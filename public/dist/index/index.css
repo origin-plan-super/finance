@@ -1,0 +1,93 @@
+.index-package1 {
+    border-bottom: 3px solid #ca231c;
+    line-height: 112px;
+    background: rgb(248, 247, 247);
+    height: 112px;
+}
+
+.index-left-one {
+    height: 112px;
+}
+
+.index-left-one img {
+    width: 230px;
+    height: 63px;
+    display: inline-block;
+}
+
+.index-left-two {
+    height: 112px;
+}
+
+.index-left-two img {
+    width: 130px;
+    height: 79px;
+    display: inline-block;
+    
+}
+
+  
+.index-right {
+    height: 112px;
+}
+
+.index-right img {
+    width: 138px;
+    height: 76px;
+    display: inline-block;
+}
+.index-sign{
+    /* background: red; */
+    height: 80px;
+    line-height: 80px;
+
+}
+.inde-sign-font{
+    /* font-size: 20px; */
+    color: red;
+}
+
+.index-red-color{
+    color: #cb2016;
+}
+
+.jumbotron{
+    padding-top: 5px;
+}
+.index-content{
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: rgb(102, 101, 101);
+    line-height: 1.2;
+}
+.pagination>li>a, .pagination>li>span{
+    margin-left: 17px;
+}
+.index-pages-color{
+    background: red;
+}
+
+.index-frame{
+    width: 450px;
+    height: 510px;
+    top: 0px;
+    background: white;
+    position: fixed;
+    top: 0px;
+    margin-left: 25%;
+    margin-top: 120px;
+    border: 1px solid gray;
+    border-radius: 2%;
+}
+.index-frame-margin{
+    margin-top: 25px;
+}
+    
+.shopcar{
+    background: #9c0903;
+    color:white;
+}
+
+.index-package5{
+    display: none;
+}
