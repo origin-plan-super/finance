@@ -1,0 +1,70 @@
+.shopBag-package1 {
+    border-bottom: 3px solid #ca231c;
+    line-height: 112px;
+    background: #e2e2e2;
+    height: 112px;
+}
+
+.shopBag-left-one {
+    height: 112px;
+}
+
+.shopBag-left-one img {
+    width: 230px;
+    height: 63px;
+    display: inline-block;
+}
+.shopBag-left-one .secondImg{
+    width: 130px;
+    height: 78px;
+    display: inline-block;
+}
+.shopBag-left-two {
+    height: 112px;
+}
+
+.shopBag-left-two img {
+    width: 130px;
+    height: 79px;
+    display: inline-block;
+    
+}
+
+  
+.shopBag-right {
+    height: 112px;
+}
+
+.shopBag-right img {
+    width: 138px;
+    height: 76px;
+    display: inline-block;
+}
+.shopBag-sign{
+    /* background: red; */
+    height: 80px;
+    line-height: 80px;
+
+}
+.inde-sign-font{
+    /* font-size: 20px; */
+    color: red;
+}
+.shopBag-red-color{
+    color: #cb2016;
+}
+/* 以上是表头的样式 */
+.discount{
+    color: #cb2016;
+    font-size: 18px;    
+}
+.reduction{
+    margin-left: 3%;
+}
+
+
+/* .goPay{
+    width: 135px;
+    display: inline-block;
+    margin-right: -36px;
+} */

@@ -1,0 +1,26 @@
+#fudong {
+    /* border: 1px solid rgb(102, 101, 101); */
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    right: 0px;
+    top: 480px;
+    text-align: center;
+}
+.fk:first-child{
+    border-bottom: 1px solid #fff;
+}
+
+.fk {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    background:#9c0903;
+}
+/* 单元格里边的字体颜色 */
+.cell-color {
+    color: #787878;
+}
