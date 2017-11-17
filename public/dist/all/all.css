@@ -1,26 +1,104 @@
+/* 右侧浮动按钮的样式 */
+
+
 #fudong {
-    /* border: 1px solid rgb(102, 101, 101); */
-    width: 50px;
-    height: 100px;
-    position: absolute;
-    right: 0px;
-    top: 480px;
-    text-align: center;
+	/* border: 1px solid rgb(102, 101, 101); */
+	width: 50px;
+	height: 100px;
+	position: absolute;
+	right: 0px;
+	top: 480px;
+	text-align: center;
 }
-.fk:first-child{
-    border-bottom: 1px solid #fff;
+
+
+
+.fudong0 {
+	border-bottom: 1px solid #fff;
+}
+
+.fudong1 {
+	border-bottom: 1px solid #fff;
 }
 
 .fk {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    color: #fff;
-    font-size: 20px;
-    background:#9c0903;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 20px;
+	background: #9c0903;
 }
+
+
 /* 单元格里边的字体颜色 */
+
 .cell-color {
-    color: #787878;
+	color: #787878;
+}
+
+
+/* 顶部导航栏的样式 */
+
+
+/*.all-package {
+    border-bottom: 3px solid #ca231c;
+    line-height: 112px;
+    background: #e2e2e2;
+    height: 112px;
+}*/
+.index-package1 {
+	border-bottom: 3px solid #ca231c;
+	line-height: 112px;
+	background: #EEEEEE;
+	height: 112px;
+}
+.index-left-one {
+	height: 112px;
+}
+
+.index-left-one img {
+	width: 230px;
+	height: 63px;
+	display: inline-block;
+}
+
+.index-left-one .secondImg {
+	width: 130px;
+	height: 78px;
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+}
+
+.index-left-two {
+	height: 112px;
+}
+
+.index-right {
+	height: 112px;
+}
+
+.index-right img {
+	width: 138px;
+	height: 76px;
+	display: inline-block;
+}
+
+
+#fudong a {
+	text-decoration: none;
+}
+
+#fudong a:link,
+a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#fudong a:hover {
+	text-decoration: none;
+	color: #fff;
+	
 }

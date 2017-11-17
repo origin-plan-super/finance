@@ -1,53 +1,10 @@
-.order-package1 {
-    border-bottom: 3px solid #ca231c;
-    line-height: 112px;
-    background: #e2e2e2;
-    height: 112px;
-}
 
-.order-left-one {
-    height: 112px;
-}
-
-.order-left-one img {
-    width: 230px;
-    height: 63px;
-    display: inline-block;
-}
-
-.order-left-two {
-    height: 112px;
-}
-
-.order-left-two img {
-    width: 130px;
-    height: 79px;
-    display: inline-block;
-    
-}
-.order-left-one .secondImg{
-    width: 130px;
-    height: 78px;
-    display: inline-block;
-}
-  
-.order-right {
-    height: 112px;
-}
-
-.order-right img {
-    width: 138px;
-    height: 76px;
-    display: inline-block;
-}
 .order-sign{
-    /* background: red; */
     height: 80px;
     line-height: 80px;
 
 }
 .inde-sign-font{
-    /* font-size: 20px; */
     color: red;
 }
 .order-red-color{

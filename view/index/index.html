@@ -14,7 +14,6 @@
 		.pagination>li>span {
 			margin-left: 17px;
 		}
-
 		.jumbotron {
 			background: gainsboro;
 		}
@@ -56,6 +55,16 @@
 			background-color: #eee;
 			border-color: #ddd;
 		}
+		.cur-pointer {
+            cursor: pointer;
+        }
+
+        .cur-pointer:hover {
+            color: red;
+        }
+        .cur-icon {
+            cursor: pointer;
+        }
 	</style>
 </head>
 
@@ -120,7 +129,7 @@
 									</select>
 								</td>
 								<td>950元</td>
-								<td class="index-red-color toSignUp">我要报名</td>
+								<td class="index-red-color toSignUp cur-pointer">我要报名</td>
 							</tr>
 							<tr>
 								<td>上海FRM考试</td>
@@ -142,7 +151,7 @@
 									</select>
 								</td>
 								<td>950元</td>
-								<td class="index-red-color toSignUp">我要报名</td>
+								<td class="index-red-color toSignUp cur-pointer">我要报名</td>
 							</tr>
 							<tr>
 								<td>上海FRM考试</td>
@@ -164,7 +173,7 @@
 									</select>
 								</td>
 								<td>950元</td>
-								<td class="index-red-color toSignUp">我要报名</td>
+								<td class="index-red-color toSignUp cur-pointer">我要报名</td>
 							</tr>
 							<tr>
 								<td>上海FRM考试</td>
@@ -186,7 +195,7 @@
 									</select>
 								</td>
 								<td>950元</td>
-								<td class="index-red-color toSignUp">我要报名</td>
+								<td class="index-red-color toSignUp cur-pointer">我要报名</td>
 							</tr>
 							<tr>
 								<td>上海FRM考试</td>
@@ -208,7 +217,7 @@
 									</select>
 								</td>
 								<td>950元</td>
-								<td class="index-red-color toSignUp">我要报名</td>
+								<td class="index-red-color toSignUp cur-pointer">我要报名</td>
 							</tr>
 						</tbody>
 					</table>
@@ -232,6 +241,7 @@
 				<div class="col-xs-12" style="display:inline-block">
 					<div class="jumbotron" style="padding-top: 5px;padding-bottom:150px;width:96%;margin-left:2%;">
 						<h3 class="text-center" style="padding-bottom:20px;">报名公告</h3>
+						<div id="">
 						<span class="index-content">1、5人以上团报有优惠，详情请咨询客服，团报须知：5人团报应为2名老 考生带3名新考生的形式报名。(超过5人低于10人按照2名老考生带其他几名新考生 形式报名)。10人团报应为4名老考生带6名新考生的形式报名(超过10人按照4名老考生
 							带其他几名新考生的形式报名)或10名全部都为新考生。
 						</span>
@@ -240,12 +250,13 @@
 							2、已确认的考生不得退考，若需要更换时间或更改信息需提前至少3个工作日(含第三个 工作日)，在工作时间内通知机考中心，并交考位费，F1-F3及FIA：每门次300元； F4每门次400元。新换考试时间需为已有考试时间且在原考试时间两个月内，不得预报名
 							未公布的考试时间或报名超过原考试时间2个月的考试。
 						</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 隐藏的填写个人信息部分 -->
-		<div class="container hide con" style="z-index:999999999999999999">
+		<div class="container hide con" style="z-index:999999999999999999;">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="index-frame text-center">
@@ -335,14 +346,23 @@
 				</div>
 			</div>
 		</div>
-      <!-- 右侧悬浮的图标 -->
+      <!-- 右侧悬浮的图标   -->
 		<div id="fudong">
-			<div class="fk fudong1">
-				<span class="glyphicon glyphicon-user userCenter"></span>
-			</div>
-			<div class="fk fudong2">
-				<span class="glyphicon glyphicon-shopping-cart shopBag"></span>
-			</div>
+			<a href="../index/index.html">
+				<div class="fk fudong0">
+					<span class="glyphicon glyphicon glyphicon-home userCenter cur-icon"></span>
+				</div>
+			</a>
+			<a href="../user/user.html">
+				<div class="fk fudong1">
+					<span class="glyphicon glyphicon-user userCenter cur-icon"></span>
+				</div>
+			</a>
+			<a href="../shopBag/shopBag.html">
+				<div class="fk fudong2">
+					<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
+				</div>
+			</a>
 		</div>
 	</div>
 

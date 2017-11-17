@@ -1,45 +1,4 @@
-.user-package1 {
-    border-bottom: 3px solid #ca231c;
-    line-height: 112px;
-    background: #e2e2e2;
-    height: 112px;
-}
 
-.user-left-one {
-    height: 112px;
-}
-
-.user-left-one img {
-    width: 230px;
-    height: 63px;
-    display: inline-block;
-}
-
-.user-left-one .secondImg {
-    width: 130px;
-    height: 78px;
-    display: inline-block;
-}
-
-.user-left-two {
-    height: 112px;
-}
-
-.user-left-two img {
-    width: 130px;
-    height: 79px;
-    display: inline-block;
-}
-
-.user-right {
-    height: 112px;
-}
-
-.user-right img {
-    width: 138px;
-    height: 76px;
-    display: inline-block;
-}
 
 .user-sign {
     height: 80px;

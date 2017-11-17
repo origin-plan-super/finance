@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh" ng-app="ionicApp">
+<!-- ng-app="ionicApp" -->
+<html lang="zh">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,25 +47,28 @@
             color: #fff;
             text-decoration: none;
         }
+        .cur-icon {
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <div class="order">
-        <!-- 表头的导航栏 -->
-        <div class="order-package1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6 order-left-one text-left">
-                        <img src="../../public/img/top-left.png" />
-                        <img class="secondImg" src="../../public/img/top-left2.png" />
-                    </div>
-                    <div class="col-xs-6 order-right text-right">
-                        <img src="../../public/img/top-right.png" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+				<div class="index-package1">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 index-left-one text-left">
+						<img src="../../public/img/top-left.png"/>
+						<img  class="secondImg" src="../../public/img/top-left2.png"/>
+					</div>
+					<div class="col-xs-6 index-right text-right">
+						<img src="../../public/img/top-right.png"/>
+					</div>
+				</div>
+			</div>
+		</div>
         <!-- 提交订单大字 -->
         <div class="container">
             <div class="row">
@@ -77,9 +81,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-2">
-                    <!-- <label class="checkbox" style="float:right;">
-                            <input type="checkbox" checked="" class="">
-                        </label> -->
                 </div>
                 <div class="col-xs-8">
                     <!-- 表格部分 -->
@@ -112,7 +113,7 @@
                                 <td class="cur-pointer">删除</td>
                             </tr>
                         </tbody>
-                    </table>
+                     </table>
                     <!-- 表格部分 -->
                 </div>
                 <div class="col-xs-2"></div>
@@ -179,7 +180,7 @@
                 </div>
                 <div class="col-xs-8 text-right">
                     <div class="col-xs-10 text-right">
-                        <span>已减100元</span>
+                        <span>已减<span>100</span>元</span>
                         <br>
                         <span>合计：
                             <span style="color:red">1800</span>元</span>
@@ -195,17 +196,23 @@
 
 
         <!-- 右侧悬浮的图标 -->
-        <div id="fudong">
-            <div class="fk fudong1">
-                <span class="glyphicon glyphicon-education index"></span>
-            </div>
-            <div class="fk fudong2" style="border-bottom: 1px solid #fff;">
-                <span class="glyphicon glyphicon-user userCenter"></span>
-            </div>
-            <div class="fk fudong3">
-                <span class="glyphicon glyphicon-shopping-cart shopBag"></span>
-            </div>
-        </div>
+		<div id="fudong">
+			<a href="../index/index.html">
+				<div class="fk fudong0">
+					<span class="glyphicon glyphicon glyphicon-home userCenter cur-icon"></span>
+				</div>
+			</a>
+			<a href="../user/user.html">
+				<div class="fk fudong1">
+					<span class="glyphicon glyphicon-user userCenter cur-icon"></span>
+				</div>
+			</a>
+			<a href="../shopBag/shopBag.html">
+				<div class="fk fudong2">
+					<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
+				</div>
+			</a>
+		</div>
     </div>
 
     <script src="../../public/vendor/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>

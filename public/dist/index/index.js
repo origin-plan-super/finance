@@ -21,18 +21,8 @@ $(function () {
         $(this).siblings('li').removeClass('selected'); // 删除其他兄弟元素的样式
     });
 });
-// 点击去结算
-$(document).on("click",".settlement",function(){
-    window.location.href = "../order/order.html";
-})
-// 点击悬浮的个人中心跳转页面
-$(document).on("click", ".userCenter", function () {
-    window.location.href = "../user/user.html";
-})
-// 点击悬浮的购物车跳转购物车页面
-$(document).on("click", ".shopBag", function () {
-    window.location.href = "../shopBag/shopBag.html";
-})
+
+
 
 // 分页效果
 $('#pageLimit').bootstrapPaginator({
