@@ -100,7 +100,8 @@
             <!-- 内容主体区域 -->
             <div id="iframeBox">
                 <!-- <iframe src="/finance/index.php/Admin/Index/home" id="fream" frameborder="0"></iframe> -->
-                <iframe src="Exam/showList" id="fream" frameborder="0"></iframe>
+                <!-- <iframe src="Exam/showList" id="fream" frameborder="0"></iframe> -->
+                <iframe src="" id="fream" frameborder="0"></iframe>
             </div>
         </div>
 
