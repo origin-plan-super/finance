@@ -1,0 +1,24 @@
+[ 2017-11-18T13:49:57+08:00 ] 127.0.0.1 /finance/App/Home/View/component/importComponent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+ERR: 无法加载模块:App
+
+[ 2017-11-18T13:49:59+08:00 ] 127.0.0.1 /finance/App/Home/View/component/importComponent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+ERR: 无法加载模块:App
+
+[ 2017-11-18T13:52:36+08:00 ] 127.0.0.1 /finance/index.php/component
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000272s ]
+ERR: 无法加载模块:Component
+
+[ 2017-11-18T13:52:41+08:00 ] 127.0.0.1 /finance/index.php/component/importComponent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+ERR: 无法加载模块:Component
+

@@ -102,3 +102,7 @@ a:visited {
 	color: #fff;
 	
 }
+
+.table>thead:first-child>tr:first-child>th {
+  text-align: center;
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- ng-app="ionicApp" -->
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>提交订单</title>
+    <link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
+    <link rel="stylesheet" type="text/css" href="__VENDOR__/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__DIST__/order/order.css" />
+    <include file="App/Admin/View/component/importComponent.html" />
+
+    <style>
+        .pagination>li>a,
+        .pagination>li>span {
+            margin-left: 17px;
+        }
+
+        .btn-red {
+            background-color: #9c0903;
+            color: white;
+            font-size: 25px;
+            padding: 2px 25px;
+        }
+
+        .btn-small {
+            padding: 3px 17px;
+            background-color: #9c0903;
+            color: white;
+        }
+
+        .btn-small:hover {
+            background-color: #9c0903;
+            color: white;
+        }
+
+        .cur-pointer {
+            cursor: pointer;
+        }
+
+        .cur-pointer:hover {
+            color: red;
+        }
+
+        .btn.focus,
+        .btn:focus,
+        .btn:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cur-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="order">
+        <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+        <include file="App/Home/View/component/topNavComponent.html" />
+
+        <!-- 提交订单大字 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 order-sign text-left">
+                    <h2 class="inde-sign-font">提交订单</h2>
+                </div>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                </div>
+                <div class="col-xs-8">
+                    <!-- 表格部分 -->
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th class="text-center">考试名称</th>
+                                <th class="text-center">报考日期</th>
+                                <th class="text-center">场次</th>
+                                <th class="text-center">考试科目</th>
+                                <th class="text-center">价格</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cell-color">
+
+                            <volist name="user_exam_info" id="vol" empty="没有信息">
+                                <tr>
+                                    <td>{$vol.exam_name}</td>
+                                    <td>{$vol.exam_date}</td>
+                                    <td>{$vol.exam_time}</td>
+                                    <td>{$vol.exam_subject}</td>
+                                    <td>{$vol.exam_money}</td>
+                                    <td class="cur-pointer">删除</td>
+                                </tr>
+
+                            </volist>
+                        </tbody>
+                    </table>
+                    <!-- 表格部分 -->
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <!-- 优惠减免 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+
+
+                </div>
+                <div class="col-xs-8">
+                    <span class="discount">优惠减免</span>
+                    <span class="reduction">
+                        <volist name="discount" id="vol" empty="没有优惠信息">
+                            满{$vol.full}元减{$vol.red}元
+                            <if condition="$i lt count($discount)">，</if>
+
+                        </volist>
+                    </span>
+                </div>
+                <div class="col-xs-2">
+
+                </div>
+            </div>
+        </div>
+        <!-- 使用优惠码 -->
+        <div class="container" style="margin-top:1%;">
+            <div class="row">
+                <div class="col-xs-2">
+                </div>
+                <div class="col-xs-8 text-left">
+                    <span class="discount">使用优惠码</span>
+                    <input type="text" style="margin-left:2%;" id="discountCode">
+                    <button type="button" class="btn btn-sm btn-small" id="ok">确定</button>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        </div>
+        <!-- 选择支付方式 -->
+        <div class="container" style="margin-top:1%;">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
+                    <span class="discount">选择支付方式</span>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <!-- 支付方式 -->
+        <div class="container" style="margin-top:1%;">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
+
+
+                    <label for="zhifubao">
+                        <input type="radio" name="order" id="zhifubao">
+                        <img class="zfb" src="__PUBLIC__/img/zhifubao.png" alt="" align="middle">
+                    </label>
+                    <label for="weixin">
+                        <input type="radio" name="order" id="weixin" style="margin-right:9px;">
+                        <img class="wx" src="__PUBLIC__/img/weixin.png" alt="" align="middle">
+                    </label>
+
+
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <!-- 去结算 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                </div>
+                <div class="col-xs-8 text-right">
+                    <div class="col-xs-10 text-right">
+                        <span>已减
+                            <span>{$red}</span>元</span>
+                        <br>
+                        <span>合计：
+                            <span style="color:red" id="sub_money">{$sub_money}</span>元</span>
+                    </div>
+                    <div class="col-xs-2 text-right">
+                        <button type="button" class="btn btn-red">去支付</button>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 右侧悬浮的图标 -->
+        <include file="App/Home/View/component/rightNavComponent.html" />
+    </div>
+
+    <script src="__VENDOR__/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__VENDOR__/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__DIST__/order/order.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__DIST__/all/all.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+
+        var sub_money = parseInt('{$sub_money}');
+
+
+        $('#ok').on('click', function () {
+            var discountCode = $('#discountCode').val();
+            $.post('__CONTROLLER__/code', {
+                discountCode: discountCode
+            }, function (res) {
+
+                res = JSON.parse(res);
+                if (res.res == 0) {
+                    layer.msg('验证码正确');
+                    sub_money -= res.msg;
+                    $('#sub_money').text(sub_money);
+
+                } else {
+                    layer.msg(res.msg);
+
+                }
+
+
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

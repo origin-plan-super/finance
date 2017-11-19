@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- ng-app="ionicApp" -->
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的购物车</title>
+    <link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
+    <link rel="stylesheet" type="text/css" href="__VENDOR__/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__DIST__/shopBag/shopBag.css" />
+    <style>
+        .pagination>li>a,
+        .pagination>li>span {
+            margin-left: 17px;
+        }
+
+        .btn-red {
+            background-color: #9c0903;
+            color: white;
+            font-size: 25px;
+            padding: 2px 25px;
+        }
+
+        .btn.focus,
+        .btn:focus,
+        .btn:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cur-pointer {
+            cursor: pointer;
+        }
+
+        .cur-pointer:hover {
+            color: red;
+        }
+
+        .cur-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shopBag">
+        <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+        <include file="App/Home/View/component/topNavComponent.html" />
+
+        <!-- 个人中心大字 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 shopBag-sign text-left">
+                    <h2 class="inde-sign-font">我的购物车</h2>
+                </div>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+
+                </div>
+                <div class="col-xs-8">
+                    <!-- 表格部分 -->
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="text-center">考试名称</th>
+                                <th class="text-center">报考日期</th>
+                                <th class="text-center">场次</th>
+                                <th class="text-center">考试科目</th>
+                                <th class="text-center">价格</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cell-color">
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>上海FRM考试</td>
+                                <td>2017年11月25日</td>
+                                <td>12:30-14:30</td>
+                                <td>F1</td>
+                                <td>950元</td>
+                                <td class="cur-pointer">删除</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>上海FRM考试</td>
+                                <td>2017年11月25日</td>
+                                <td>12:30-14:30</td>
+                                <td>F1</td>
+                                <td>950元</td>
+                                <td class="cur-pointer">删除</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 表格部分 -->
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <!-- 优惠减免 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+
+                </div>
+                <div class="col-xs-8">
+                    <span class="discount">优惠减免</span>
+                    <span class="reduction">满1000元减100元，满10科减100元。</span>
+                </div>
+                <div class="col-xs-2">
+
+                </div>
+            </div>
+        </div>
+        <!-- 去结算 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                </div>
+                <div class="col-xs-8">
+                    <div class="col-xs-10  text-right">
+                        <span>已减100元</span>
+                        <br>
+                        <span>合计：
+                            <span style="color:red">1800</span>元</span>
+                    </div>
+                    <div class="col-xs-2  text-right">
+                        <a href="../order/order.html">
+                            <button type="button" class="btn btn-red goPay">去结算</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧悬浮的图标 -->
+        <include file="App/Home/View/component/rightNavComponent.html" />
+
+    </div>
+
+    <script src="../../public/vendor/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../public/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__DIST__/shopBag/shopBag.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__DIST__/all/all.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/ionic/1.3.2/js/ionic.bundle.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

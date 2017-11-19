@@ -1,0 +1,16 @@
+<!-- css -->
+<link href="__VENDOR__/layui/css/layui.css" rel="stylesheet" type="text/css">
+
+
+<!-- js -->
+<script src="__VENDOR__/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="__VENDOR__/layer/layer.js"></script>
+<script src="__VENDOR__/layui/layui.js"></script>
+<script src="__DIST__/tool/tool.js"></script>
+
+<script>
+
+    function getLocalTime(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+    }
+</script>

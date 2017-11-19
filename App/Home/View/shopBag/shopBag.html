@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- ng-app="ionicApp" -->
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的购物车</title>
+    <link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
+    <link rel="stylesheet" type="text/css" href="__VENDOR__/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__DIST__/shopBag/shopBag.css" />
+    <link href="__VENDOR__/layui/css/layui.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .pagination>li>a,
+        .pagination>li>span {
+            margin-left: 17px;
+        }
+
+        .btn-red {
+            background-color: #9c0903;
+            color: white;
+            font-size: 25px;
+            padding: 2px 25px;
+        }
+
+        .btn.focus,
+        .btn:focus,
+        .btn:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cur-pointer {
+            cursor: pointer;
+        }
+
+        .cur-pointer:hover {
+            color: red;
+        }
+
+        s .cur-icon {
+            cursor: pointer;
+        }
+
+        .layui-form-checked[lay-skin=primary] i {
+            border-color: #9c0903;
+            background-color: #9c0903;
+            color: #fff;
+        }
+
+
+        .layui-form-checkbox[lay-skin=primary]:hover i {
+            border-color: #9c0903;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="shopBag layui-form" action='{:U("Order/order")}' method="post">
+        <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+        <include file="App/Home/View/component/topNavComponent.html" />
+
+        <!-- 个人中心大字 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 shopBag-sign text-left">
+                    <h2 class="inde-sign-font">我的购物车</h2>
+                </div>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+
+                </div>
+                <div class="col-xs-8">
+                    <!-- 表格部分 -->
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="text-center">考试名称</th>
+                                <th class="text-center">报考日期</th>
+                                <th class="text-center">场次</th>
+                                <th class="text-center">考试科目</th>
+                                <th class="text-center">价格</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cell-color">
+
+                            <volist name="user_exam_info" id="vol" empty="没有信息">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="sign_id[]" lay-skin="primary" value='{$vol.sign_id}'>
+                                    </td>
+                                    <td>{$vol.exam_name}</td>
+                                    <td>{$vol.exam_date}</td>
+                                    <td>{$vol.exam_time}</td>
+                                    <td>{$vol.exam_subject}</td>
+                                    <td>{$vol.exam_money}</td>
+                                    <td class="cur-pointer del" data-id='{$vol.sign_id}'>删除</td>
+                                </tr>
+
+                            </volist>
+                        </tbody>
+                    </table>
+                    <!-- 表格部分 -->
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+        <!-- 优惠减免 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+
+                </div>
+                <div class="col-xs-8">
+                    <span class="discount">优惠减免</span>
+                    <span class="reduction">
+                        <!-- 满1000元减100元，满10科减100元。 -->
+
+                        <volist name="discount" id="vol" empty="没有优惠信息">
+                            满{$vol.full}元减{$vol.red}元
+                            <if condition="$i lt count($discount)">，</if>
+
+                        </volist>
+
+                    </span>
+                </div>
+                <div class="col-xs-2">
+
+                </div>
+            </div>
+        </div>
+        <!-- 去结算 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 text-right">
+                </div>
+                <div class="col-xs-8">
+                    <div class="col-xs-10  text-right">
+                        <span>已减{$red}元</span>
+                        <br>
+                        <span>合计：
+                            <span style="color:red">{$sub_money}</span>元</span>
+                    </div>
+                    <div class="col-xs-2  text-right">
+                        <button type="submit" class="btn btn-red goPay">去结算</button>
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧悬浮的图标 -->
+        <include file="App/Home/View/component/rightNavComponent.html" />
+
+    </form>
+
+    <script src="__VENDOR__/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__VENDOR__/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__DIST__/all/all.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__VENDOR__/layer/layer.js"></script>
+    <script src="__VENDOR__/layui/layui.js"></script>
+    <script src="__DIST__/tool/tool.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script>
+
+
+        layui.use('form', function () {
+            var form = layui.form;
+
+        });
+
+
+        $(document).on('click', '.del', function () {
+
+            var id = $(this).attr('data-id');
+            var _this = $(this);
+
+            $.post('__CONTROLLER__/del', {
+                sign_id: id
+            }, function (res) {
+
+                res = JSON.parse(res);
+                if (res.res == 0) {
+
+                    _this.parents('tr').remove();
+
+                } else {
+                    w(res);
+                    layer.msg('删除失败~' + res.msg, {
+                        offset: '80%'
+                    });
+                }
+
+            });
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -2,12 +2,17 @@
 $(function () {
     var timer, scrollTop, sideDiv = $('#fudong').appendTo('body');
     $(window).scroll(function () {
-        timer && clearTimeout(timer);
+
+        clearTimeout(timer);
+
         scrollTop = $(this).scrollTop();
+
         timer = setTimeout(function () {
             sideDiv.animate({
-                top: scrollTop + 112 + 'px'
-            }, 600);
-        }, 200);
+                top: scrollTop + 480 + 'px'
+            }, 300);
+
+        }, 20);
+
     });
 });
