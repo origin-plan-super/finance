@@ -20,8 +20,12 @@ class ZfbController extends Controller {
     
     
     public function myorder(){
-        dump('post.');
-        dump('get.');
+        
+        $post= I('post.');
+        $get= I('get.');
+        
+        dump($post);
+        dump($get);
         
     }
     
