@@ -106,7 +106,7 @@
 					<table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
 						<thead>
 							<tr>
-								<th width='400' class="text-center">考试名称</th>
+								<th class="text-center">考试名称</th>
 								<th class="text-center">报考日期</th>
 								<th class="text-center">场次</th>
 								<th class="text-center">剩余考位</th>

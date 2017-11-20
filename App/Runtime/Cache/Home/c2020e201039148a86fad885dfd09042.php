@@ -73,19 +73,19 @@
                     <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
                         <thead>
                             <tr>
-                                <th style="min-width:20px">考试名称</th>
-                                <th style="min-width:20px">报考日期</th>
-                                <th style="min-width:20px">场次</th>
-                                <th style="min-width:20px">考试科目</th>
-                                <th style="min-width:20px">价格</th>
+                                <th>考试名称</th>
+                                <th>报考日期</th>
+                                <th>场次</th>
+                                <th>考试科目</th>
+                                <th>价格</th>
                                 <!-- 用户信息 -->
-                                <th style="min-width:20px">姓名</th>
-                                <th style="min-width:20px">手机</th>
-                                <th style="min-width:20px">邮箱</th>
-                                <th style="min-width:20px">注册ID</th>
-                                <th style="min-width:20px">身份证</th>
-                                <th style="min-width:20px">出生年月</th>
-                                <th style="min-width:20px">备注</th>
+                                <th>姓名</th>
+                                <th>手机</th>
+                                <th>邮箱</th>
+                                <th>注册ID</th>
+                                <th>身份证</th>
+                                <th>出生年月</th>
+                                <th>备注</th>
                             </tr>
                         </thead>
                         <tbody class="cell-color">
