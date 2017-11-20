@@ -45,12 +45,19 @@ class ZfbController extends Controller {
         dump(I('post.'));
         dump(I('get.'));
         
+        F('testpost',I('post.'));
+        F('testget',I('get.'));
+        
+        
     }
     /**同步跳转 */
     public function returnI(){
         echo '同步跳转';
         dump(I('post.'));
         dump(I('get.'));
+        
+        dump(  F('testpost'));
+        dump(  F('testget'));
     }
     
     
