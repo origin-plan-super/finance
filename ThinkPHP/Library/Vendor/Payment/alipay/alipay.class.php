@@ -5,7 +5,7 @@ class alipay{
     'seller_id' => '',//收款支付宝账号，以2088开头由16位纯数字组成的字符串，一般情况下收款账号就是签约账号
     'key' => '',// MD5密钥，安全检验码，由数字和字母组成的32位字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm
     'notify_url' => '',// 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    'return_url' => '',// 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
+    'return_url' => 'http://120.78.162.200:12138/finance/Home/zfb/returnI',// 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
     'sign_type' => 'MD5',//签名方式 strtoupper('MD5')
     'input_charset' => 'utf-8',//字符编码格式 目前支持 gbk 或 utf-8 strtolower('utf-8')
     'cacert' => '\\cacerts.pem',//请保证cacert.pem文件在当前文件夹目录中 getcwd()
