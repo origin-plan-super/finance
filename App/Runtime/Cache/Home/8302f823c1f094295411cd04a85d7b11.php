@@ -310,7 +310,7 @@
                 code: $('#discountCode').val()
             }, function (res) {
 
-                $('#test').html(res);
+                // $('#test').html(res);
                 res = JSON.parse(res);
 
                 if (res.res == 0) {

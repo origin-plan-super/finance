@@ -118,6 +118,9 @@ class OrderController extends CommonController {
     * 添加订单
     */
     public function add(){
+        //先生成订单号
+        $order_add[]    =   [];//订单号
+        $order_add['order_id']    =   date('Ymdhis').rand(1000,9999);//订单号
         
         /**
         * 先创建订单
@@ -144,7 +147,7 @@ class OrderController extends CommonController {
             
             
             $model              =   M('Sign');
-            $result             =   $model
+            $sign_info=    $result             =   $model
             ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
             ->table('fi_sign as t1,fi_exam as t2')
             ->where('t1.exam_id = t2.exam_id AND t1.user_pid = '.session('user_pid'))
@@ -153,12 +156,7 @@ class OrderController extends CommonController {
             ->select();
             $exam_id            =   [];//课程的id数组
             
-            //循环找到exam_id
-            foreach ($result as $key => $value) {
-                $exam_id[]      =   $value['exam_id'];//添加到数组中
-            }
             
-            $add['exam_id']     =   json_encode($exam_id);//保存exam_id
             
             
             // ========================
@@ -197,26 +195,46 @@ class OrderController extends CommonController {
             }
             
             //得到价格
-            $add['money']       =   $sub_money;
+            $order_add['money']       =   $sub_money;
             
             // ========================
             // ==== 计算价格结束 ====
             // ========================
             
             
-            $add['method']      =   $post['method'];//支付方式，微信或支付宝或银联
-            $add['user_pid']    =   session('user_pid');//用户id
-            $add['order_id']    =   date('Ymdhis').rand(1000,9999);//订单号
-            $add['add_time']    =   time();//添加时间
-            $add['edit_time']   =   $add['add_time'] ;//最后一次修改时间
-            $add['state']       =   0 ;//状态：未支付
-            
+            $order_add['method']      =   $post['method'];//支付方式，微信或支付宝或银联
+            $order_add['user_pid']    =   session('user_pid');//用户id
+            $order_add['add_time']    =   time();//添加时间
+            $order_add['edit_time']   =   $order_add['add_time'] ;//最后一次修改时间
+            $order_add['state']       =   0 ;//状态：未支付
             
             $model=M('Order');
-            $result             =   $model->add($add);
+            $result             =   $model->add($order_add);
             if($result!==false){
+                
+                // ========================
+                // ==== 记录订单的课程信息 ====
+                // ========================
+                //放到order_info表中
+                
+                //创建信息表的模型
+                $model=M('OrderInfo');
+                //组装数据
+                
+                //遍历sign，找到exam_id，组装数据
+                foreach ($sign_info as $key => $value) {
+                    $add=null;
+                    $add['order_id']=  $order_add['order_id'];
+                    $add['exam_id']=  $value['exam_id'];
+                    $add['subject']=  $value['exam_subject'];
+                    $add['add_time']=  time();
+                    $add['edit_time']=  $add['add_time'];
+                    //数据组装完成，存入数据库
+                    $model->add($add);
+                }
+                
                 $res['res']     =   0;
-                $res['msg']     =   $add['order_id'];
+                $res['msg']     =   $order_add['order_id'];
             }else{
                 $rse['res']     =   -1;
                 $res['msg']     =   'no!!!!!';

@@ -18,7 +18,7 @@ use Think\Controller;
 class TestController extends Controller {
     
     public function index() {
-        // echo 
+        // echo
         echo'<br>';
         echo date('Y-m-d h-i-s');
         
