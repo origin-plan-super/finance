@@ -14,7 +14,7 @@ return array(
 'DB_HOST' => '127.0.0.1', // 服务器地址
 'DB_NAME' => 'finance', // 数据库名
 'DB_USER' => 'root', // 用户名
-'DB_PWD' => 'mysqlyh12138.home/.', // 密码
+'DB_PWD' => 'mysqlyh12138..', // /home密码
 'DB_PORT' => '3306', // 端口
 'DB_PREFIX' => 'fi_', // 数据库表前缀
 
@@ -39,16 +39,16 @@ return array(
 'seller_email'=>'support@finance365.com',
 
 //这里是异步通知页面url，提交到项目的Pay控制器的notifyurl方法；
-'notify_url'=>'http://120.78.162.200:12138/home/finance/Pay/notifyurl',
+'notify_url'=>'http://120.78.162.200:12138/finance/home/Pay/notifyurl',
 
 //这里是页面跳转通知url，提交到项目的Pay控制器的returnurl方法；
-'return_url'=>'http://120.78.162.200:12138/home/finance/Pay/returnurl',
+'return_url'=>'http://120.78.162.200:12138/finance/home/Pay/returnurl',
 
 //支付成功跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参payed（已支付列表）
-'successpage'=>'http://120.78.162.200:12138/home/finance/Zfb/myorder?ordtype=payed',
+'successpage'=>'http://120.78.162.200:12138/finance/home/Zfb/myorder?ordtype=payed',
 
 //支付失败跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参unpay（未支付列表）
-'errorpage'=>'http://120.78.162.200:12138/home/finance/Zfb/myorder?ordtype=unpay',
+'errorpage'=>'http://120.78.162.200:12138/finance/home/Zfb/myorder?ordtype=unpay',
 ),
 
 );
