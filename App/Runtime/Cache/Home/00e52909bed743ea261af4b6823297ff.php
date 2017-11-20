@@ -102,8 +102,8 @@
 		<!-- 表格部分 -->
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
-					<table class="table table-bordered table-hover text-center">
+				<div class="col-xs-12 table-responsive">
+					<table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
 						<thead>
 							<tr>
 								<th width='400' class="text-center">考试名称</th>

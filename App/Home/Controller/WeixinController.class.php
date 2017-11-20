@@ -113,4 +113,25 @@ class WeixinController extends Controller {
         dump(F("wx_notified_data_xml"));
         dump(F("wxpay_HTTP_RAW_POST_DATA"));
     }
+    
+    public function getInfo(){
+        
+        import('Common.Libs.Weixin.JSAPI');
+        $input = new \WxPayOrderQuery();
+        $input->SetOut_trade_no($out_trade_no);
+        $data = \WxPayApi::orderQuery($input);
+        if($data['trade_state'] == 'SUCCESS' ){
+            $paydata = S('paydata');
+            $data = $paydata[$out_trade_no];
+            $data['status'] = 1;
+            $paydata[$out_trade_no] = $data;
+            S('paydata',$paydata);
+            return $data;
+        }else{
+            return false;
+        }
+        
+        
+        
+    }
 }

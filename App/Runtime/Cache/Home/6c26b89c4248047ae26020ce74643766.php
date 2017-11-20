@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 shopBag-sign text-left">
-                    <h2 class="inde-sign-font">我的购物车</h2>
+                    <h2 class="inde-sign-font" style="padding-top:20px">我的购物车</h2>
                 </div>
             </div>
         </div>
@@ -90,9 +90,9 @@
                 <div class="col-xs-2">
 
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-8 table-responsive">
                     <!-- 表格部分 -->
-                    <table class="table table-bordered table-hover text-center">
+                    <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
                         <thead>
                             <tr>
                                 <th></th>

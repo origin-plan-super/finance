@@ -18,6 +18,13 @@
         .cur-icon {
             cursor: pointer;
         }
+
+        .table-test {
+            /* position: relative;
+            margin: 0 auto;
+            min-width: 1000px;
+            white-space: 1000px */
+        }
     </style>
 </head>
 
@@ -47,24 +54,25 @@
         <!-- 表格 -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12" style="padding:0 120px;">
+                <div class="col-md-12 table-responsive table-test" style="padding:0 120px ">
                     <!-- 表格部分 -->
-                    <table class="table table-bordered table-hover text-center">
+                    <!-- style="white-space:nowrap" -->
+                    <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
                         <thead>
                             <tr>
-                                <th style="width:400px">考试名称</th>
-                                <th>报考日期</th>
-                                <th>场次</th>
-                                <th>考试科目</th>
-                                <th>价格</th>
+                                <th style="min-width:20px">考试名称</th>
+                                <th style="min-width:20px">报考日期</th>
+                                <th style="min-width:20px">场次</th>
+                                <th style="min-width:20px">考试科目</th>
+                                <th style="min-width:20px">价格</th>
                                 <!-- 用户信息 -->
-                                <th>姓名</th>
-                                <th>手机</th>
-                                <th>邮箱</th>
-                                <th>注册ID</th>
-                                <th>身份证</th>
-                                <th>出生年月</th>
-                                <th>备注</th>
+                                <th style="min-width:20px">姓名</th>
+                                <th style="min-width:20px">手机</th>
+                                <th style="min-width:20px">邮箱</th>
+                                <th style="min-width:20px">注册ID</th>
+                                <th style="min-width:20px">身份证</th>
+                                <th style="min-width:20px">出生年月</th>
+                                <th style="min-width:20px">备注</th>
                             </tr>
                         </thead>
                         <tbody class="cell-color">
