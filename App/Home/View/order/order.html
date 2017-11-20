@@ -101,6 +101,7 @@
                                 </tr>
 
                             </volist>
+
                         </tbody>
                     </table>
                     <!-- 表格部分 -->
@@ -189,7 +190,7 @@
                             <span style="color:red" id="sub_money">{$sub_money}</span>元</span>
                     </div>
                     <div class="col-xs-2 text-right">
-                        <button type="button" class="btn btn-red">去支付</button>
+                        <button type="button" class="btn btn-red" id="goAdd">去支付</button>
                     </div>
                 </div>
                 <div class="col-xs-2">
@@ -200,6 +201,9 @@
 
         <!-- 右侧悬浮的图标 -->
         <include file="App/Home/View/component/rightNavComponent.html" />
+    </div>
+    <div id="test">
+
     </div>
 
     <script src="__VENDOR__/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -221,7 +225,9 @@
                 res = JSON.parse(res);
                 if (res.res == 0) {
                     layer.msg('验证码正确');
+
                     sub_money -= res.msg;
+                    sub_money = sub_money.toFixed(2);
                     $('#sub_money').text(sub_money);
 
                 } else {
@@ -233,6 +239,38 @@
             });
 
         });
+        /*
+        *去支付订单
+        */
+        $('#goAdd').on('click', function () {
+
+
+            $.post('__CONTROLLER__/add', {
+                method: 1,
+                code: $('#discountCode').val()
+            }, function (res) {
+
+                $('#test').html(res);
+                res = JSON.parse(res);
+
+                if (res.res == 0) {
+                    layer.msg('验证码正确');
+                    sub_money -= res.msg;
+                    $('#sub_money').text(sub_money);
+
+                    window.location.href = '__CONTROLLER__/payment/order_id/' + res.msg;
+
+
+                } else {
+                    layer.msg(res.msg);
+
+                }
+
+
+            });
+
+        })
+        // 
 
     </script>
 </body>

@@ -16,7 +16,7 @@
 
 namespace Home\Controller;
 use Think\Controller;
-class ShopBagController extends Controller {
+class ShopBagController extends CommonController {
     /**
     * 显示购物车
     */

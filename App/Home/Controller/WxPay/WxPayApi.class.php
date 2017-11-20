@@ -1,7 +1,10 @@
 <?php
-require_once "WxPay.Exception.php";
-require_once "WxPay.Config.php";
-require_once "WxPay.Data.php";
+// require_once "WxPayException.php";
+// require_once "WxPayConfig.php";
+// require_once "WxPayData.php";
+import("@.Controller.WxPay.WxPayException");
+import("@.Controller.WxPay.WxPayConfig");
+import("@.Controller.WxPay.WxPayData");
 
 /**
  * 
@@ -411,7 +414,7 @@ class WxPayApi
 	public static function notify($callback, &$msg)
 	{
 		//获取通知的数据
-		$xml = file_get_contents('php://input');
+		$xml = $GLOBALS['HTTP_RAW_POST_DATA'];
 		//如果返回成功则验证签名
 		try {
 			$result = WxPayResults::Init($xml);
@@ -534,8 +537,8 @@ class WxPayApi
 			curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
 		}
 		curl_setopt($ch,CURLOPT_URL, $url);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,TRUE);
-		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,2);//严格校验
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,FALSE);//严格校验
 		//设置header
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		//要求结果为字符串且输出到屏幕上

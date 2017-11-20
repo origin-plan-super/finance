@@ -126,6 +126,7 @@
                                     <td><?php echo ($vol["exam_money"]); ?></td>
                                     <td class="cur-pointer">删除</td>
                                 </tr><?php endforeach; endif; else: echo "没有信息" ;endif; ?>
+
                         </tbody>
                     </table>
                     <!-- 表格部分 -->
@@ -211,7 +212,7 @@
                             <span style="color:red" id="sub_money"><?php echo ($sub_money); ?></span>元</span>
                     </div>
                     <div class="col-xs-2 text-right">
-                        <button type="button" class="btn btn-red">去支付</button>
+                        <button type="button" class="btn btn-red" id="goAdd">去支付</button>
                     </div>
                 </div>
                 <div class="col-xs-2">
@@ -257,6 +258,9 @@
 </div>
 
     </div>
+    <div id="test">
+
+    </div>
 
     <script src="/finance/Public/vendor/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="/finance/Public/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
@@ -277,7 +281,9 @@
                 res = JSON.parse(res);
                 if (res.res == 0) {
                     layer.msg('验证码正确');
+
                     sub_money -= res.msg;
+                    sub_money = sub_money.toFixed(2);
                     $('#sub_money').text(sub_money);
 
                 } else {
@@ -289,6 +295,38 @@
             });
 
         });
+        /*
+        *去支付订单
+        */
+        $('#goAdd').on('click', function () {
+
+
+            $.post('/finance/index.php/Home/Order/add', {
+                method: 1,
+                code: $('#discountCode').val()
+            }, function (res) {
+
+                $('#test').html(res);
+                res = JSON.parse(res);
+
+                if (res.res == 0) {
+                    layer.msg('验证码正确');
+                    sub_money -= res.msg;
+                    $('#sub_money').text(sub_money);
+
+                    window.location.href = '/finance/index.php/Home/Order/payment/order_id/' + res.msg;
+
+
+                } else {
+                    layer.msg(res.msg);
+
+                }
+
+
+            });
+
+        })
+        // 
 
     </script>
 </body>

@@ -1,7 +1,7 @@
 <?php
 /**
 * +----------------------------------------------------------------------
-* 创建日期：2017年11月15日
+* 创建日期：2017年11月17日
 * +----------------------------------------------------------------------
 * https：//github.com/ALNY-AC
 * +----------------------------------------------------------------------
@@ -9,18 +9,23 @@
 * +----------------------------------------------------------------------
 * QQ:1173197065
 * +----------------------------------------------------------------------
-* #####测试控制器#####
+* #####需要登录权限的继承本控制器#####
 * @author 代码狮
 *
 */
-namespace Admin\Controller;
+namespace Home\Controller;
 use Think\Controller;
-class TestController extends Controller {
+class CommonController extends Controller {
     
-    public function index() {
-        // echo 
-        echo'<br>';
-        echo date('Y-m-d h-i-s');
+    //ThinkPHP提供的构造方法
+    public function _initialize() {
+        
+        if (empty(session('user_pid'))) {
+            $url=U('Index/index');
+            echo "<script>top.location.href='$url'</script>";
+            exit ;
+        }
         
     }
+    
 }

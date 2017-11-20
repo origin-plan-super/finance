@@ -1,13 +1,13 @@
 <?php
-require_once "../lib/WxPay.Api.php";
-
+// require_once "/lib/WxPayApi.php";
+import("@.Controller.WxPay.WxPayApi");
 /**
  * 
  * 刷卡支付实现类
  * @author widyhu
  *
  */
-class NativePay
+class WxPayNativePay
 {
 	/**
 	 * 
@@ -16,7 +16,7 @@ class NativePay
 	 */
 	public function GetPrePayUrl($productId)
 	{
-		$biz = new WxPayBizPayUrl();
+		$biz = new \WxPayBizPayUrl();
 		$biz->SetProduct_id($productId);
 		$values = WxpayApi::bizpayurl($biz);
 		$url = "weixin://wxpay/bizpayurl?" . $this->ToUrlParams($values);

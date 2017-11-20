@@ -23,7 +23,7 @@ class NoticeController extends Controller {
     */
     public function get(){
         
-      
+        
         
     }
     

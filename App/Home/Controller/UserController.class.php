@@ -16,7 +16,7 @@
 
 namespace Home\Controller;
 use Think\Controller;
-class UserController extends Controller {
+class UserController extends CommonController {
     /**
     * 显示用户的报名信息
     */
