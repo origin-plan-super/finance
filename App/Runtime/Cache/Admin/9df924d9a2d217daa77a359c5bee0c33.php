@@ -80,7 +80,7 @@
                     </li>
                     <hr class="hr-black">
                     <li class="layui-nav-item">
-                        <!-- <a href="javascript:;" data-src='Order/index'>订单管理</a> -->
+                        <a href="javascript:;" data-src='Order/showList'>订单管理</a>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;" data-src='Discount/showList'>优惠管理</a>

@@ -65,6 +65,7 @@ class ExamController extends CommonController {
             //计算剩余考位
             //到sign里面统计查询
             $m=M('sign');
+            $where=[];
             $where['exam_id']=$value['exam_id'];
             $count=$m->where($where)->count();
             $result[$key]['surplus']=$value['exam_num']-$count;

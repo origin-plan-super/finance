@@ -45,10 +45,10 @@ return array(
 'return_url'=>'http://120.78.162.200:12138/finance/index.php/home/Pay/returnurl',
 
 //支付成功跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参payed（已支付列表）
-'successpage'=>'Zfb/myorder?ordtype=payed',
+'successpage'=>'Index/index',
 
 //支付失败跳转到的页面，我这里跳转到项目的User控制器，myorder方法，并传参unpay（未支付列表）
-'errorpage'=>'Zfb/myorder?ordtype=unpay',
+'errorpage'=>'Index/index',
 ),
 
 );

@@ -114,11 +114,8 @@
                 console.log(url);
                 if (layEvent === 'open') {
 
-
                     if ($('#isNew').is(':checked')) {
-
                         window.open(url);
-
                     } else {
 
                         layer.open({
