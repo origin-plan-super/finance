@@ -33,7 +33,7 @@ class PayController extends Controller{
         /**
         * 从数据库中取出信息
         */
-        $where['order_id']=I('post.order_id');
+        $where['order_id']=I('get.order_id');
         $model=M('Order');
         $order=$model->where($where)->find();
         
@@ -66,8 +66,9 @@ class PayController extends Controller{
         $anti_phishing_key = "";//防钓鱼时间戳 //若要使用请调用类文件submit中的query_timestamp函数
         $exter_invoke_ip = get_client_ip(); //客户端的IP地址  */
         
+        
         $out_trade_no = $order['order_id'];//商户订单号 通过支付页面的表单进行传递，注意要唯一！
-        $subject = '【财金通】'.$order['order_id'];  //订单名称 //必填 通过支付页面的表单进行传递
+        $subject = '【财金通】';  //订单名称 //必填 通过支付页面的表单进行传递
         $total_fee =$order['money'];   //付款金额  //必填 通过支付页面的表单进行传递
         $body = $order['order_id'];  //订单描述 通过支付页面的表单进行传递
         $show_url = '11';  //商品展示地址 通过支付页面的表单进行传递

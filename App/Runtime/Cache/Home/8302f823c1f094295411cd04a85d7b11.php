@@ -182,11 +182,11 @@
 
 
                     <label for="zhifubao">
-                        <input type="radio" name="order" id="zhifubao">
+                        <input type="radio" name="method" id="zhifubao" value="0">
                         <img class="zfb" src="/finance/Public/img/zhifubao.png" alt="" align="middle">
                     </label>
                     <label for="weixin">
-                        <input type="radio" name="order" id="weixin" style="margin-right:9px;">
+                        <input type="radio" name="method" id="weixin" style="margin-right:9px;" value="1">
                         <img class="wx" src="/finance/Public/img/weixin.png" alt="" align="middle">
                     </label>
 
@@ -297,9 +297,16 @@
         */
         $('#goAdd').on('click', function () {
 
+            var method = $('input[name="method"]:checked').val();
 
+            if (method == null) {
+                layer.msg('请选择支付方式！');
+                return;
+            }
+
+            // a75970e82b9722853e8fc36c39461f09
             $.post('/finance/index.php/Home/Order/add', {
-                method: 1,
+                method: method,
                 code: $('#discountCode').val()
             }, function (res) {
 
@@ -307,11 +314,18 @@
                 res = JSON.parse(res);
 
                 if (res.res == 0) {
-                    layer.msg('验证码正确');
-                    sub_money -= res.msg;
-                    $('#sub_money').text(sub_money);
 
-                    window.location.href = '/finance/index.php/Home/Order/payment/order_id/' + res.msg;
+                    layer.msg('订单提交成功');
+                    if (method == 0) {
+                        //支付宝
+                        window.location.href = '/finance/index.php/Home/Pay/doalipay/order_id/' + res.msg;
+
+                    }
+                    if (method == 1) {
+                        //微信
+                        window.location.href = '/finance/index.php/Home/Order/payment/order_id/' + res.msg;
+
+                    }
 
 
                 } else {
@@ -323,7 +337,6 @@
             });
 
         })
-        // 
 
     </script>
 </body>

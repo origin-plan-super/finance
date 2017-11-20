@@ -241,7 +241,14 @@
         */
         $('#goAdd').on('click', function () {
 
-            var method = $('#method').val();
+            var method = $('input[name="method"]:checked').val();
+
+            if (method == null) {
+                layer.msg('请选择支付方式！');
+                return;
+            }
+
+            // a75970e82b9722853e8fc36c39461f09
             $.post('__CONTROLLER__/add', {
                 method: method,
                 code: $('#discountCode').val()

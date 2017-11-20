@@ -185,7 +185,7 @@ class OrderController extends CommonController {
                 }
             }
             
-            //再算优惠码
+            //再算优惠码 a75970e82b9722853e8fc36c39461f09
             $code=I('post.code');
             
             $model=M('DiscountCode');
@@ -209,7 +209,7 @@ class OrderController extends CommonController {
             $add['order_id']    =   date('Ymdhis').rand(1000,9999);//订单号
             $add['add_time']    =   time();//添加时间
             $add['edit_time']   =   $add['add_time'] ;//最后一次修改时间
-            $add['state']       =   0 ;//最后一次修改时间
+            $add['state']       =   0 ;//状态：未支付
             
             
             $model=M('Order');
