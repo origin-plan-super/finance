@@ -125,7 +125,7 @@
 
 									<td class="text-center">
 
-										<select class="form-control text-center" id="select<?php echo ($vol["exam_id"]); ?>">
+										<select class="form-control text-center input-sm" id="select<?php echo ($vol["exam_id"]); ?>">
 											<?php if(is_array($vol["exam_subject"])): $i = 0; $__LIST__ = $vol["exam_subject"];if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol2): $mod = ($i % 2 );++$i;?><option class="text-center"><?php echo ($vol2); ?></option><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
 										</select>
 
