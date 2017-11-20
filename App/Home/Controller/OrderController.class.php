@@ -158,8 +158,6 @@ class OrderController extends CommonController {
                 $exam_id[]      =   $value['exam_id'];//添加到数组中
             }
             
-            
-            
             $add['exam_id']     =   json_encode($exam_id);//保存exam_id
             
             
@@ -195,10 +193,7 @@ class OrderController extends CommonController {
             $result=$model->where($where)->find();
             
             if($result){
-                
-                $res['res']=0;
                 $sub_money-=$result['money'];
-                
             }
             
             //得到价格
@@ -252,7 +247,6 @@ class OrderController extends CommonController {
             if($result){
                 //二维码路由
                 $url    =   U("Weixin/get",'order_id='.$result['order_id']);
-                
                 
                 
                 $this->assign('order',$result);

@@ -29,6 +29,15 @@ class PayController extends Controller{
     然后进行相关处理
     */
     public function doalipay(){
+        
+        /**
+        * 从数据库中取出信息
+        */
+        $where['order_id']=I('post.order_id');
+        $model=M('Order');
+        $order=$model->where($where)->find();
+        
+        
         /*********************************************************
         把alipayapi.php中复制过来的如下两段代码去掉，
         第一段是引入配置项，
@@ -57,10 +66,10 @@ class PayController extends Controller{
         $anti_phishing_key = "";//防钓鱼时间戳 //若要使用请调用类文件submit中的query_timestamp函数
         $exter_invoke_ip = get_client_ip(); //客户端的IP地址  */
         
-        $out_trade_no = rand(1,9999).time();//商户订单号 通过支付页面的表单进行传递，注意要唯一！
-        $subject = '测试订单';  //订单名称 //必填 通过支付页面的表单进行传递
-        $total_fee ='0.01';   //付款金额  //必填 通过支付页面的表单进行传递
-        $body = '这是一个测试订单';  //订单描述 通过支付页面的表单进行传递
+        $out_trade_no = $order['order_id'];//商户订单号 通过支付页面的表单进行传递，注意要唯一！
+        $subject = '【财金通】'.$order['order_id'];  //订单名称 //必填 通过支付页面的表单进行传递
+        $total_fee =$order['money'];   //付款金额  //必填 通过支付页面的表单进行传递
+        $body = $order['order_id'];  //订单描述 通过支付页面的表单进行传递
         $show_url = '11';  //商品展示地址 通过支付页面的表单进行传递
         $anti_phishing_key = "";//防钓鱼时间戳 //若要使用请调用类文件submit中的query_timestamp函数
         $exter_invoke_ip = get_client_ip(); //客户端的IP地址
