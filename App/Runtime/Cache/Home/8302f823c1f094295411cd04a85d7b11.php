@@ -101,9 +101,7 @@
         <!-- 表格 -->
         <div class="container">
             <div class="row">
-                <div class="col-xs-2">
-                </div>
-                <div class="col-xs-8 table-responsive">
+                <div class="col-xs-12 table-responsive">
                     <!-- 表格部分 -->
                     <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
                         <thead>
@@ -131,7 +129,6 @@
                     </table>
                     <!-- 表格部分 -->
                 </div>
-                <div class="col-xs-2"></div>
             </div>
         </div>
         <!-- 优惠减免 -->

@@ -14589,3 +14589,2223 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000922s ]
 
+[ 2017-11-20T18:07:44+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008374s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2017-11-20T18:07:45+08:00 ] 127.0.0.1 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2017-11-20T18:07:46+08:00 ] 127.0.0.1 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007502s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2017-11-20T18:07:59+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2017-11-20T18:08:00+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+
+[ 2017-11-20T18:08:01+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000512s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2017-11-20T18:08:01+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007144s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2017-11-20T18:08:09+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2017-11-20T18:08:09+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008375s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2017-11-20T18:08:13+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000592s ]
+
+[ 2017-11-20T18:08:13+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-11-20T18:08:17+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007590s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007632s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000735s ]
+
+[ 2017-11-20T18:08:21+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008723s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2017-11-20T18:08:21+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008496s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+
+[ 2017-11-20T18:08:22+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-11-20T18:08:27+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2017-11-20T18:08:28+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2017-11-20T18:08:29+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008054s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2017-11-20T18:08:29+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007591s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000512s ]
+
+[ 2017-11-20T18:08:35+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000920s ]
+
+[ 2017-11-20T18:08:36+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2017-11-20T18:08:40+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006995s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2017-11-20T18:08:44+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007320s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2017-11-20T18:08:49+08:00 ] 192.168.1.196 /finance/index.php/Home/Order/order.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) AND `sign_id` IN ('54b9e841ee7f83778cb0223cd08e4cc1','d4ace1664e61728dabd3a7fd4da1e412','ff0b9ad9cd4aa1dcd56b12466abff86b') ORDER BY t1.add_time desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2017-11-20T18:09:04+08:00 ] 192.168.1.196 /finance/index.php/Home/Order/order.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) AND `sign_id` IN ('54b9e841ee7f83778cb0223cd08e4cc1','d4ace1664e61728dabd3a7fd4da1e412','ff0b9ad9cd4aa1dcd56b12466abff86b') ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007990s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2017-11-20T18:09:19+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008717s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2017-11-20T18:09:22+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000528s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2017-11-20T18:09:28+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007548s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000739s ]
+
+[ 2017-11-20T18:09:32+08:00 ] 192.168.1.196 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2017-11-20T18:09:34+08:00 ] 192.168.1.196 /finance/index.php/Home/ShopBag/ShopBag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY full desc  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2017-11-20T18:09:41+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2017-11-20T18:09:41+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007527s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007573s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2017-11-20T18:09:41+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2017-11-20T18:09:41+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007872s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007913s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2017-11-20T18:09:47+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000734s ]
+
+[ 2017-11-20T18:10:12+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2017-11-20T18:10:14+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007813s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2017-11-20T18:10:16+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000978s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001161s ]
+
+[ 2017-11-20T18:10:17+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2017-11-20T18:10:18+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2017-11-20T18:10:20+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007581s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2017-11-20T18:10:21+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007633s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000521s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2017-11-20T18:10:23+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2017-11-20T18:10:24+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000676s ]
+
+[ 2017-11-20T18:10:26+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007666s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2017-11-20T18:10:27+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+
+[ 2017-11-20T18:10:28+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007735s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2017-11-20T18:10:29+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000739s ]
+
+[ 2017-11-20T18:10:30+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2017-11-20T18:10:31+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008168s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2017-11-20T18:10:39+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 10,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '04335c829e1e1a136d4f67d8482e9862' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007714s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2017-11-20T18:10:42+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9db3a54aedadb58725409b0d4ec591d6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'c00c8caae2a53d26d11301d9f421b992' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26c66e10a33de4635f473bf1e4b86b41' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '9769e2b5a38bd4d380848c5f75751731' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '26f3888b99d451e09e3f3c8c51f52a82' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '49535234ded3cac84c8cdd1025c7718c' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'cf02a408266f23ade95099d64fee93f3' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'e633e4780dd23d9d710ace9f7ed91247' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '0f87c5305379c2488c53e305e254a155' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '91dd0dbd174920ff2a45c80c26351000' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008139s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2017-11-20T18:11:09+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000712s ]
+
+[ 2017-11-20T18:11:11+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007936s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000849s ]
+
+[ 2017-11-20T18:11:21+08:00 ] 127.0.0.1 /finance/index.php/Home/User/User.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.* FROM fi_sign as t1,fi_exam as t2 WHERE ( t1.exam_id = t2.exam_id AND t1.user_pid = 123 ) ORDER BY t1.add_time desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007575s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2017-11-20T18:11:29+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007721s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2017-11-20T18:11:31+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2017-11-20T18:11:31+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007443s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007486s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2017-11-20T18:11:31+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007513s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2017-11-20T18:11:32+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001174s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001359s ]
+
+[ 2017-11-20T18:11:32+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000528s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2017-11-20T18:28:15+08:00 ] 192.168.1.196 /finance/index.php/Home/Index/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `fi_sign` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = '2a05924c2f1144b777ef1a270e805210' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_sign` WHERE `exam_id` = 'fe2557d302e87364429fb7abfca886f6' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001125s ]
+
+[ 2017-11-20T18:28:55+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 29 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000712s ]
+
+[ 2017-11-20T18:29:03+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 29 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000475s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000520s ]
+
+[ 2017-11-20T18:29:05+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000405s ]
+
+[ 2017-11-20T18:30:12+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+
+[ 2017-11-20T18:30:41+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004756s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2017-11-20T18:35:46+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000998s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000853s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:35:49+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+
+[ 2017-11-20T18:35:57+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2017-11-20T18:36:05+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:37:57+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:37:58+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:38:01+08:00 ] 192.168.1.196 /finance/index.php/Home/Zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000237s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2017-11-20T18:38:04+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:38:20+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+ERR: 非法操作:index
+
+[ 2017-11-20T18:53:57+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000872s ]
+
+[ 2017-11-20T18:54:10+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2017-11-20T18:54:18+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2017-11-20T18:54:51+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 38 行.
+
+[ 2017-11-20T18:55:53+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 36 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: payment_info D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+NOTIC: [8] Undefined variable: order D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 31 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004770s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000417s ]
+
+[ 2017-11-20T18:57:51+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 37 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000307s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2017-11-20T18:58:45+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000454s ]
+
+[ 2017-11-20T18:58:57+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2017-11-20T18:58:58+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2017-11-20T18:58:58+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2017-11-20T18:58:58+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2017-11-20T18:59:10+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 40 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2017-11-20T18:59:19+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 41 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2017-11-20T18:59:36+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 43 行.
+
+[ 2017-11-20T18:59:54+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2017-11-20T19:01:37+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000419s ]
+
+[ 2017-11-20T19:02:54+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 38 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000438s ]
+
+[ 2017-11-20T20:26:01+08:00 ] 192.168.1.196 /finance/index.php/Home/zfb/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+NOTIC: [2048] Declaration of Home\Controller\ZfbController::get() should be compatible with Think\Controller::get($name = '') D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php 第 57 行.
+NOTIC: [2] Missing argument 4 for alipay::__construct(), called in D:\database\Project\working\company\finance\App\Home\Controller\ZfbController.class.php on line 26 and defined D:\database\Project\working\company\finance\ThinkPHP\Library\Vendor\Payment\alipay\alipay.class.php 第 18 行.
+NOTIC: [8] Undefined variable: return_url D:\database\Project\working\company\finance\ThinkPHP\Library\Vendor\Payment\alipay\alipay.class.php 第 23 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004623s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000399s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
