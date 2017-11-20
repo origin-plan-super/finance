@@ -65,9 +65,9 @@
             </div>
         </div>
         <!-- 表格 -->
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 table-responsive table-test" style="padding:0 120px ">
+                <div class="col-md-12 table-responsive table-test" >
                     <!-- 表格部分 -->
                     <!-- style="white-space:nowrap" -->
                     <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
