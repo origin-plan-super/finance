@@ -148,6 +148,7 @@
                 </div>
                 <div class="col-xs-8">
                     <span class="discount">科目减免</span>
+
                     <span class="reduction">
 
                         <?php if(is_array($DiscountSubject)): $i = 0; $__LIST__ = $DiscountSubject;if( count($__LIST__)==0 ) : echo "没有优惠信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>满<?php echo ($vol["full"]); ?>科目减<?php echo ($vol["red"]); ?>元

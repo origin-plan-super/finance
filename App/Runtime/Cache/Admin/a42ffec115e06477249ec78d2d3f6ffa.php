@@ -73,8 +73,9 @@
                 </table>
             </div>
             <div class="col-md-12">
+                <button type="button" class="btn btn-success" id="down">下载表格</button>
                 <hr/>
-                <table class="table table-bordered table-hover table-sm">
+                <table class="table table-bordered table-hover table-sm" id="table">
                     <thead>
                         <tr>
                             <th>考试名称</th>
@@ -116,11 +117,27 @@
     </div>
 
 
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
     <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
 
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+    <!-- <script src="/finance/Public/vendor/jquery/jquery.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="/finance/Public/vendor/tableExport/tableExport.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+
+
+        $('#table').tableExport({
+            filename: '表格文件',
+            format: 'xls'
+        });
+    </script>
 </body>
 
 </html>

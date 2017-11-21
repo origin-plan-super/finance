@@ -132,7 +132,7 @@
                                         <button class="btn btn-default btn-xs open-info" data-href="/finance/index.php/Home/User/show/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
                                             <span class="text-danger">查看</span>
                                         </button>
-                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-default btn-xs open-info" data-href="/finance/index.php/Home/User/show/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
+                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-default btn-xs del" data-href="/finance/index.php/Home/User/del/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
                                                 <span class="text-danger">取消订单</span>
                                             </button><?php endif; ?>
 
@@ -231,8 +231,11 @@
 
     <script src="/finance/Public/vendor/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="/finance/Public/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/finance/Public/vendor/layer/layer.js"></script>
     <script src="/finance/Public/dist/user/user.js" type="text/javascript" charset="utf-8"></script>
     <script src="/finance/Public/dist/all/all.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/finance/Public/dist/tool/tool.js" type="text/javascript" charset="utf-8"></script>
+
     <script>
 
 
@@ -250,6 +253,27 @@
             window.open(href);
         });
 
+        $(document).on('click', '.del', function () {
+            var href = $(this).attr('data-href');
+            var $this = $(this);
+
+            $.get(href, function (res) {
+
+                res = JSON.parse(res);
+                if (res.res == 0) {
+                    $this.parents('tr').remove();
+                    layer.msg('取消订单成功~', {
+                        offset: '80%'
+                    });
+                } else {
+                    layer.msg('取消失败~' + res.msg, {
+                        offset: '80%'
+                    });
+                }
+
+            });
+
+        });
 
     </script>
 </body>

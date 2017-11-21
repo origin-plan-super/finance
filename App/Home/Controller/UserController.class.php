@@ -86,5 +86,38 @@ class UserController extends CommonController {
         }
     }
     
+    /**
+    * 删除一个
+    */
+    public function del(){
+        
+        
+        $model=M('Order');
+        $where['order_id']=I('get.order_id');
+        $where['state']=0;
+        $result=$model->where($where)->delete();
+        
+        if($result !==false){
+            //删除成功
+            
+            //再删除订单信息表中的数据
+            
+            $model=M('OrderInfo');
+            $result=$model->where($where)->delete();
+            
+            $res['res']=0;
+            $res['msg']=$result;
+            
+        }else{
+            //删除失败
+            $res['res']=-1;
+            $res['msg']=$result;
+        }
+        $res['sql']=$model->_sql();
+        
+        echo json_encode($res);
+    }
+    
+    
     
 }

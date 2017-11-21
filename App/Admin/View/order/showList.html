@@ -33,7 +33,16 @@
             <input type="checkbox" id="isNew" name="xxx" lay-skin="switch">
         </div>
     </div>
+    <div class="layui-row" style="padding-top:10px">
 
+        <div class="layui-btn-group">
+            <button class="layui-btn layui-btn-sm" id="printAll">
+                <i class="layui-icon">&#xe640;</i>批量导出
+            </button>
+        </div>
+
+
+    </div>
 
 
     <table id="live_table" lay-filter="table_filter"></table>
@@ -77,18 +86,21 @@
 
     <script>
         var tableIns;
+        var table;
         layui.use(['table', 'form'], function () {
-            var table = layui.table
+            table = layui.table
                 , form = layui.form;
             //第一个实例
             tableIns = table.render({
-                elem: '#live_table'
+                id: 'table'
+                , elem: '#live_table'
                 , url: '__CONTROLLER__/getList' //数据接口
                 , page: true //开启分页
                 , limit: localStorage.limit == null ? 5 : localStorage.limit
                 // , limits: [5, 10]
                 , cols: [[ //表头
-                    { type: 'numbers', width: 50 }
+                    { type: 'checkbox', width: 50, fixed: 'lfet' }
+                    , { type: 'numbers', width: 50 }
                     , { field: 'order_id', title: '订单号', width: 200 }
                     , { field: 'user_pid', title: '用户', width: 200 }
                     , { field: 'money', title: '交易金额', width: 150, edit: 'text' }
@@ -248,7 +260,25 @@
                 }
             });
         }
+        /**
+                * 批量打印
+                */
+        $(document).on('click', '#printAll', function () {
+            w('开始批量打印');
+            var o = table.checkStatus('table');
+            if (o.data.length <= 0) {
+                return;
+            }
+            var id = '';
+            for (var i = 0; i < o.data.length; i++) {
+                id += "'" + o.data[i].order_id + "',";
+            }
+            id = id.substring(0, id.length - 1);
 
+
+            window.location.href = '__CONTROLLER__/printXls/order/' + id;
+
+        });
 
     </script>
 

@@ -68,6 +68,10 @@
 		.cur-icon {
 			cursor: pointer;
 		}
+
+		#info * {
+			max-width: 100%;
+		}
 	</style>
 </head>
 
@@ -162,7 +166,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12" style="display:inline-block">
-					<div class="jumbotron" style="padding-top: 5px;padding-bottom:150px;width:96%;margin-left:2%;">
+					<div class="jumbotron gonggao" style="padding-top: 5px;padding-bottom:150px;width:96%;margin-left:2%;">
 						<h3 class="text-center" style="padding-bottom:20px;">报名公告</h3>
 						<div id="info"><?php echo ($notice_content); ?></div>
 					</div>
@@ -327,7 +331,7 @@
 				$.post('', data.field, function (res) {
 
 
-					$('#info').html(res);
+					// $('#info').html(res);
 					res = JSON.parse(res);
 					w(res);
 

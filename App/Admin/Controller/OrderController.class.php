@@ -107,6 +107,7 @@ class OrderController extends CommonController {
             
             $model=M('Order');
             $where['order_id']=I('post.order_id');
+            $where['state']=0;
             $result=$model->where($where)->delete();
             if($result !==false){
                 //删除成功
@@ -167,4 +168,16 @@ class OrderController extends CommonController {
         
     }
     
+    /**
+    * 输出表格
+    */
+    public function printXls(){
+        
+        $post=I('get.');
+        dump($post);
+        
+        $model=M('Order');
+        
+        
+    }
 }
