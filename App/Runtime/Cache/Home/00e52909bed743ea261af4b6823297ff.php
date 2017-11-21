@@ -121,7 +121,13 @@
 									<td><?php echo ($vol["exam_name"]); ?></td>
 									<td><?php echo ($vol["exam_date"]); ?></td>
 									<td><?php echo ($vol["exam_time"]); ?></td>
-									<td><?php echo ($vol["surplus"]); ?></td>
+									<td>
+										<?php if($vol["surplus"] > 0): echo ($vol["surplus"]); ?>
+											<?php else: ?>
+											<span class="text-danger">已报满</span><?php endif; ?>
+
+
+									</td>
 
 									<td class="text-center">
 

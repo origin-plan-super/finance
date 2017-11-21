@@ -110,7 +110,13 @@
 									<td>{$vol.exam_name}</td>
 									<td>{$vol.exam_date}</td>
 									<td>{$vol.exam_time}</td>
-									<td>{$vol.surplus}</td>
+									<td>
+										<if condition="$vol.surplus gt 0">
+											{$vol.surplus}
+											<else/>
+											<span class="text-danger">已报满</span>
+										</if>
+									</td>
 
 									<td class="text-center">
 

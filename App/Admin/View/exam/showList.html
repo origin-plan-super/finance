@@ -55,7 +55,15 @@
     
 
     </script>
-
+    <script type="text/html" id="barSurplus">
+        
+        {{#  if(d.surplus > 0){ }}
+        {{ d.surplus }}
+        {{#  }else{ }}
+        <span class="layui-badge">已满员</span>
+        {{#  }}}
+        
+    </script>
     <script>
         var tableIns;
         layui.use(['table', 'form'], function () {
@@ -76,7 +84,7 @@
                     , { field: 'exam_time', title: '场次时间', width: 200 }
                     , { field: 'exam_money', title: '价格', edit: 'text', width: 100 }
                     , { field: 'exam_num', title: '总人数', edit: 'text', width: 100 }
-                    , { field: 'surplus', title: '剩余人数', width: 100 }
+                    , { title: '剩余人数', width: 100, toolbar: '#barSurplus' }
                     , { field: 'people_num', title: '报考人数', width: 100 }
                     , { title: '科目', align: 'center', toolbar: '#bar2', width: 300 }
                     , { fixed: 'right', width: 150, align: 'center', toolbar: '#bar1' }
