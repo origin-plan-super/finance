@@ -47,7 +47,7 @@
 
     <script type="text/html" id="bar1">
 
-        {{#  if(d.auth > 0){ }}
+        {{#  if(d.is_use > 0){ }}
 
         <span class="layui-badge layui-bg-gray">已使用</span>
         
@@ -87,8 +87,8 @@
                 , cols: [[ //表头
                     { type: 'checkbox', width: 50, fixed: 'lfet' }
                     , { type: 'numbers', width: 50 }
-                    , { field: 'discount_code_id', title: 'ID', width: 150 }
-                    , { field: 'money', title: '优惠', width: 80 }
+                    , { field: 'discount_code_id', title: '优惠码', width: 150 }
+                    , { field: 'money', title: '优惠', width: 150 }
                     , { field: 'is_use', title: '是否使用', width: 100, toolbar: '#bar1', align: 'center' }
                     , { field: 'add_time', title: '添加时间', width: 200, toolbar: '#bar2' }
                     , { fixed: 'right', width: 100, align: 'center', title: '操作', toolbar: '#bar3' } //这里的toolbar值是模板元素的选择器

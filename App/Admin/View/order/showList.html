@@ -41,7 +41,10 @@
     <script type="text/html" id="bar1">
         
         <a class="layui-btn layui-btn-xs" lay-event="open">查看</a>
-            
+        {{#  if(d.state == 0){ }}
+        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+        {{#  } }}
+
     </script>
 
     <script type="text/html" id="bar2">
@@ -67,20 +70,9 @@
         {{#  } }}
     </script>
 
-    <script type="text/html" id="bar4">
-        
-
-            {{#  var a=JSON.parse(d.exam_id) }}
-
-                 {{#  w(a) }}
-
-            {{#  layui.each(a, function(index, item){ }}
-
-                  {{ item }},
-
-            {{#  }); }}
-
-            
+    <script type="text/html" id="barTime">
+        {{# var a = getLocalTime(d.add_time) }}
+        {{ a }}
     </script>
 
     <script>
@@ -102,13 +94,23 @@
                     , { field: 'money', title: '交易金额', width: 150 }
                     , { field: 'method', title: '支付方式', width: 100, toolbar: '#bar3', align: 'center' }
                     , { field: 'state', title: '状态', width: 80, toolbar: '#bar2' }
-                    , { field: 'exam_id', title: '课程id', width: 200 }
-                    // , { field: 'add_time', title: '添加时间', width: 200 }
+                    , { field: 'add_time', title: '添加时间', width: 200, toolbar: '#barTime' }
                     // , { field: 'edit_time', title: '最后修改时间', width: 200 }
-                    , { fixed: 'right', width: 80, align: 'center', toolbar: '#bar1' }
+                    , { fixed: 'right', title: '', width: 150, align: 'center', toolbar: '#bar1' }
                     // , { field: 'is_up', fixed: 'right', title: '是否推荐', align: 'center', width: 110, templet: '#checkboxTpl', unresize: true }
                     // , { fixed: 'right', width: 180, align: 'center', title: '操作', toolbar: '#bar1' } //这里的toolbar值是模板元素的选择器
-                ]]
+                ]],
+                done: function (res, curr, count) {
+                    //如果是异步请求数据方式，res即为你接口返回的信息。
+                    //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                    // console.log(res);
+
+                    //得到当前页码
+                    // console.log(curr);
+
+                    //得到数据总量
+                    // console.log(count);
+                }
             });
 
 
@@ -134,7 +136,7 @@
 
                         layer.open({
                             type: 2,
-                            title: data.exam_name + " | " + data.exam_date,
+                            title: data.order_id + " | " + data.user_pid,
                             shadeClose: true,
                             maxmin: true, //开启最大化最小化按钮
                             area: ['80%', '80%'],
@@ -144,7 +146,31 @@
                     }
 
                 }
+                if (layEvent === 'del') { //删除
 
+                    layer.confirm('真的删除此条数据吗？', function (index) {
+                        //删除对应行（tr）的DOM结构，并更新缓存
+                        layer.close(index);
+                        //向服务端发送删除指令
+
+                        $.post('__CONTROLLER__/del', {
+                            "order_id": obj.data.order_id,
+                        }, function (res) {
+                            res = JSON.parse(res);
+                            if (res.res == 0) {
+                                layer.msg('删除成功~', {
+                                    offset: '80%'
+                                });
+                                obj.del();
+
+                            } else {
+                                layer.msg(res.msg, {
+                                    offset: '80%'
+                                });
+                            }
+                        });
+                    });
+                }
 
 
 
@@ -170,13 +196,13 @@
                 , done: function (res, curr, count) {
                     //如果是异步请求数据方式，res即为你接口返回的信息。
                     //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
-                    console.log(res);
+                    // console.log(res);
 
                     //得到当前页码
-                    console.log(curr);
+                    // console.log(curr);
 
                     //得到数据总量
-                    console.log(count);
+                    // console.log(count);
                     layer.msg('找到了' + count + '条数据~');
                 }
             });

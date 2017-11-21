@@ -35,7 +35,7 @@ class OrderController extends CommonController {
             
             $key=I('get.key');
             
-            $where['order_id|user_pid|exam_id'] = array(
+            $where['order_id|user_pid|money'] = array(
             'like',
             "%".$key."%",
             'OR'
@@ -45,6 +45,7 @@ class OrderController extends CommonController {
             $res['count']=$model->where($where)->count();
             
         }else{
+            
             
             $count= $model->count();
             $res['count']=$count;
@@ -75,21 +76,62 @@ class OrderController extends CommonController {
         $result=$model->where($where)->find();
         if($result){
             
-            $examM=M('exam');
+            $model=M('OrderInfo');
+            //取出order_info表中的数据
+            $model                  =   M('OrderInfo');
+            $order_info             =   $model
+            ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
+            ->table('fi_order_info as t1,fi_exam as t2')
+            ->where('t1.exam_id = t2.exam_id')
+            ->where($where)
+            ->order('t1.add_time desc')
+            ->select();
             
-            $exam_arr=json_decode($value['exam_id']);
-            
-            $exam_info=   $examM->where($exam_arr)->select();
-            
-            $result['exam_info']=$exam_info;
             
             $this->assign('order',$result);
+            $this->assign('order_info',$order_info);
             $this->display();
         }else{
             //没有这个订单
+            echo '订到未找到！：'.I('get.order_id');
         }
         
         
+    }
+    /**
+    * 删除一个
+    */
+    public function del(){
+        
+        if(IS_POST){
+            
+            $model=M('Order');
+            $where['order_id']=I('post.order_id');
+            $result=$model->where($where)->delete();
+            if($result !==false){
+                //删除成功
+                
+                
+                //再删除订单信息表中的数据
+                
+                $model=M('OrderInfo');
+                $result=$model->where($where)->delete();
+                
+                $res['res']=0;
+                $res['msg']=$result;
+                
+            }else{
+                //删除失败
+                $res['res']=-1;
+                $res['msg']=$result;
+            }
+            $res['sql']=$model->_sql();
+            
+        }else{
+            $res['res']=-1;
+            $res['msg']='no';
+        }
+        echo json_encode($res);
     }
     
     

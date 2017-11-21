@@ -69,28 +69,48 @@
                                 <?php if($order["state"] == 1): ?><span class="badge badge-secondary bg-success">已支付</span><?php endif; ?>
                             </td>
                         </tr>
-                        <tr>
-                            <th style='width:150px'>课程：</th>
-                            <td>
-
-                                <?php if(is_array($order["exam_info"])): $i = 0; $__LIST__ = $order["exam_info"];if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><span><?php echo ($vol["exam_name"]); ?>
-                                        <?php if($i < count($order['exam_info'])): ?>，<?php endif; ?>
-                                    </span><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th style='width:150px'>课程ID：</th>
-                            <td>
-
-                                <?php if(is_array($order["exam_info"])): $i = 0; $__LIST__ = $order["exam_info"];if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><span><?php echo ($vol["exam_id"]); ?>
-                                        <?php if($i < count($order['exam_info'])): ?>，<?php endif; ?>
-                                    </span><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
-
+            <div class="col-md-12">
+                <hr/>
+                <table class="table table-bordered table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>考试名称</th>
+                            <th>报考日期</th>
+                            <th>场次</th>
+                            <th>考试科目</th>
+                            <th>价格</th>
+                            <!-- 用户信息 -->
+                            <th>姓名</th>
+                            <th>手机</th>
+                            <th>邮箱</th>
+                            <th>注册ID</th>
+                            <th>身份证</th>
+                            <th>出生年月</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(is_array($order_info)): $i = 0; $__LIST__ = $order_info;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
+                                <td><?php echo ($vol["exam_name"]); ?></td>
+                                <td><?php echo ($vol["exam_date"]); ?></td>
+                                <td><?php echo ($vol["exam_time"]); ?></td>
+                                <td><?php echo ($vol["exam_subject"]); ?></td>
+                                <td><?php echo ($vol["exam_money"]); ?></td>
+                                <!-- 用户信息 -->
+                                <td><?php echo ($vol["user_name"]); ?></td>
+                                <td><?php echo ($vol["user_phone"]); ?></td>
+                                <td><?php echo ($vol["user_email"]); ?></td>
+                                <td><?php echo ($vol["user_pid"]); ?></td>
+                                <td><?php echo ($vol["user_uid"]); ?></td>
+                                <td><?php echo ($vol["user_day"]); ?></td>
+                                <td><?php echo ($vol["user_info"]); ?></td>
+                            </tr><?php endforeach; endif; else: echo "没有信息" ;endif; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>

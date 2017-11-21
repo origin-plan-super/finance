@@ -98,6 +98,7 @@ class OrderController extends CommonController {
         
         $model=M('DiscountCode');
         $where['discount_code_id']=$code;
+        $where['is_use']=0;
         $result=$model->where($where)->find();
         
         if($result){
@@ -106,7 +107,7 @@ class OrderController extends CommonController {
             
         }else{
             $res['res']=-1;
-            $res['msg']='优惠码错误';
+            $res['msg']='没有找到优惠码或已被使用';
             
         }
         
@@ -118,6 +119,7 @@ class OrderController extends CommonController {
     * 添加订单
     */
     public function add(){
+        
         //先生成订单号
         $order_add[]    =   [];//订单号
         $order_add['order_id']    =   date('Ymdhis').rand(1000,9999);//订单号
@@ -188,11 +190,16 @@ class OrderController extends CommonController {
             
             $model=M('DiscountCode');
             $where['discount_code_id']=$code;
+            $where['is_use']=0;
             $result=$model->where($where)->find();
             
             if($result){
                 $sub_money-=$result['money'];
             }
+            
+            //把优惠码弃用
+            $save['is_use']=1;
+            $model->where($where)->save($save);
             
             //得到价格
             $order_add['money']       =   $sub_money;
@@ -218,20 +225,24 @@ class OrderController extends CommonController {
                 //放到order_info表中
                 
                 //创建信息表的模型
-                $model=M('OrderInfo');
+                $Sign=M('Sign');
+                $OrderInfo=M('OrderInfo');
                 //组装数据
                 
                 //遍历sign，找到exam_id，组装数据
+                
+                $sign_id            =   json_decode(session('sign_id'));//从session中取出sign_id
+                $where['sign_id']   =   array('in',$sign_id);
+                
+                $Signarr= $Sign->where($where)->select();
+                
                 foreach ($sign_info as $key => $value) {
-                    $add=null;
-                    $add['order_id']=  $order_add['order_id'];
-                    $add['exam_id']=  $value['exam_id'];
-                    $add['subject']=  $value['exam_subject'];
-                    $add['add_time']=  time();
-                    $add['edit_time']=  $add['add_time'];
-                    //数据组装完成，存入数据库
-                    $model->add($add);
+                    $Signarr[$key]['order_id']=$order_add['order_id'];
+                    $Signarr[$key]['add_time']=time();
+                    $Signarr[$key]['edit_time']=time();
+                    unset($Signarr[$key]['sign_id']);
                 }
+                $OrderInfo->addAll($Signarr);
                 
                 $res['res']     =   0;
                 $res['msg']     =   $order_add['order_id'];

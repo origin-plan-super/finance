@@ -190,7 +190,7 @@
 								<label for="">手机</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_phone" type="text" class="form-control" style="width:70%;">
+								<input lay-verify='required|phone' name="user_phone" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -199,7 +199,7 @@
 								<label for="">邮箱</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name='user_email' type="text" class="form-control" style="width:70%;">
+								<input lay-verify='required|email' name='user_email' type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -217,7 +217,7 @@
 								<label for="">身份证</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_uid" type="text" class="form-control" style="width:70%;">
+								<input lay-verify='required|identity' name="user_uid" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>

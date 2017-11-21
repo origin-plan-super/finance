@@ -62,34 +62,52 @@
                                 </if>
                             </td>
                         </tr>
-                        <tr>
-                            <th style='width:150px'>课程：</th>
-                            <td>
-
-                                <volist name="order.exam_info" id="vol" empty="暂时没有数据">
-                                    <span>{$vol.exam_name}
-                                        <if condition="$i lt count($order['exam_info'])">，</if>
-                                    </span>
-
-                                </volist>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th style='width:150px'>课程ID：</th>
-                            <td>
-
-                                <volist name="order.exam_info" id="vol" empty="暂时没有数据">
-                                    <span>{$vol.exam_id}
-                                        <if condition="$i lt count($order['exam_info'])">，</if>
-                                    </span>
-
-                                </volist>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
+            <div class="col-md-12">
+                <hr/>
+                <table class="table table-bordered table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th>考试名称</th>
+                            <th>报考日期</th>
+                            <th>场次</th>
+                            <th>考试科目</th>
+                            <th>价格</th>
+                            <!-- 用户信息 -->
+                            <th>姓名</th>
+                            <th>手机</th>
+                            <th>邮箱</th>
+                            <th>注册ID</th>
+                            <th>身份证</th>
+                            <th>出生年月</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="order_info" id="vol" empty="没有信息">
 
+                            <tr>
+                                <td>{$vol.exam_name}</td>
+                                <td>{$vol.exam_date}</td>
+                                <td>{$vol.exam_time}</td>
+                                <td>{$vol.exam_subject}</td>
+                                <td>{$vol.exam_money}</td>
+                                <!-- 用户信息 -->
+                                <td>{$vol.user_name}</td>
+                                <td>{$vol.user_phone}</td>
+                                <td>{$vol.user_email}</td>
+                                <td>{$vol.user_pid}</td>
+                                <td>{$vol.user_uid}</td>
+                                <td>{$vol.user_day}</td>
+                                <td>{$vol.user_info}</td>
+                            </tr>
+
+                        </volist>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
