@@ -131,7 +131,7 @@
 
 
             $(document).on('click', 'a[href="javascript:;" ]', function () {
-
+                var index = layer.load(1); //加载等待层
 
                 localStorage.item_id = '#' + $(this).parents('.layui-nav-item').attr('id');
 
@@ -141,7 +141,7 @@
                         url: $(this).attr('data-src')
                     }, function (date) {
                         $('#fream').attr('src', date);
-
+                        layer.close(index);
                     })
                 }
 
