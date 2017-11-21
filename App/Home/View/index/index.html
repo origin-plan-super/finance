@@ -128,7 +128,15 @@
 
 									</td>
 									<td>{$vol.exam_money}元</td>
-									<td class="index-red-color toSignUp cur-pointer" data-id="#select{$vol.exam_id}" data-exam-id='{$vol.exam_id}'>我要报名</td>
+									<if condition="$vol.surplus gt 0">
+										<td class="index-red-color toSignUp cur-pointer" data-id="#select{$vol.exam_id}" data-exam-id='{$vol.exam_id}'>
+											<span class="text-danger">我要报名</span>
+										</td>
+										<else/>
+										<td class="index-red-color">
+											<span class="" style="color:#777">我要报名</span>
+										</td>
+									</if>
 								</tr>
 
 							</volist>
@@ -282,15 +290,19 @@
 				$.post('', data.field, function (res) {
 
 
-					// $('#info').html(res);
+					$('#info').html(res);
 					res = JSON.parse(res);
+					w(res);
+
 					if (res.res == 0) {
 						layer.msg('添加成功~', {
 							offset: '80%'
 						});
 						$(".con").addClass("hidden");
-					} else {
-						layer.msg('添加失败~', {
+					}
+
+					if (res.res == -2) {
+						layer.msg('已经满员~', {
 							offset: '80%'
 						});
 					}

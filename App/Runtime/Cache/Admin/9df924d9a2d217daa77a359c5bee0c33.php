@@ -86,6 +86,9 @@
                         <a href="javascript:;" data-src='Discount/showList'>优惠管理</a>
                     </li>
                     <li class="layui-nav-item">
+                        <a href="javascript:;" data-src='DiscountSubject/showList'>科目优惠管理</a>
+                    </li>
+                    <li class="layui-nav-item">
                         <a href="javascript:;" data-src='DiscountCode/showList'>优惠码管理</a>
                     </li>
                     <hr class="hr-black">

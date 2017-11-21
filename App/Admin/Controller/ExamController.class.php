@@ -51,7 +51,6 @@ class ExamController extends CommonController {
             $res['count']=$model->where($where)->count();
             
             
-            
         }else{
             
             $count= $model->count();

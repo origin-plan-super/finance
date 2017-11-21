@@ -134,6 +134,30 @@
 
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-xs-2">
+
+                </div>
+                <div class="col-xs-8">
+                    <span class="discount">科目减免</span>
+                    <span class="reduction">
+
+                        <volist name="DiscountSubject" id="vol" empty="没有优惠信息">
+                            满{$vol.full}科目减{$vol.red}元
+                            <if condition="$i lt count($DiscountSubject)">，</if>
+                        </volist>
+
+                    </span>
+                </div>
+                <div class="col-xs-2">
+
+                </div>
+            </div>
+
+
+
+
         </div>
         <!-- 去结算 -->
         <div class="container">

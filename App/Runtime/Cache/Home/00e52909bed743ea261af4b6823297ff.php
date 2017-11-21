@@ -125,8 +125,6 @@
 										<?php if($vol["surplus"] > 0): echo ($vol["surplus"]); ?>
 											<?php else: ?>
 											<span class="text-danger">已报满</span><?php endif; ?>
-
-
 									</td>
 
 									<td class="text-center">
@@ -137,7 +135,13 @@
 
 									</td>
 									<td><?php echo ($vol["exam_money"]); ?>元</td>
-									<td class="index-red-color toSignUp cur-pointer" data-id="#select<?php echo ($vol["exam_id"]); ?>" data-exam-id='<?php echo ($vol["exam_id"]); ?>'>我要报名</td>
+									<?php if($vol["surplus"] > 0): ?><td class="index-red-color toSignUp cur-pointer" data-id="#select<?php echo ($vol["exam_id"]); ?>" data-exam-id='<?php echo ($vol["exam_id"]); ?>'>
+											<span class="text-danger">我要报名</span>
+										</td>
+										<?php else: ?>
+										<td class="index-red-color">
+											<span class="" style="color:#777">我要报名</span>
+										</td><?php endif; ?>
 								</tr><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
 
 
@@ -323,15 +327,19 @@
 				$.post('', data.field, function (res) {
 
 
-					// $('#info').html(res);
+					$('#info').html(res);
 					res = JSON.parse(res);
+					w(res);
+
 					if (res.res == 0) {
 						layer.msg('添加成功~', {
 							offset: '80%'
 						});
 						$(".con").addClass("hidden");
-					} else {
-						layer.msg('添加失败~', {
+					}
+
+					if (res.res == -2) {
+						layer.msg('已经满员~', {
 							offset: '80%'
 						});
 					}

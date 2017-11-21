@@ -147,6 +147,7 @@ class DiscountController extends CommonController {
             $model = M('Discount');
             $result = $model -> where($where) -> delete();
             
+            
             if($resut!==false){
                 $res['res'] = $result;
                 $res['msg'] ='成功' ;

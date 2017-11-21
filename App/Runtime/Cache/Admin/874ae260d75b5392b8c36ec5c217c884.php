@@ -15,6 +15,13 @@
 <script src="/finance/Public/vendor/layer/layer.js"></script>
 <script src="/finance/Public/vendor/layui/layui.js"></script>
 <script src="/finance/Public/dist/tool/tool.js"></script>
+
+<script>
+
+    function getLocalTime(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+    }
+</script>
     <style>
         body {
             padding: 15px;

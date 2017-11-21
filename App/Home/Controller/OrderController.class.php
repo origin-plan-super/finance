@@ -66,16 +66,32 @@ class OrderController extends CommonController {
             foreach ($discount as $key => $value) {
                 
                 if($sub_money >= $value['full']){
-                    
-                    $sub_money-=$value['red'];
-                    $red=$value['red'];
+                    $red+=$value['red'];
                     break
                     ;
                 }
                 
             }
             
+            // ========================
+            // ==== 满科减 ====
+            // ========================
+            //先获得
+            $model              =   M('DiscountSubject');
+            $DiscountSubject           =   $model->order('full desc')->select();
+            $this->assign('DiscountSubject',$DiscountSubject);
+            //再计算
+            foreach ($DiscountSubject as $key => $value) {
+                //这里计算数量
+                
+                if(count($result) >= $value['full']){
+                    $red+=$value['red'];
+                    break
+                    ;
+                }
+            }
             
+            $sub_money-=$red;
             
             $this->assign('red',$red);
             $this->assign('sub_money',$sub_money);
@@ -178,8 +194,7 @@ class OrderController extends CommonController {
             //优惠减免
             foreach ($discount as $key => $value) {
                 if($sub_money >= $value['full']){
-                    $sub_money-=$value['red'];
-                    $red=$value['red'];
+                    $red+=$value['red'];
                     break
                     ;
                 }
@@ -194,16 +209,35 @@ class OrderController extends CommonController {
             $result=$model->where($where)->find();
             
             if($result){
-                $sub_money-=$result['money'];
+                $red+=$result['money'];
             }
             
             //把优惠码弃用
             $save['is_use']=1;
             $model->where($where)->save($save);
             
-            //得到价格
-            $order_add['money']       =   $sub_money;
             
+            // ========================
+            // ==== 满科减 ====
+            // ========================
+            //先获得
+            $model              =   M('DiscountSubject');
+            $DiscountSubject           =   $model->order('full desc')->select();
+            $this->assign('DiscountSubject',$DiscountSubject);
+            //再计算
+            foreach ($DiscountSubject as $key => $value) {
+                //这里计算数量
+                
+                if(count($result) >= $value['full']){
+                    $red+=$value['red'];
+                    break
+                    ;
+                }
+            }
+            
+            
+            //得到价格
+            $order_add['money']       =   $sub_money-$red;
             // ========================
             // ==== 计算价格结束 ====
             // ========================

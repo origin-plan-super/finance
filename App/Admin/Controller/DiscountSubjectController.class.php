@@ -9,33 +9,41 @@
 * +----------------------------------------------------------------------
 * QQ:1173197065
 * +----------------------------------------------------------------------
-* #####订单控制器#####
+* #####科目优惠管理#####
 * @author 代码狮
 *
 */
-
 namespace Admin\Controller;
 use Think\Controller;
-class OrderController extends CommonController {
-    public function Order(){
+class DiscountSubjectController extends Controller {
+    
+    /**
+    * 显示
+    */
+    public function showList() {
+        
         $this->display();
     }
+    
     /**
-    * 获得
+    * 获得科目优惠列表
     */
     public function getList(){
         
-        $model=M('Order');
+        // 科目满减 满10科减10元
+        
+        $model=M('DiscountSubject');
         $page=I('get.page');
         $limit=I('get.limit');
         
-        $page=($page-1)* $limit;
+        $page=( $page-1)* $limit;
         
         if(!empty(I('get.key'))){
             
             $key=I('get.key');
             
-            $where['order_id|user_pid|money'] = array(
+            //职位
+            $where['discount_subject_id|full|red'] = array(
             'like',
             "%".$key."%",
             'OR'
@@ -45,7 +53,6 @@ class OrderController extends CommonController {
             $res['count']=$model->where($where)->count();
             
         }else{
-            
             
             $count= $model->count();
             $res['count']=$count;
@@ -62,42 +69,43 @@ class OrderController extends CommonController {
             $res['code']=-1;
             $res['msg']='没有数据！';
         }
+        
         echo json_encode($res);
         
     }
     
+    
     /**
-    * 查看订单
+    * 添加科目优惠信息
     */
-    public function show(){
+    public function add(){
         
-        $where['order_id']=I('get.order_id');
-        $model=M('Order');
-        $result=$model->where($where)->find();
-        if($result){
+        if(IS_POST){
             
-            $model=M('OrderInfo');
-            //取出order_info表中的数据
-            $model                  =   M('OrderInfo');
-            $order_info             =   $model
-            ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
-            ->table('fi_order_info as t1,fi_exam as t2')
-            ->where('t1.exam_id = t2.exam_id')
-            ->where($where)
-            ->order('t1.add_time desc')
-            ->select();
+            $add['full']=I('post.full');
+            $add['red']=I('post.red');
+            $add['add_time']=time();
+            $add['edit_time']=$add['add_time'];
+            $add['discount_subject_id']=md5($add['add_time'].$add['full'].$add['red'].rand().__KEY__);
             
+            $model=M('DiscountSubject');
+            $result=$model->add($add);
             
-            $this->assign('order',$result);
-            $this->assign('order_info',$order_info);
-            $this->display();
+            if($result!==false){
+                $res['res']=0;
+                $res['msg']='添加成功';
+            }else{
+                $res['res']=-1;
+                $res['msg']=$result;
+            }
+            echo json_encode($res);
+            
         }else{
-            //没有这个订单
-            echo '订到未找到！：'.I('get.order_id');
+            $this->display();
         }
         
-        
     }
+    
     /**
     * 删除一个
     */
@@ -105,18 +113,11 @@ class OrderController extends CommonController {
         
         if(IS_POST){
             
-            $model=M('Order');
-            $where['order_id']=I('post.order_id');
+            $model=M('DiscountSubject');
+            $where['discount_subject_id']=I('post.discount_subject_id');
             $result=$model->where($where)->delete();
             if($result !==false){
                 //删除成功
-                
-                
-                //再删除订单信息表中的数据
-                
-                $model=M('OrderInfo');
-                $result=$model->where($where)->delete();
-                
                 $res['res']=0;
                 $res['msg']=$result;
                 
@@ -133,18 +134,44 @@ class OrderController extends CommonController {
         }
         echo json_encode($res);
     }
+    /**
+    *
+    * 批量删除
+    *
+    */
+    public function removes() {
+        
+        if (!empty(I('post.discount_subject_id'))) {
+            
+            $discount_subject_id = I('post.discount_subject_id');
+            $where = "discount_subject_id in($discount_subject_id)";
+            $model = M('DiscountSubject');
+            $result = $model -> where($where) -> delete();
+            
+            if($resut!==false){
+                $res['res'] = $result;
+                $res['msg'] ='成功' ;
+            }else{
+                $res['res'] = -1;
+                $res['msg'] =$result ;
+            }
+            
+        }
+        
+        echo json_encode($res);
+    }
     
     /**
-    * 保存用户字段操作
+    * 保存字段操作
     * 可上传任意字段保存，慎用，以后加字段验证
     */
     public function saveInfo(){
         if(IS_POST){
             
             $save=I('post.save');
-            $save['eidt_time']=time();
-            $model=M('Order');
-            $where['order_id']=I('post.order_id');
+            $save['edit_time']=time();
+            $model=M('DiscountSubject');
+            $where['discount_subject_id']=I('post.discount_subject_id');
             $result=$model->where($where)->save($save);
             if($result !==false){
                 //修改成功
@@ -166,5 +193,8 @@ class OrderController extends CommonController {
         echo json_encode($res);
         
     }
+    
+    
+    
     
 }

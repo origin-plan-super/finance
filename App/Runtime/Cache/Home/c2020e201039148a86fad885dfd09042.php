@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/finance/Public/dist/all/all.css" />
     <link rel="stylesheet" type="text/css" href="/finance/Public/vendor/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/finance/Public/dist/user/user.css" />
+
     <style>
         .pagination>li>a,
         .pagination>li>span {
@@ -59,7 +60,7 @@
             <div class="row">
 
                 <div class="col-xs-8 user-sign text-left">
-                    <h3 class="">我的报名信息</h3>
+                    <h3 class="">我的订单</h3>
                 </div>
 
             </div>
@@ -67,25 +68,26 @@
         <!-- 表格 -->
         <div class="container">
             <div class="row">
-                <div class="col-md-12 table-responsive table-test" >
+                <div class="col-md-12 table-responsive table-test">
                     <!-- 表格部分 -->
                     <!-- style="white-space:nowrap" -->
                     <table class="table table-bordered table-hover text-center" style="text-overflow: ellipsis;white-space: nowrap;">
                         <thead>
                             <tr>
-                                <th>考试名称</th>
-                                <th>报考日期</th>
-                                <th>场次</th>
-                                <th>考试科目</th>
-                                <th>价格</th>
+                                <th>订单号</th>
+                                <th>交易金额</th>
+                                <th>支付方式</th>
+                                <th>状态</th>
+                                <th>创建时间</th>
+                                <th style='width:200px'>详细信息</th>
                                 <!-- 用户信息 -->
-                                <th>姓名</th>
+                                <!-- <th>姓名</th>
                                 <th>手机</th>
                                 <th>邮箱</th>
                                 <th>注册ID</th>
                                 <th>身份证</th>
                                 <th>出生年月</th>
-                                <th>备注</th>
+                                <th>备注</th> -->
                             </tr>
                         </thead>
                         <tbody class="cell-color">
@@ -109,19 +111,41 @@
                                     ["edit_time"] => string(10) "1511050718"
                                   } -->
                             <?php if(is_array($user_exam_info)): $i = 0; $__LIST__ = $user_exam_info;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                                    <td><?php echo ($vol["exam_name"]); ?></td>
-                                    <td><?php echo ($vol["exam_date"]); ?></td>
-                                    <td><?php echo ($vol["exam_time"]); ?></td>
-                                    <td><?php echo ($vol["exam_subject"]); ?></td>
-                                    <td><?php echo ($vol["exam_money"]); ?></td>
+                                    <td><?php echo ($vol["order_id"]); ?></td>
+                                    <td><?php echo ($vol["money"]); ?>￥</td>
+                                    <td>
+                                        <?php if($vol["method"] == 0 ): ?><span class="label label-info">支付宝</span><?php endif; ?>
+                                        <?php if($vol["method"] == 1 ): ?><span class="label label-success">微信</span><?php endif; ?>
+                                    </td>
+                                    <td>
+
+                                        <?php if($vol["state"] == 0 ): ?><span class="label label-warning">未支付</span><?php endif; ?>
+                                        <?php if($vol["state"] == 1 ): ?><span class="">已支付</span><?php endif; ?>
+                                    </td>
+                                    <td><?php echo ($vol["add_time"]); ?></td>
+                                    <td>
+
+                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-success btn-xs go-zf" data-href="/finance/index.php/Home/Pay/doalipay/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
+                                                <span class="">去付款</span>
+                                            </button><?php endif; ?>
+
+                                        <button class="btn btn-default btn-xs open-info" data-href="/finance/index.php/Home/User/show/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
+                                            <span class="text-danger">查看</span>
+                                        </button>
+                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-default btn-xs open-info" data-href="/finance/index.php/Home/User/show/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
+                                                <span class="text-danger">取消订单</span>
+                                            </button><?php endif; ?>
+
+
+                                    </td>
                                     <!-- 用户信息 -->
-                                    <td><?php echo ($vol["user_name"]); ?></td>
+                                    <!-- <td><?php echo ($vol["user_name"]); ?></td>
                                     <td><?php echo ($vol["user_phone"]); ?></td>
                                     <td><?php echo ($vol["user_email"]); ?></td>
                                     <td><?php echo ($vol["user_pid"]); ?></td>
                                     <td><?php echo ($vol["user_uid"]); ?></td>
                                     <td><?php echo ($vol["user_day"]); ?></td>
-                                    <td><?php echo ($vol["user_info"]); ?></td>
+                                    <td><?php echo ($vol["user_info"]); ?></td> -->
                                 </tr><?php endforeach; endif; else: echo "没有信息" ;endif; ?>
 
 
@@ -210,6 +234,22 @@
     <script src="/finance/Public/dist/user/user.js" type="text/javascript" charset="utf-8"></script>
     <script src="/finance/Public/dist/all/all.js" type="text/javascript" charset="utf-8"></script>
     <script>
+
+
+        $(document).on('click', '.open-info', function () {
+
+            var href = $(this).attr('data-href');
+            var $this = $(this);
+            window.open(href);
+        });
+
+        $(document).on('click', '.go-zf', function () {
+
+            var href = $(this).attr('data-href');
+            var $this = $(this);
+            window.open(href);
+        });
+
 
     </script>
 </body>

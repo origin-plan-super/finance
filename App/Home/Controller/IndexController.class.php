@@ -26,30 +26,62 @@ class IndexController extends Controller {
         
         if(IS_POST){
             
-            //保存购物车信息
+            
             $add=I('post.');
             
-            $add['sign_id']=md5($add['exam_id'].$add['user_name'].$add['user_phone'].rand());
-            $add['add_time']=time();
-            $add['edit_time']=$add['add_time'];
+            // ========================
+            // ==== 先统计一下是否满员 ====
+            // ========================
             
-            session('user_pid',$add['user_pid']);
+            $m=M('exam');
+            $w['exam_id']=$add['exam_id'];
+            $exam   =   $m->where($w)->find();
+            
+            $m=M('sign');
+            $count  =   $m->where($w)->count();
+            $count  =   $exam['exam_num']-$count;
+            
+            $res['res']=-2;
+            $res['msg']=$count;
             
             
-            $model=M('sign');
-            $result= $model->add($add);
             
-            if($result!==false){
-                $res['res']=0;
-                $res['msg']=$result;
-                
-                $model=M('exam');
-                $where['exam_id']=I('post.exam_id');
-                
+            
+            if($count<=0){
+                //已经报满
+                $res['res']=-2;
+                $res['msg']=$count;
             }else{
-                $res['rse']=-1;
-                $rse['msg']='添加错误';
+                $m=M('sign');
+                $where['exam_id']=$add['exam_id'];
+                
+                
+                //保存购物车信息
+                
+                $add['sign_id']=md5($add['exam_id'].$add['user_name'].$add['user_phone'].rand());
+                $add['add_time']=time();
+                $add['edit_time']=$add['add_time'];
+                
+                session('user_pid',$add['user_pid']);
+                
+                
+                $model=M('sign');
+                $result= $model->add($add);
+                
+                if($result!==false){
+                    $res['res']=0;
+                    $res['msg']=$result;
+                    
+                    $model=M('exam');
+                    $where['exam_id']=I('post.exam_id');
+                    
+                }else{
+                    $res['rse']=-1;
+                    $rse['msg']='添加错误';
+                }
             }
+            
+            
             
             echo json_encode($res);
             

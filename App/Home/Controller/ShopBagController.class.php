@@ -73,14 +73,35 @@ class ShopBagController extends CommonController {
             foreach ($discount as $key => $value) {
                 
                 if($sub_money >= $value['full']){
-                    
-                    $sub_money-=$value['red'];
-                    $red=$value['red'];
+                    $red+=$value['red'];
                     break;
             }
             
+            // ========================
+            // ==== 满科减 ====
+            // ========================
+            //先获得
+            $model              =   M('DiscountSubject');
+            $DiscountSubject           =   $model->order('full desc')->select();
+            $this->assign('DiscountSubject',$DiscountSubject);
+            //再计算
+            foreach ($DiscountSubject as $key => $value) {
+                //这里计算数量
+                
+                if(count($result) >= $value['full']){
+                    $red+=$value['red'];
+                    break
+                    ;
+                }
+            }
+            
+            
+            // die;
+            
+            
         }
         
+        $sub_money-=$red;
         
         
         $this->assign('red',$red);
