@@ -179,15 +179,19 @@ class OrderController extends CommonController {
         //          SELECT t1.*,t2.title FROM mia_goods as t1,mia_class as t2 WHERE (t1.class_id = t2.class_id)
         /**配置输出 */
         $result = $model ->
-        field('t1.*,t2.*,t3.*') ->
-        table('fi_order as t1,fi_order_info as t2,fi_sign as t3') ->
-        where("t1.order_id in ($order_id) AND t1.order_id = t2.order_id AND t2.user_pid = t3.user_pid") ->
+        field('t1.*,t2.*') ->
+        table('fi_order as t1,fi_order_info as t2') ->
+        where("t1.order_id in ($order_id) AND t1.order_id = t2.order_id") ->
         select();
         
         // dump($model->_sql());
         // dump($result);
         //
+        $fileName='财金通【'.date('Y年m月d日 H:i:s')."】-- 订单表($order_id)";
+        
+        
         $this->assign('table',$result);
+        $this->assign('fileName',$fileName);
         $this->display();
         
         

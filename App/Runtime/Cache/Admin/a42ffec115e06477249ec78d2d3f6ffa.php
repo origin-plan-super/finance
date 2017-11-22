@@ -133,10 +133,13 @@
     <script>
 
 
-        $('#table').tableExport({
-            filename: '表格文件',
-            format: 'xls'
-        });
+
+
+
+        // $('#table').tableExport({
+        //     filename: '表格文件',
+        //     format: 'xls'
+        // });
     </script>
 </body>
 
