@@ -125,21 +125,8 @@
                             <label for="user_code">短信验证码</label>
                             <input type="text" name="user_code" class="form-control" id="user_code" placeholder="短信验证码">
                         </div>
-
                         <button type="submit" class="btn btn-default btn-red">登录</button>
                     </form>
-                </div>
-            </div>
-        </div>
-        <!-- last巨幕部分 -->
-        <div class="container">
-            <div class="row">
-                <hr>
-                <div class="col-xs-12" style="display:inline-block">
-                    <div class="jumbotron gonggao" style="padding-top: 5px;padding-bottom:150px;width:96%;margin-left:2%;">
-                        <h3 class="text-center" style="padding-bottom:20px;">报名公告</h3>
-                        <div id="info">{$notice_content}</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -164,10 +151,9 @@
             $this = $(this).attr('disabled', 'disabled');
 
 
-
             var url = '__PUBLIC__/SUBMAIL_PHP_SDK/demo/message_xsend_demo.php?user_pid=' + $('#user_pid').val();
             $.get(url, function (res) {
-                $('#info').html(res);
+                // $('#info').html(res);
                 res = JSON.parse(res);
 
                 if (res.status == 'success') {

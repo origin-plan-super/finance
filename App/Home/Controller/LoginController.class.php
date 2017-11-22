@@ -34,15 +34,9 @@ class LoginController extends Controller {
                 
                 $url=U('Index/index');
                 echo "<script>top.location.href='$url'</script>";
-                exit ;
-                
-                
-                
-                
-                echo 1;
             }else{
                 //验证码不正确
-                echo -1;
+                echo '验证码错误！请返回重试！';
             }
             session('user_code',null);
             
