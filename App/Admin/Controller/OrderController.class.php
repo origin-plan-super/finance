@@ -173,23 +173,22 @@ class OrderController extends CommonController {
     */
     public function printXls(){
         
-        $order=I('get.order');
-        $where = "order_id in($order)";
-        $model=M('Order');
-        
+        $order_id=I('get.order_id');
+        $where = "t1.order_id in($order_id)";
+        $model=M();
         //          SELECT t1.*,t2.title FROM mia_goods as t1,mia_class as t2 WHERE (t1.class_id = t2.class_id)
-        
-        $model = M('Order');
         /**配置输出 */
         $result = $model ->
-        where($where) ->
         field('t1.*,t2.*,t3.*') ->
         table('fi_order as t1,fi_order_info as t2,fi_sign as t3') ->
-        where('t1.order_id = t2.order_id AND t2.user_pid = t3.user_pid') ->
+        where("t1.order_id in ($order_id) AND t1.order_id = t2.order_id AND t2.user_pid = t3.user_pid") ->
         select();
         
-        
-        dump($result);
+        // dump($model->_sql());
+        // dump($result);
+        //
+        $this->assign('table',$result);
+        $this->display();
         
         
     }

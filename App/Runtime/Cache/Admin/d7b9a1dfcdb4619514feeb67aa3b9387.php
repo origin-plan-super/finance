@@ -291,7 +291,7 @@
             id = id.substring(0, id.length - 1);
 
 
-            window.location.href = '/finance/index.php/Admin/Order/printXls/order/' + id;
+            window.location.href = '/finance/index.php/Admin/Order/printXls/order_id/' + id;
 
         });
 
