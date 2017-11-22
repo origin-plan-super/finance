@@ -21,11 +21,21 @@ class CommonController extends Controller {
     public function _initialize() {
         
         if (empty(session('user_pid'))) {
-            $url=U('Index/index');
-            echo "<script>top.location.href='$url'</script>";
-            exit ;
+            
+            if(IS_AJAX){
+                $res['res']=-999;
+                echo json_encode($res);
+            }else{
+                $url=U('Login/login');
+                echo "<script>top.location.href='$url'</script>";
+                exit ;
+            }
+            
+            
+            
         }
         
     }
+    
     
 }

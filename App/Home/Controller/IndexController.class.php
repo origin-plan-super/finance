@@ -23,6 +23,7 @@ class IndexController extends Controller {
     */
     public function index(){
         
+        // session('user_pid',null);
         
         if(IS_POST){
             
@@ -41,12 +42,6 @@ class IndexController extends Controller {
             $count  =   $m->where($w)->count();
             $count  =   $exam['exam_num']-$count;
             
-            $res['res']=-2;
-            $res['msg']=$count;
-            
-            
-            
-            
             if($count<=0){
                 //已经报满
                 $res['res']=-2;
@@ -61,8 +56,8 @@ class IndexController extends Controller {
                 $add['sign_id']=md5($add['exam_id'].$add['user_name'].$add['user_phone'].rand());
                 $add['add_time']=time();
                 $add['edit_time']=$add['add_time'];
+                $add['user_pid']=  session('user_pid');
                 
-                session('user_pid',$add['user_pid']);
                 
                 
                 $model=M('sign');

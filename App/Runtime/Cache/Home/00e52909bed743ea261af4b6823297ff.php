@@ -219,15 +219,6 @@
 						</div>
 						<div class="index-frame-margin">
 							<div class="col-xs-4 text-right">
-								<label for="">注册ID</label>
-							</div>
-							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_pid" type="text" class="form-control" style="width:70%;">
-							</div>
-							<br>
-						</div>
-						<div class="index-frame-margin">
-							<div class="col-xs-4 text-right">
 								<label for="">身份证</label>
 							</div>
 							<div class="col-xs-8 text-left">
@@ -317,6 +308,9 @@
 	<script>
 
 
+
+
+
 		layui.use(['table', 'form'], function () {
 			var table = layui.table
 				, form = layui.form;
@@ -362,15 +356,36 @@
 		// 报名信息页面的显示与隐藏
 		$(document).ready(function () {
 			$(".toSignUp").click(function (e) {
+				var $this = $(this);
 
-				var id = $(this).attr('data-id');
-				var exam_id = $(this).attr('data-exam-id');
-				var val = $(id).val();
-				$('#exam_subject_info').text(val);
-				$('#exam_subject').val(val);
-				$('#exam_id').val(exam_id);
 
-				$(".con").removeClass("hidden");
+
+				/**
+				先判断登录没
+				*/
+				$.get('<?php echo U("Login/isLogin");?>', function (res) {
+
+					res = JSON.parse(res);
+					if (res.res == -999) {
+						//未登录
+						window.location.href = '<?php echo U("Login/login");?>';
+
+					} else {
+						//登录了
+						var id = $this.attr('data-id');
+						var exam_id = $this.attr('data-exam-id');
+						var val = $(id).val();
+						$('#exam_subject_info').text(val);
+						$('#exam_subject').val(val);
+						$('#exam_id').val(exam_id);
+
+						$(".con").removeClass("hidden");
+					}
+
+
+
+				});
+
 			});
 			$("#closeForm").click(function (e) {
 				$(".con").addClass("hidden");
