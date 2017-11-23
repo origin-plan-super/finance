@@ -192,7 +192,7 @@
     <script>
 
 
-        var num = 2;
+        var num = 60;
         var count = num;
         $('#getCode').on('click', function () {
             $this = $(this).attr('disabled', 'disabled');

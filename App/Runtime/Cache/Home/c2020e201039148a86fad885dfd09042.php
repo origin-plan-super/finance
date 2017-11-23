@@ -125,7 +125,7 @@
                                     <td><?php echo ($vol["add_time"]); ?></td>
                                     <td>
 
-                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-success btn-xs go-zf" data-href="/finance/index.php/Home/Pay/doalipay/order_id/<?php echo ($vol["order_id"]); ?>" role="button">
+                                        <?php if($vol["state"] == 0 ): ?><button class="btn btn-success btn-xs go-zf" data-method='<?php echo ($vol["method"]); ?>' data-order-id='<?php echo ($vol["order_id"]); ?>' role="button">
                                                 <span class="">去付款</span>
                                             </button><?php endif; ?>
 
@@ -247,10 +247,25 @@
         });
 
         $(document).on('click', '.go-zf', function () {
+            //订单号
+            var order_id = $(this).attr('data-order-id');
 
-            var href = $(this).attr('data-href');
-            var $this = $(this);
-            window.open(href);
+            //判断用户是支付宝还是微信
+            var method = $(this).attr('data-method');
+
+            if (method == '0') {
+                //支付宝
+                var href = '/finance/index.php/Home/Pay/doalipay/order_id/' + order_id;
+                window.open(href);
+            }
+            if (method == '1') {
+                //微信
+                var href = '/finance/index.php/Home/Order/payment/order_id/' + order_id;
+                window.open(href);
+
+            }
+
+
         });
 
         $(document).on('click', '.del', function () {

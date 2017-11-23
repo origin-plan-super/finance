@@ -123,10 +123,9 @@
                                     <td>
 
                                         <if condition="$vol.state == 0 ">
-                                            <button class="btn btn-success btn-xs go-zf" data-href="__MODULE__/Pay/doalipay/order_id/{$vol.order_id}" role="button">
+                                            <button class="btn btn-success btn-xs go-zf" data-method='{$vol.method}' data-order-id='{$vol.order_id}' role="button">
                                                 <span class="">去付款</span>
                                             </button>
-
                                         </if>
 
                                         <button class="btn btn-default btn-xs open-info" data-href="__CONTROLLER__/show/order_id/{$vol.order_id}" role="button">
@@ -219,10 +218,25 @@
         });
 
         $(document).on('click', '.go-zf', function () {
+            //订单号
+            var order_id = $(this).attr('data-order-id');
 
-            var href = $(this).attr('data-href');
-            var $this = $(this);
-            window.open(href);
+            //判断用户是支付宝还是微信
+            var method = $(this).attr('data-method');
+
+            if (method == '0') {
+                //支付宝
+                var href = '__MODULE__/Pay/doalipay/order_id/' + order_id;
+                window.open(href);
+            }
+            if (method == '1') {
+                //微信
+                var href = '__MODULE__/Order/payment/order_id/' + order_id;
+                window.open(href);
+
+            }
+
+
         });
 
         $(document).on('click', '.del', function () {

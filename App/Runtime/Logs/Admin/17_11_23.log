@@ -1,0 +1,573 @@
+[ 2017-11-23T09:07:25+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077361s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2017-11-23T09:07:26+08:00 ] 127.0.0.1 /finance/index.php/Admin/Hot/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+ERR: 无法加载控制器:Hot
+
+[ 2017-11-23T09:07:30+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2017-11-23T09:07:31+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026556s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000962s ]
+
+[ 2017-11-23T09:07:31+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/getList?page=1&limit=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2017-11-23T09:07:39+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000822s ]
+
+[ 2017-11-23T09:07:39+08:00 ] 127.0.0.1 /finance/index.php/Admin/Discount/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034132s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2017-11-23T09:07:39+08:00 ] 127.0.0.1 /finance/index.php/Admin/Discount/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000636s ]
+
+[ 2017-11-23T09:07:40+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2017-11-23T09:07:40+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountSubject/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2017-11-23T09:07:40+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountSubject/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `fi_discount_subject` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount_subject` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_discount_subject` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000835s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000888s ]
+
+[ 2017-11-23T09:07:41+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2017-11-23T09:07:41+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028248s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000877s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2017-11-23T09:07:41+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `fi_discount_code` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount_code` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_discount_code` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountSubject/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountSubject/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `fi_discount_subject` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount_subject` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount_subject` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000935s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001102s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001208s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/Admin/Discount/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005794s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2017-11-23T09:07:43+08:00 ] 127.0.0.1 /finance/index.php/Admin/Discount/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+SQL: SHOW COLUMNS FROM `fi_discount` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2017-11-23T09:07:44+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2017-11-23T09:07:44+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000402s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000872s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2017-11-23T09:07:44+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `fi_discount_code` [ RunTime:0.0563s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount_code` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount_code` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2017-11-23T09:17:49+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005652s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005695s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2017-11-23T09:17:49+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001550s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005561s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000911s ]
+
+[ 2017-11-23T09:17:49+08:00 ] 127.0.0.1 /finance/index.php/Admin/DiscountCode/getList?page=1&limit=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `fi_discount_code` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_discount_code` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_discount_code` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2017-11-23T09:17:53+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2017-11-23T09:17:53+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002761s ]
+
+[ 2017-11-23T09:17:53+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/getList?page=1&limit=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2017-11-23T09:18:52+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000844s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2017-11-23T09:18:52+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001148s ]
+
+[ 2017-11-23T09:18:52+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/getList?page=1&limit=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_order` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order` ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002092s ]
+
+[ 2017-11-23T09:18:56+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/saveInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0007s ]
+SQL: UPDATE `fi_order` SET `money`='0.01' WHERE `order_id` = '201711230907579360' [ RunTime:0.0383s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2017-11-23T09:18:58+08:00 ] 127.0.0.1 /finance/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000886s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2017-11-23T09:18:58+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/showList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006274s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2017-11-23T09:18:58+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/getList?page=1&limit=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+

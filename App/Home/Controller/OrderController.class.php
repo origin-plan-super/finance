@@ -305,8 +305,6 @@ class OrderController extends CommonController {
             $model                  =   M('order');
             $where['order_id']      =   I('get.order_id');
             $result                 =   $model->where($where)->find();
-            
-            
             if($result){
                 //二维码路由
                 $url    =   U("Weixin/get",'order_id='.$result['order_id']);

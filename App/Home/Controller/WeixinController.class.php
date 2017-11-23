@@ -62,9 +62,11 @@ class WeixinController extends Controller {
         //商品的名称，商品描述
         $input->SetBody ( "财金通---" . $premission_name );
         
-        
         $input->SetAttach ( "财金通-Attach" );
-        $input->SetOut_trade_no ( \WxPayConfig::MCHID . date ( "YmdHis" ) );
+        
+        $out_trade_no=\WxPayConfig::MCHID . date ( "YmdHis" );
+        session('out_trade_no',$out_trade_no);
+        $input->SetOut_trade_no ( $out_trade_no );
         $input->SetTotal_fee ( $price * 100 );
         $input->SetTime_start ( date ( "YmdHis" ) );
         $input->SetTime_expire ( date ( "YmdHis", time () + 600 ) );
@@ -116,6 +118,8 @@ class WeixinController extends Controller {
     
     public function getInfo(){
         
+        $out_trade_no=    session('out_trade_no');
+        
         import('Common.Libs.Weixin.JSAPI');
         $input = new \WxPayOrderQuery();
         $input->SetOut_trade_no($out_trade_no);
@@ -130,8 +134,5 @@ class WeixinController extends Controller {
         }else{
             return false;
         }
-        
-        
-        
     }
 }
