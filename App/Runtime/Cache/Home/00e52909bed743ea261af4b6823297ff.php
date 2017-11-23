@@ -395,7 +395,7 @@
 				$.post('', data.field, function (res) {
 
 
-					$('#info').html(res);
+					// $('#info').html(res);
 					res = JSON.parse(res);
 					w(res);
 
@@ -496,7 +496,11 @@
 						tr.find('.index-red-color').addClass('toSignUp cur-pointer');
 						tr.find('.index-red-color').click(showClick);
 
-
+						w(res.msg);
+						//设置我要报名的属性
+						tr.find('.index-red-color').attr('data-subject-id', res.msg.subject_id);
+						tr.find('.index-red-color').attr('data-exam-id', res.msg.exam_id);
+						tr.find('.index-red-color').attr('data-subject-title', res.msg.title);
 
 
 					} else {

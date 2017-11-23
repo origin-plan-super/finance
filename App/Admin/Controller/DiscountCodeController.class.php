@@ -76,16 +76,26 @@ class DiscountCodeController extends CommonController {
         if(IS_POST){
             $money=I('post.money');
             $num=I('post.num');
+            
+            
+            
             //循环生成优惠码
             $model=M('DiscountCode');
             $count=0;
+            
+            
+            
             for ($i=1; $i <= $num; $i++) {
+                $add=array();
                 
                 $add['add_time']=time();
                 $add['edit_time']=$add['add_time'];
                 $add['money']=$money;
+                // $add['is_use']=$money;
                 $add['discount_code_id']=md5($add['add_time'].$add['money'].rand().__KEY__);
+                
                 $result=$model->add($add);
+                
                 if($result!==false){
                     $count++;
                 }
@@ -98,7 +108,6 @@ class DiscountCodeController extends CommonController {
             
         }else{
             $this->display();
-            
         }
         
         

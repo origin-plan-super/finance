@@ -35,6 +35,9 @@ class ExamSubjectController extends CommonController {
         $this->display();
     }
     
+    /**
+    * 获得
+    */
     public function getList(){
         
         
@@ -42,6 +45,35 @@ class ExamSubjectController extends CommonController {
         $w['exam_id']=I('get.exam_id');
         
         $result= $model->where($w)->select();
+        
+        
+        $sign=M('sign');
+        
+        foreach ($result as $key => $value) {
+            
+            $count =$sign->where()->count();//计算已报名人数
+            //
+            // $surplus
+            
+            // $result[$key]['peoples']
+            // $sign_w['subject_id']=$result['subject_id'];
+            
+            
+        }
+        
+        
+        
+        
+        // peoples
+        
+        
+        
+        //===查询已报名人数
+        
+        
+        
+        
+        
         
         if($result){
             $res['code']=0;
@@ -64,14 +96,12 @@ class ExamSubjectController extends CommonController {
         
         
         
-        
         $page=( $page-1)* $limit;
         
         if(!empty(I('get.key'))){
             
             $key=I('get.key');
             
-            //职位
             $where['exam_name|exam_id'] = array(
             'like',
             "%".$key."%",
