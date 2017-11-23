@@ -28375,3 +28375,18 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000541s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
 
+[ 2017-11-23T16:42:40+08:00 ] 127.0.0.1 /finance/index.php/Admin/Order/getList?page=1&limit=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+NOTIC: [2048] Declaration of Admin\Controller\OrderController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\database\Project\working\company\finance\App\Admin\Controller\OrderController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_order` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` ORDER BY add_time desc LIMIT 0,5   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
