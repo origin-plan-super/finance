@@ -32,7 +32,7 @@
                         </tr>
                         <tr>
                             <th style='width:150px'>用户：</th>
-                            <td>{$order.user_pid}</td>
+                            <td>{$order.user_id}</td>
                         </tr>
                         <tr>
                             <th style='width:150px'>交易金额：</th>
@@ -40,6 +40,7 @@
                         </tr>
                         <tr>
                             <th style='width:150px'>支付方式：</th>
+
                             <td>
                                 <!-- {$order.method} -->
                                 <if condition="$order.method == 0">
@@ -89,10 +90,10 @@
 
                             <tr>
                                 <td>{$vol.exam_name}</td>
-                                <td>{$vol.exam_date}</td>
-                                <td>{$vol.exam_time}</td>
-                                <td>{$vol.exam_subject}</td>
-                                <td>{$vol.exam_money}</td>
+                                <td>{$vol.date}</td>
+                                <td>{$vol.time}</td>
+                                <td>{$vol.title}</td>
+                                <td>{$vol.money}</td>
                                 <!-- 用户信息 -->
                                 <td>{$vol.user_name}</td>
                                 <td>{$vol.user_phone}</td>
