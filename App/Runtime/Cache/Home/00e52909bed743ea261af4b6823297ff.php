@@ -260,7 +260,7 @@
 								<label for="">姓名</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_name" type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required' name="user_name" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -269,7 +269,7 @@
 								<label for="">手机</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required|phone' name="user_phone" type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required|phone' name="user_phone" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -278,7 +278,7 @@
 								<label for="">邮箱</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required|email' name='user_email' type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required|email' name='user_email' type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -287,7 +287,7 @@
 								<label for="">身份证</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required|identity' name="user_uid" type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required|identity' name="user_uid" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -296,7 +296,7 @@
 								<label for="">注册ID</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_pid" type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required' name="user_pid" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -305,7 +305,7 @@
 								<label for="">出生年月</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<input lay-verify='required' name="user_day" type="text" class="form-control" style="width:70%;">
+								<input lay-verify-abcd='required' name="user_day" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -388,9 +388,9 @@
 				, form = layui.form;
 
 			form.on('submit(*)', function (data) {
-				console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
-				console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
-				console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+				// console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+				// console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+				// console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
 
 				$.post('', data.field, function (res) {
 

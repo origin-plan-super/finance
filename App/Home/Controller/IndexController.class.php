@@ -108,18 +108,57 @@ class IndexController extends Controller {
             
             //5、展示数据
             $result =   $model->limit($page->firstRow,$page->listRows)->order('add_time desc')->select();
-            foreach ($result as $key => $value) {
-                $result[$key]['exam_subject']=json_decode($value['exam_subject'],true);
-                //计算剩余考位
-                //到sign里面统计查询
+            
+            //计算剩余考位
+            
+            
+            // foreach ($result as $key => $value) {
+            //     $result[$key]['exam_subject']=json_decode($value['exam_subject'],true);
+            //     //计算剩余考位
+            //     //到sign里面统计查询
+            
+            //     $m=M('sign');
+            //     $where['exam_id']=$value['exam_id'];
+            //     $count=$m->where($where)->count();
+            
+            //     $result[$key]['surplus']=$value['exam_num']-$count;
+            
+            // }
+            $examSubject  =   M('examSubject');
+            
+            //根据已支付订单获得人数
+            //先获得subject_id然后到获得订单号，之后判断支付状态。
+            $OrderInfo  =   M('OrderInfo');
+            
+            foreach ($exam_info as $key => $value) {
+                $w['exam_id']=$value['exam_id'];
                 
-                $m=M('sign');
-                $where['exam_id']=$value['exam_id'];
-                $count=$m->where($where)->count();
+                $r  =   $examSubject ->where($w)->select();
                 
-                $result[$key]['surplus']=$value['exam_num']-$count;
+                foreach ($r as $k => $v) {
+                    //计算已经结算的人数s
+                    $order_w['subject_id']=$r[$k]['subject_id'];//课程的id
+                    //联表查询订单表和订单信息表
+                    $count=  $OrderInfo
+                    ->field('t1.*,t2.*')
+                    ->table('fi_order_info as t1,fi_order as t2')
+                    ->where('t1.order_id = t2.order_id AND t2.state = 1')
+                    ->where($order_w)
+                    ->order('t1.add_time desc')
+                    ->count();//找多个
+                    
+                    $max_num=$r[$k]['max_num'];
+                    $r[$k]['surplus']= $max_num-$count;
+                    
+                }
+                
+                $exam_info[$key]['subject_info']=$r;
                 
             }
+            //计算人数结束
+            
+            
+            
             $this->assign('exam_info',$result);
             
             //6、传递给模板
@@ -151,28 +190,36 @@ class IndexController extends Controller {
             
             
             //先找科目数据
-            $examSubject=M('examSubject');
+            $examSubject=M('ExamSubject');
             $where['subject_id']=$add['subject_id'];
             $examSubjectDate=$examSubject->where($where)->find();//科目数据
+            $res['sql']=$examSubject->_sql();
+            
+            $res['examSubjectDate']=$examSubjectDate;
             
             // ========================
-            // ==== 先统计一下是否满员 ====
+            // ==== 人数计算 ====
             // ========================
             
+            //先取出最大人数
+            $max_num=$examSubjectDate['max_num'];
             
-            //取得选中的科目id
-            $w['subject_id']=$add['subject_id'];
+            //1、获得当前人数
+            $count=countSubject($add['subject_id']);
             
-            //计数
-            $m=M('sign');
-            $signCount  =   $m->where($w)->count();//计数
-            $signCount  =   $examSubjectDate['max_num']-$signCount;//总的减去已经报名的
+            //4、然后计算，用最大人数减去当前人数
+            $surplus=$max_num-$count;
             
+            // ========================
+            // ==== 人数计算end ====
+            // ========================
+            $res['count']=$count;
+            $res['max_num']=$max_num;
             
-            if($signCount<=0){
+            if($surplus<=0){
                 //满了
                 $res['res']=-2;
-                $res['msg']=$signCount;
+                $res['msg']=$surplus;
                 echo json_encode($res);
                 exit;
             }
@@ -239,31 +286,39 @@ class IndexController extends Controller {
             order('add_time desc')->
             select();
             
+            // ========================
+            // ==== 人数计算 ====
+            // ========================
             
             
-            $model  =   M('examSubject');
-            $sign  =   M('sign');
+            
+            //1、先根据课程id，取出科目信息
+            $model=M('ExamSubject');
+            $OrderModel=M('Order');//创建订单模型
             
             foreach ($exam_info as $key => $value) {
-                $w['exam_id']=$value['exam_id'];
-                
-                $r=   $model ->where($w)->select();
-                
-                foreach ($r as $k => $v) {
-                    //计算已经报名的人数
-                    $sing_w['subject_id']=$r[$k]['subject_id'];//课程的id
-                    $count= $sign->where($sing_w)->count();//计数
-                    $max_num=$r[$k]['max_num'];
-                    $r[$k]['surplus']= $max_num-$count;
-                    
+                //找出每个对应的类别列表
+                $exam_id=$value['exam_id'];
+                $where=[];
+                $where['exam_id']= $exam_id;
+                $subject_info=$model->where($where)->select();//这个就是所有对应的科目
+                //然后把科目加到课程里去
+                //然后遍历科目信息里面的每一项，计算里面的每一项的人数
+                foreach ($subject_info as $key2 => $value2) {
+                    $max_num=$value2['max_num'];
+                    //计算人数函数
+                    $count=countSubject($value2['subject_id']);
+                    $surplus=$max_num-$count;
+                    $subject_info[$key2]['surplus']=$surplus;
                 }
                 
-                $exam_info[$key]['subject_info']=$r;
+                $exam_info[$key]['subject_info']= $subject_info;
                 
             }
             
-            // dump($exam_info);
-            // die;
+            // ========================
+            // ==== 人数计算end ====
+            // ========================
             
             $this->assign('exam_info',$exam_info);
             $this->assign('exam_info_json',json_encode($exam_info));

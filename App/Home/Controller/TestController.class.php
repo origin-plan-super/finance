@@ -19,7 +19,9 @@ use Think\Controller;
 class TestController extends CommonController {
     
     public function index(){
-        
-        
+        $subject_id='c72008da97b923fd0fa17bebd07f4d6a';
+        $count=countSubject($subject_id);
+        echo $count;
+        die;
     }
 }
