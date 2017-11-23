@@ -136,7 +136,7 @@ class OrderController extends CommonController {
             //过期不能用
             $time=time();
             
-            if($time>$result['time']){
+            if($time>$result['end_time']){
                 //过期了
                 $res['res']=-2;
                 $res['msg']='验证码已过期';
