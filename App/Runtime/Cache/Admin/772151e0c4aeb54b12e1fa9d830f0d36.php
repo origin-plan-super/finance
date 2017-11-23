@@ -56,22 +56,13 @@
     </script>
     <script type="text/html" id="bar2">
                 
-        {{#  var a=JSON.parse(d.exam_subject) }}
-        {{#  w(a) }}
-        {{#  layui.each(a, function(index, item){ }}
-            {{ '【'+item.title+'】:'+item.money }}￥,
+        {{#  w(d.subject_info) }}
+        {{#  layui.each(d.subject_info, function(index, item){ }}
+            {{ '【'+item.title+'】:'+item.money }}￥ | 
         {{#  }); }}
     
     </script>
-    <script type="text/html" id="barSurplus">
-        
-        {{#  if(d.surplus > 0){ }}
-        {{ d.surplus }}
-        {{#  }else{ }}
-        <span class="layui-badge">已满员</span>
-        {{#  }}}
-        
-    </script>
+
     <script>
         var tableIns;
         layui.use(['table', 'form'], function () {
@@ -88,6 +79,7 @@
                     { type: 'numbers', width: 50 }
                     , { field: 'exam_id', title: 'ID', width: 80 }
                     , { field: 'exam_name', title: '考试名', edit: 'text', width: 300 }
+                    , { title: '科目', toolbar: '#bar2' }
                     , { fixed: 'right', width: 200, align: 'center', toolbar: '#bar1' }
                     // , { field: 'is_up', fixed: 'right', title: '是否推荐', align: 'center', width: 110, templet: '#checkboxTpl', unresize: true }
                     // , { fixed: 'right', width: 180, align: 'center', title: '操作', toolbar: '#bar1' } //这里的toolbar值是模板元素的选择器

@@ -93,7 +93,7 @@
                     , { field: 'time', title: '报考时间', width: 200 }
                     , { field: 'max_num', title: '考位数量', edit: 'text', width: 100 }
                     , { field: 'peoples', title: '已报人数', width: 100 }
-                    , { field: 'surplus', title: '剩余人数', width: 100 }
+                    , { field: 'surplus', title: '剩余人数', width: 100, toolbar: '#barSurplus' }
                     , { fixed: 'right', width: 150, align: 'center', toolbar: '#bar1' }
                     // , { field: 'is_up', fixed: 'right', title: '是否推荐', align: 'center', width: 110, templet: '#checkboxTpl', unresize: true }
                     // , { fixed: 'right', width: 180, align: 'center', title: '操作', toolbar: '#bar1' } //这里的toolbar值是模板元素的选择器

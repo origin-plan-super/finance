@@ -63,12 +63,10 @@ class ExamController extends CommonController {
         foreach ($result as $key => $value) {
             //计算剩余考位
             //到sign里面统计查询
-            $m=M('sign');
-            $where=[];
+            $model=M('ExamSubject');
             $where['exam_id']=$value['exam_id'];
-            $count=$m->where($where)->count();
-            $result[$key]['surplus']=$value['exam_num']-$count;
-            $result[$key]['people_num']=$count;
+            $r=$model->where($where)->select();
+            $result[$key]['subject_info']=$r;
         }
         
         if($result){

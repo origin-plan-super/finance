@@ -46,90 +46,14 @@ class ExamSubjectController extends CommonController {
         
         $result= $model->where($w)->select();
         
-        
-        $sign=M('sign');
-        
         foreach ($result as $key => $value) {
+            //已经报名的人数
+            $result[$key]['peoples']= countSubject($value['subject_id']);
+            //总人数
+            $max_num=$value['max_num'];
+            //计算剩余人数
+            $result[$key]['surplus']=$max_num- countSubject($value['subject_id']);
             
-            $count =$sign->where()->count();//计算已报名人数
-            //
-            // $surplus
-            
-            // $result[$key]['peoples']
-            // $sign_w['subject_id']=$result['subject_id'];
-            
-            
-        }
-        
-        
-        
-        
-        // peoples
-        
-        
-        
-        //===查询已报名人数
-        
-        
-        
-        
-        
-        
-        if($result){
-            $res['code']=0;
-            $res['msg']='更新了'.$res['count'].'条数据';
-            $res['data']= $result;
-        }else{
-            $res['code']=-1;
-            $res['msg']='没有数据！';
-        }
-        echo json_encode($res);
-        
-        return;
-        $model=M('Exam');
-        $page=I('get.page');
-        $limit=I('get.limit');
-        
-        
-        
-        
-        
-        
-        
-        $page=( $page-1)* $limit;
-        
-        if(!empty(I('get.key'))){
-            
-            $key=I('get.key');
-            
-            $where['exam_name|exam_id'] = array(
-            'like',
-            "%".$key."%",
-            'OR'
-            );
-            
-            $result= $model->limit("$page,$limit")->order('add_time desc')->where($where)->select();
-            $res['count']=$model->where($where)->count();
-            
-            
-        }else{
-            
-            $count= $model->count();
-            $res['count']=$count;
-            $result= $model->limit("$page,$limit")->order('add_time desc')->select();
-            
-        }
-        
-        //计算剩余考位
-        foreach ($result as $key => $value) {
-            //计算剩余考位
-            //到sign里面统计查询
-            $m=M('sign');
-            $where=[];
-            $where['exam_id']=$value['exam_id'];
-            $count=$m->where($where)->count();
-            $result[$key]['surplus']=$value['exam_num']-$count;
-            $result[$key]['people_num']=$count;
         }
         
         if($result){

@@ -3817,3 +3817,53 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
 
+[ 2017-11-24T06:52:39+08:00 ] 127.0.0.1 /finance/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001479s ]
+SQL: SHOW COLUMNS FROM `fi_exam` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fi_exam` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fi_exam_subject` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fi_order` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fi_exam_subject` WHERE `exam_id` = 'c971db243b48f3d0600704e54fddfc69'  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `fi_order_info` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fi_order_info` WHERE `subject_id` = '9f774fffedb875d27646d5367c3efcef'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_exam_subject` WHERE `exam_id` = 'cbe4fb483141db6519f24d0517ba810b'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order_info` WHERE `subject_id` = 'c72008da97b923fd0fa17bebd07f4d6a'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230751531922' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230751531922' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230751531922' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230752062938' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711240646391366' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711240646391366' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711240646391366' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order_info` WHERE `subject_id` = 'dafa9cb260a880ec6f1fe3e0ed7f5ea6'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_exam_subject` WHERE `exam_id` = '8b56105c119683595464eb4c979a9f70'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order_info` WHERE `subject_id` = 'e40b7105ddcfe5a0c71396f8525a3fe5'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230424121872' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order_info` WHERE `subject_id` = 'cc751a202428ed880b28ce4810dd0fbb'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230751531922' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711230752062938' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fi_order` WHERE `order_id` = '201711240646391366' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `fi_notice` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fi_notice` ORDER BY edit_time desc LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: subject_id D:\database\Project\working\company\finance\App\Runtime\Cache\Home\00e52909bed743ea261af4b6823297ff.php 第 198 行.
+NOTIC: [8] Undefined index: subject_id D:\database\Project\working\company\finance\App\Runtime\Cache\Home\00e52909bed743ea261af4b6823297ff.php 第 198 行.
+NOTIC: [8] Undefined index: subject_id D:\database\Project\working\company\finance\App\Runtime\Cache\Home\00e52909bed743ea261af4b6823297ff.php 第 198 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010882s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000918s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
