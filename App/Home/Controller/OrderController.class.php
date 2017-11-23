@@ -132,13 +132,26 @@ class OrderController extends CommonController {
         $result=$model->where($where)->find();
         
         if($result){
-            $res['res']=0;
-            $res['msg']=$result['money'];
+            //有优惠码
+            //过期不能用
+            $time=time();
+            
+            if($time>$result['time']){
+                //过期了
+                $res['res']=-2;
+                $res['msg']='验证码已过期';
+            }else{
+                
+                $res['res']=0;
+                $res['msg']=$result['money'];
+                
+            }
+            
+            
             
         }else{
             $res['res']=-1;
             $res['msg']='没有找到优惠码或已被使用';
-            
         }
         
         echo json_encode($res);

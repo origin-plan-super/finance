@@ -56,6 +56,15 @@ class DiscountCodeController extends CommonController {
             
         }
         
+        $time=time();
+        
+        foreach ($result as $key => $value) {
+            
+            if($time>$value['end_time']){
+                $result[$key]['isEnd']=true;
+            }
+            
+        }
         
         if($result){
             $res['code']=0;
@@ -76,6 +85,7 @@ class DiscountCodeController extends CommonController {
         if(IS_POST){
             $money=I('post.money');
             $num=I('post.num');
+            $end_time=I('post.end_time');
             
             
             
@@ -91,7 +101,7 @@ class DiscountCodeController extends CommonController {
                 $add['add_time']=time();
                 $add['edit_time']=$add['add_time'];
                 $add['money']=$money;
-                // $add['is_use']=$money;
+                $add['end_time']=strtotime($end_time);
                 $add['discount_code_id']=md5($add['add_time'].$add['money'].rand().__KEY__);
                 
                 $result=$model->add($add);

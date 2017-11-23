@@ -20,7 +20,7 @@ class TestController extends Controller {
     public function index() {
         // echo
         echo'<br>';
-        echo date('Y-m-d h-i-s');
+        echo strtotime('2017-11-28');
         
     }
 }

@@ -163,7 +163,7 @@
 
                             <?php if(is_array($user_exam_info)): $i = 0; $__LIST__ = $user_exam_info;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
                                     <td>
-                                        <input type="checkbox" name="sign_id[]" lay-skin="primary" value='<?php echo ($vol["sign_id"]); ?>'>
+                                        <input type="checkbox" lay-filter="test" class="goods-item" name="sign_id[]" lay-skin="primary" value='<?php echo ($vol["sign_id"]); ?>'>
                                     </td>
                                     <td><?php echo ($vol["exam_name"]); ?></td>
                                     <td><?php echo ($vol["date"]); ?></td>
@@ -230,10 +230,11 @@
                 </div>
                 <div class="col-xs-8">
                     <div class="col-xs-10  text-right">
-                        <span>已减<?php echo ($red); ?>元</span>
+                        <span>已减
+                            <span id="red"></span> 元</span>
                         <br>
                         <span>合计：
-                            <span style="color:red"><?php echo ($sub_money); ?></span>元</span>
+                            <span style="color:red" id="sub_money"></span>元</span>
                     </div>
                     <div class="col-xs-2  text-right">
                         <button type="submit" class="btn btn-red goPay">去结算</button>
@@ -293,8 +294,49 @@
     <script>
 
 
+
         layui.use('form', function () {
             var form = layui.form;
+
+            form.on('checkbox(test)', function (data) {
+                // console.log(data.elem); //得到select原始DOM对象
+                // console.log(data.value); //得到被选中的值
+                // console.log(data.othis); //得到美化后的DOM对象
+
+                //获得所有选中的
+
+
+                var postArr = [];
+
+                $('input:checked').each(function (index) {
+                    postArr[index] = $(this).val();
+                });
+
+
+                $.post('/finance/index.php/Home/ShopBag/getAllMoney', {
+                    sign_id: postArr
+                }, function (res) {
+                    w(res);
+                    res = JSON.parse(res);
+                    w(res);
+                    if (res.res > 0) {
+                        //最终的钱
+                        var sub_money = res.msg.sub_money;
+                        //减掉的钱
+                        var red = res.msg.red;
+                        $('#sub_money').text(sub_money);
+                        $('#red').text(red);
+
+                        //放到页面上。
+
+                    }
+
+
+
+                });
+
+            });
+
 
         });
 
@@ -323,6 +365,7 @@
             });
 
         });
+
 
 
 

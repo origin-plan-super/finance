@@ -80,11 +80,33 @@
         {{ a }}
         
     </script>
+
+    <script type="text/html" id="barEndTim">
+        
+                        
+                {{# var a = getLocalTime(d.end_time) }}
+                {{ a }}
+                
+    </script>
+
     <script type="text/html" id="bar3">
 
         <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>
 
     </script>
+    <script type="text/html" id="isEnd">
+        
+                {{#  if(d.isEnd == true){ }}
+        
+                <span class="layui-badge">已过期</span>
+                
+                {{#  } else { }}
+        
+                <span class="layui-badge layui-bg-gray">未过期</span>
+        
+                {{#  } }}
+                    
+            </script>
     <script>
         var tableIns;
         var table;
@@ -105,6 +127,8 @@
                     , { field: 'discount_code_id', title: '优惠码', width: 150 }
                     , { field: 'money', title: '优惠', width: 150 }
                     , { field: 'is_use', title: '是否使用', width: 100, toolbar: '#bar1', align: 'center' }
+                    , { title: '是否过期', width: 100, toolbar: '#isEnd', align: 'center' }
+                    , { field: 'end_time', title: '过期时间', width: 200, toolbar: '#barEndTim' }
                     , { field: 'add_time', title: '添加时间', width: 200, toolbar: '#bar2' }
                     , { fixed: 'right', width: 100, align: 'center', title: '操作', toolbar: '#bar3' } //这里的toolbar值是模板元素的选择器
                 ]]

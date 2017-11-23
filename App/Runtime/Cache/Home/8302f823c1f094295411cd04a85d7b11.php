@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>提交订单</title>
     <link rel="stylesheet" type="text/css" href="/finance/Public/dist/all/all.css" />
@@ -107,7 +106,7 @@
 
 	}
 
-	.fk:hover {
+	a:hover {
 		text-decoration: none;
 	}
 </style>
@@ -234,6 +233,8 @@
                     <span class="discount">使用优惠码</span>
                     <input type="text" style="margin-left:2%;" id="discountCode">
                     <button type="button" class="btn btn-sm btn-small" id="ok">确定</button>
+                    <span id="discountCodeBox"></span>
+
                 </div>
                 <div class="col-xs-2">
                 </div>
@@ -352,9 +353,9 @@
                 res = JSON.parse(res);
                 if (res.res == 0) {
                     layer.msg('验证码正确');
-
                     sub_money -= res.msg;
                     sub_money = sub_money.toFixed(2);
+                    $('#discountCodeBox').text('已减' + res.msg + '元');
 
                     sub_money = sub_money <= 0 ? 0 : sub_money;
 
