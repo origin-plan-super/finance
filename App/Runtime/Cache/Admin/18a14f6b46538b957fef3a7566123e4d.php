@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>编辑课程</title>
+    <title>添加科目</title>
     <!-- css -->
 <link href="/finance/Public/vendor/layui/css/layui.css" rel="stylesheet" type="text/css">
 
@@ -32,20 +32,18 @@
 
 <body>
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>编辑课程</legend>
+        <legend>为【<?php echo ($exam_info["exam_name"]); ?>】添加科目</legend>
         <div class="layui-field-box">
         </div>
     </fieldset>
     <form class="layui-form" style="width: 600px;" action="" method="post">
 
-        <input type="hidden" name="exam_id" value="<?php echo ($exam_info["exam_id"]); ?>">
         <!--  -->
-
+        <input type="hidden" name="exam_id" value="<?php echo ($exam_info["exam_id"]); ?>">
         <div class="layui-form-item">
-            <label class="layui-form-label">考试名称：</label>
+            <label class="layui-form-label">科目名称：</label>
             <div class="layui-input-block">
-                <input lay-verify='required' value="<?php echo ($exam_info["exam_name"]); ?>" type="text" name="exam_name" placeholder="请输入考试名称" autocomplete="off"
-                    class="layui-input">
+                <input lay-verify='required' type="text" name="title" placeholder="请输入科目名称" autocomplete="off" class="layui-input">
             </div>
         </div>
 
@@ -55,7 +53,7 @@
             <label class="layui-form-label">报考日期：</label>
             <div class="layui-input-block">
                 <!-- 注意：这一层元素并不是必须的 -->
-                <input lay-verify='required' value="<?php echo ($exam_info["exam_date"]); ?>" type="text" name="exam_date" class="layui-input" id="date" placeholder="请选择日期">
+                <input lay-verify='required' type="text" name="date" class="layui-input" id="date" placeholder="请选择日期">
             </div>
 
         </div>
@@ -65,8 +63,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">场次时间：</label>
             <div class="layui-input-block">
-                <input lay-verify='required' value="<?php echo ($exam_info["exam_time"]); ?>" type="text" name="exam_time" class="layui-input" id="time_start"
-                    placeholder="开始时间">
+                <input lay-verify='required' type="text" name="time" class="layui-input" id="time_start" placeholder="开始时间">
             </div>
 
         </div>
@@ -76,11 +73,17 @@
         <div class="layui-form-item">
             <label class="layui-form-label">考位数量：</label>
             <div class="layui-input-block">
-                <input lay-verify='required' value="<?php echo ($exam_info["exam_num"]); ?>" type="number" name="exam_num" placeholder="考位数量" autocomplete="off"
-                    class="layui-input">
+                <input lay-verify='required' type="number" name="max_num" placeholder="考位数量" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <!--  -->
 
+        <div class="layui-form-item">
+            <label class="layui-form-label">考试价格：</label>
+            <div class="layui-input-block">
+                <input lay-verify='required' type="number" name="money" placeholder="考试价格" autocomplete="off" class="layui-input">
+            </div>
+        </div>
         <!--  -->
 
         <div class="layui-form-item">
@@ -120,39 +123,19 @@
                 // console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
                 // console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
 
-
-
-                var exam_subject_1 = data.field.exam_subject.split("\n");
-                var exam_subject_2 = [];
-
-                for (var i = 0; i < exam_subject_1.length; i++) {
-
-                    var a = exam_subject_1[i].split(',');
-                    exam_subject_2[i] = {};
-                    exam_subject_2[i].title = a[0];
-                    exam_subject_2[i].money = a[1];
-
-                }
-
-                data.field.exam_subject = exam_subject_2;
-
-
                 $.post('', data.field, function (res) {
-
-                    // $('#test').html(res);
 
                     res = JSON.parse(res);
                     if (res.res == 0) {
-                        layer.msg('修改成功~', {
+                        layer.msg('添加成功~', {
                             offset: '80%'
                         });
 
                     } else {
-                        layer.msg('修改失败~', {
+                        layer.msg(res.msg, {
                             offset: '80%'
                         });
                     }
-
 
                 });
 
@@ -162,9 +145,6 @@
 
 
         });
-
-
-
     </script>
 </body>
 

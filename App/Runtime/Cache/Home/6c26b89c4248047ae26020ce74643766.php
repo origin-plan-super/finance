@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>我的购物车</title>
     <link rel="stylesheet" type="text/css" href="/finance/Public/dist/all/all.css" />
@@ -61,7 +60,44 @@
 <body>
     <form class="shopBag layui-form" action='<?php echo U("Order/order");?>' method="post">
         <!-- 表头的导航栏 表头样式统一在allcss里边 -->
-        <!-- 页眉-图片部分 -->
+        <style>
+	.col-xs-6 {
+		/* background-color: #ff0000; */
+		/* outline: 1px #00f solid; */
+	}
+
+	#topTool {
+		position: absolute;
+		right: 180px;
+		bottom: 0;
+		line-height: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#topTool a {
+		display: inline-block;
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+	}
+
+	#topTool .fk {
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+		height: auto;
+		line-height: 1;
+		padding: 5px 10px;
+
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+</style>
+
+<!-- 页眉-图片部分 -->
 <div class="index-package1">
 	<div class="container">
 		<div class="row">
@@ -71,7 +107,27 @@
 			</div>
 			<div class="col-xs-6 index-right text-right">
 				<img src="/finance/Public/img/top-right.png" />
+				<div id="topTool">
+					<a href="<?php echo U('Index/index');?>">
+						<div class="fk fudong0">
+							首页
+						</div>
+					</a>
+					<a href="<?php echo U('User/User');?>">
+
+						<div class="fk fudong1">
+							个人中心
+						</div>
+					</a>
+					<a href="<?php echo U('ShopBag/ShopBag');?>">
+						<div class="fk fudong2">
+							购物车
+						</div>
+					</a>
+				</div>
+
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -99,6 +155,7 @@
                                 <th class="text-center">场次</th>
                                 <th class="text-center">考试科目</th>
                                 <th class="text-center">价格</th>
+                                <th class="text-center">姓名</th>
                                 <th class="text-center"></th>
                             </tr>
                         </thead>
@@ -109,10 +166,11 @@
                                         <input type="checkbox" name="sign_id[]" lay-skin="primary" value='<?php echo ($vol["sign_id"]); ?>'>
                                     </td>
                                     <td><?php echo ($vol["exam_name"]); ?></td>
-                                    <td><?php echo ($vol["exam_date"]); ?></td>
-                                    <td><?php echo ($vol["exam_time"]); ?></td>
-                                    <td><?php echo ($vol["exam_subject"]); ?></td>
-                                    <td><?php echo ($vol["exam_money"]); ?></td>
+                                    <td><?php echo ($vol["date"]); ?></td>
+                                    <td><?php echo ($vol["time"]); ?></td>
+                                    <td><?php echo ($vol["title"]); ?></td>
+                                    <td><?php echo ($vol["money"]); ?></td>
+                                    <td><?php echo ($vol["user_name"]); ?></td>
                                     <td class="cur-pointer del" data-id='<?php echo ($vol["sign_id"]); ?>'>删除</td>
                                 </tr><?php endforeach; endif; else: echo "没有信息" ;endif; ?>
                         </tbody>
@@ -221,7 +279,6 @@
 		</div>
 	</a>
 </div>
-
 
     </form>
 

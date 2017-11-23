@@ -1,8 +1,8 @@
 <?PHP
 session_start();
-// $_POST['user_pid']
-$user_pid=$_GET['user_pid'];
-// echo $user_pid;
+// $_POST['user_id']
+$user_id=$_GET['user_id'];
+// echo $user_id;
 // die;
 /*
 | Submail message/xsend API demo
@@ -39,7 +39,7 @@ $submail=new MESSAGEXsend($message_configs);
 */
 
 
-$submail->setTo($user_pid);
+$submail->setTo($user_id);
 
 /*
 |必选参数

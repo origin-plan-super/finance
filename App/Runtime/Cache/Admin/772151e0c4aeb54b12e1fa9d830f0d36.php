@@ -43,32 +43,25 @@
             <button class="layui-btn" id="reload" data-type="reload">搜索</button>
             <button class="layui-btn" id="refresh" data-type="reload">刷新表格</button>
         </div>
-        <div class="layui-col-md4 layui-col-md-offset4">
-            <div class="layui-form-mid layui-word-aux">在新页面打开编辑</div>
-            <input type="checkbox" id="isNew" name="xxx" lay-skin="switch">
-        </div>
+
     </div>
-
-
 
     <table id="live_table" lay-filter="table_filter"></table>
 
     <script type="text/html" id="bar1">
         
-        <a class="layui-btn layui-btn-xs" lay-event="open">编辑</a>
+        <a class="layui-btn layui-btn-xs" lay-event="open">查看科目列表</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
             
     </script>
     <script type="text/html" id="bar2">
-
                 
         {{#  var a=JSON.parse(d.exam_subject) }}
         {{#  w(a) }}
         {{#  layui.each(a, function(index, item){ }}
-            {{ item }},
+            {{ '【'+item.title+'】:'+item.money }}￥,
         {{#  }); }}
     
-
     </script>
     <script type="text/html" id="barSurplus">
         
@@ -95,14 +88,7 @@
                     { type: 'numbers', width: 50 }
                     , { field: 'exam_id', title: 'ID', width: 80 }
                     , { field: 'exam_name', title: '考试名', edit: 'text', width: 300 }
-                    , { field: 'exam_date', title: '考试日期', width: 200 }
-                    , { field: 'exam_time', title: '场次时间', width: 200 }
-                    , { field: 'exam_money', title: '价格', edit: 'text', width: 100 }
-                    , { field: 'exam_num', title: '总人数', edit: 'text', width: 100 }
-                    , { title: '剩余人数', width: 100, toolbar: '#barSurplus' }
-                    , { field: 'people_num', title: '报考人数', width: 100 }
-                    , { title: '科目', align: 'center', toolbar: '#bar2', width: 300 }
-                    , { fixed: 'right', width: 150, align: 'center', toolbar: '#bar1' }
+                    , { fixed: 'right', width: 200, align: 'center', toolbar: '#bar1' }
                     // , { field: 'is_up', fixed: 'right', title: '是否推荐', align: 'center', width: 110, templet: '#checkboxTpl', unresize: true }
                     // , { fixed: 'right', width: 180, align: 'center', title: '操作', toolbar: '#bar1' } //这里的toolbar值是模板元素的选择器
                 ]]
@@ -118,24 +104,24 @@
                 var exam_id = data.exam_id;
                 console.log(layEvent);
                 //查看
-                var url = '/finance/index.php/Admin/Exam/edit/exam_id/' + exam_id;
+                var url = '/finance/index.php/Admin/examSubject/showList/exam_id/' + exam_id;
                 console.log(url);
                 if (layEvent === 'open') {
+                    window.open(url);
 
-                    if ($('#isNew').is(':checked')) {
-                        window.open(url);
-                    } else {
+                    // if ($('#isNew').is(':checked')) {
+                    //     window.open(url);
+                    // } else {
+                    //     layer.open({
+                    //         type: 2,
+                    //         title: data.exam_name + " | " + data.exam_date,
+                    //         shadeClose: true,
+                    //         maxmin: true, //开启最大化最小化按钮
+                    //         area: ['80%', '80%'],
+                    //         content: url
 
-                        layer.open({
-                            type: 2,
-                            title: data.exam_name + " | " + data.exam_date,
-                            shadeClose: true,
-                            maxmin: true, //开启最大化最小化按钮
-                            area: ['80%', '80%'],
-                            content: url
-
-                        });
-                    }
+                    //     });
+                    // }
 
                 }
 
@@ -165,6 +151,27 @@
                             }
                         });
                     });
+                }
+
+                /**
+                 * 单元格点击
+                */
+                if (obj.event === 'exam_subject') {
+
+
+                    w(obj.tr);
+
+                    var a = JSON.parse(data.exam_subject);
+
+                    var b = '';
+                    for (let i = 0; i < a.length; i++) {
+                        b += '科目名：【' + a[i].title + '】,科目价格：【' + a[i].money + '￥】<br/>';
+                    }
+                    layer.alert(b, {
+                        skin: 'layui-layer-molv' //样式类名
+                        , closeBtn: 0
+                    });
+
                 }
 
             });

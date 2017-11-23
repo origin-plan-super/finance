@@ -37,6 +37,7 @@ class PayController extends Controller{
         $model=M('Order');
         $order=$model->where($where)->find();
         
+       
         
         /*********************************************************
         把alipayapi.php中复制过来的如下两段代码去掉，

@@ -24,13 +24,13 @@ class LoginController extends Controller {
         if(IS_POST){
             
             $user_code=I('post.user_code');
-            $user_pid=I('post.user_pid');
+            $user_id=I('post.user_id');
             $code= session('user_code');
             
             if($user_code==$code){
                 //验证码正确
                 
-                session('user_pid',$user_pid);
+                session('user_id',$user_id);
                 
                 $url=U('Index/index');
                 echo "<script>top.location.href='$url'</script>";
@@ -51,7 +51,7 @@ class LoginController extends Controller {
     * 判断是否登录
     */
     public function isLogin(){
-        if (empty(session('user_pid'))) {
+        if (empty(session('user_id'))) {
             $res['res']=-999;
         }else{
             $res['res']=1;

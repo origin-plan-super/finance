@@ -20,7 +20,7 @@ class CommonController extends Controller {
     //ThinkPHP提供的构造方法
     public function _initialize() {
         
-        if (empty(session('user_pid'))) {
+        if (empty(session('user_id'))) {
             
             if(IS_AJAX){
                 $res['res']=-999;

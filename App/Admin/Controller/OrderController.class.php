@@ -178,11 +178,12 @@ class OrderController extends CommonController {
         $model=M();
         //          SELECT t1.*,t2.title FROM mia_goods as t1,mia_class as t2 WHERE (t1.class_id = t2.class_id)
         /**配置输出 */
-        $result = $model ->
-        field('t1.*,t2.*') ->
-        table('fi_order as t1,fi_order_info as t2') ->
-        where("t1.order_id in ($order_id) AND t1.order_id = t2.order_id") ->
-        select();
+        $result = $model
+        ->field('t1.*,t2.*,t3.*')
+        ->table('fi_order_info as t1,fi_order as t2,fi_exam_subject as t3')
+        ->where("t1.order_id in ($order_id) AND t1.order_id = t2.order_id AND t1.subject_id = t3.subject_id ")
+        ->order('t1.add_time desc')
+        ->select();
         
         // dump($model->_sql());
         // dump($result);

@@ -48,10 +48,8 @@ class UserController extends CommonController {
         
         
         $model=M('Order');
-        
-        $count= $model->count();
-        $res['count']=$count;
-        $result= $model->limit("$page,$limit")->order('add_time desc')->select();
+        $where['user_id']=session('user_id');
+        $result= $model->where($where)->order('add_time desc')->select();
         
         $this->assign('user_exam_info',$result);
         $this->display();
@@ -60,22 +58,24 @@ class UserController extends CommonController {
     
     
     public function show(){
-        $where['order_id']=I('get.order_id');
+        $order_id=I('get.order_id');
         $model=M('Order');
         $result=$model->where($where)->find();
         if($result){
             
+            
+            
+            //联表查询，需要查找到科目的信息
+            
             $model=M('OrderInfo');
             //取出order_info表中的数据
-            $model                  =   M('OrderInfo');
+            $model                  =   M();
             $order_info             =   $model
-            ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
-            ->table('fi_order_info as t1,fi_exam as t2')
-            ->where('t1.exam_id = t2.exam_id')
-            ->where($where)
+            ->field('t1.*,t2.*,t3.*')
+            ->table('fi_order_info as t1,fi_order as t2,fi_exam_subject as t3')
+            ->where("t1.order_id = '".$order_id."' AND t1.order_id = t2.order_id AND t2.user_id = '".session('user_id')."' AND t1.subject_id = t3.subject_id ")
             ->order('t1.add_time desc')
             ->select();
-            
             
             $this->assign('order',$result);
             $this->assign('order_info',$order_info);

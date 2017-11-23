@@ -23,28 +23,27 @@ class ShopBagController extends CommonController {
     public function ShopBag(){
         
         
-        $model              =   M('Sign');
-        $result             =   $model
-        ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
-        ->table('fi_sign as t1,fi_exam as t2')
-        ->where('t1.exam_id = t2.exam_id AND t1.user_pid = '.session('user_pid'))
-        ->order('t1.add_time desc')
-        ->select();
-        $this->assign('user_exam_info',$result);
+        
+        $sign_m              =   M('Sign');//购物车的模型
+        
+        //联表查询，需要查找到科目的信息
+        $signDate=  $sign_m->where($where)
+        ->field('t1.*,t2.*,t3.*')
+        ->table('fi_sign as t1,fi_exam_subject as t2,fi_exam as t3')
+        ->where('t1.subject_id = t2.subject_id AND t1.user_id = '.session('user_id').' AND t2.exam_id = t3.exam_id ')
+        ->select();//找多个
+        
+        $this->assign('user_exam_info',$signDate);
         
         
+        // ==== 查找end ====
         
         
-        // discount
-        
-        // ========================
         // ==== 获得优惠 ====
-        // ========================
         
         $model              =   M('discount');
         $discount           =   $model->order('full desc')->select();
         $this->assign('discount',$discount);
-        
         
         
         // ========================
@@ -53,12 +52,13 @@ class ShopBagController extends CommonController {
         
         $sub_money=0;
         
-        foreach ($result as $key => $value) {
-            $sub_money += $value['exam_money'];
+        foreach ($signDate as $key => $value) {
+            //计算总价
+            $sub_money += $value['money'];
         }
         
         $discount = $model->order('full desc')->select();
-        $red;
+        $red=0;//这个是要用总价减去的数
         //优惠减免
         foreach ($discount as $key => $value) {
             
@@ -68,6 +68,7 @@ class ShopBagController extends CommonController {
                 ;
             }
         }
+        //优惠减免没问题
         
         // ========================
         // ==== 满科减 ====
@@ -80,21 +81,24 @@ class ShopBagController extends CommonController {
         //再计算
         foreach ($DiscountSubject as $key => $value) {
             //这里计算数量
-            
-            if(count($result) >= $value['full']){
+            if(count($signDate) >= $value['full']){
                 $red+=$value['red'];
                 break
                 ;
             }
         }
         
-        $sub_money-=$red;
+        $sub_money-=$red;//减去优惠的钱
+        $sub_money = $sub_money<=0 ?0 :$sub_money;//如果负数就等于0
         
         
+        $this->assign('red',$red);//减去的钱
+        $this->assign('sub_money',$sub_money);//优惠过后的总价
+        
+        //计算到此结束
         
         
-        $this->assign('red',$red);
-        $this->assign('sub_money',$sub_money);
+        //模板的展示
         
         $this->display();
         

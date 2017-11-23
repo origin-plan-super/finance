@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
@@ -47,7 +46,7 @@
             <div class="row">
 
                 <div class="col-xs-8 user-sign text-left">
-                    <h3 class="">我的订单</h3>
+                    <h3 class="">我的订单{$Think.session.user_id}</h3>
                 </div>
 
             </div>
@@ -111,7 +110,6 @@
                                         </if>
                                     </td>
                                     <td>
-
                                         <if condition="$vol.state == 0 ">
                                             <span class="label label-warning">未支付</span>
                                         </if>
@@ -119,7 +117,7 @@
                                             <span class="">已支付</span>
                                         </if>
                                     </td>
-                                    <td>{$vol.add_time}</td>
+                                    <td>{$vol.add_time|date='Y-m-d H:i:s',###}</td>
                                     <td>
 
                                         <if condition="$vol.state == 0 ">

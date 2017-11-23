@@ -73,8 +73,6 @@
                 </table>
             </div>
             <div class="col-md-12">
-                <button type="button" class="btn btn-success" id="down">下载表格</button>
-                <hr/>
                 <table class="table table-bordered table-hover table-sm" id="table">
                     <thead>
                         <tr>

@@ -125,10 +125,10 @@
                 <div class="col-xs-12 ">
 
                     <form class="form-login" method="post">
-                        <label for="user_pid">手机号</label>
+                        <label for="user_id">手机号</label>
 
                         <div class="input-group form-group">
-                            <input type="text" class="form-control" id="user_pid" name="user_pid" placeholder="手机号" value="13914896237">
+                            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="手机号" value="13914896237">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" id="getCode">获取验证码</button>
                             </span>
@@ -198,7 +198,7 @@
             $this = $(this).attr('disabled', 'disabled');
 
 
-            var url = '/finance/Public/SUBMAIL_PHP_SDK/demo/message_xsend_demo.php?user_pid=' + $('#user_pid').val();
+            var url = '/finance/Public/SUBMAIL_PHP_SDK/demo/message_xsend_demo.php?user_id=' + $('#user_id').val();
             $.get(url, function (res) {
                 // $('#info').html(res);
                 res = JSON.parse(res);

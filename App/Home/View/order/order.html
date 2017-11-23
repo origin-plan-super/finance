@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>提交订单</title>
     <link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
@@ -91,10 +90,10 @@
                             <volist name="user_exam_info" id="vol" empty="没有信息">
                                 <tr>
                                     <td>{$vol.exam_name}</td>
-                                    <td>{$vol.exam_date}</td>
-                                    <td>{$vol.exam_time}</td>
-                                    <td>{$vol.exam_subject}</td>
-                                    <td>{$vol.exam_money}</td>
+                                    <td>{$vol.date}</td>
+                                    <td>{$vol.time}</td>
+                                    <td>{$vol.title}</td>
+                                    <td>{$vol.money}</td>
                                     <td class="cur-pointer">删除</td>
                                 </tr>
 
@@ -245,6 +244,10 @@
 
                     sub_money -= res.msg;
                     sub_money = sub_money.toFixed(2);
+
+                    sub_money = sub_money <= 0 ? 0 : sub_money;
+
+
                     $('#sub_money').text(sub_money);
 
                 } else {
@@ -276,6 +279,18 @@
 
                 // $('#test').html(res);
                 res = JSON.parse(res);
+
+                if (res.res == 1) {
+                    //订单金额<=0，直接支付完成
+
+                    layer.msg('支付完成~正在为您跳转');
+                    setTimeout(function () {
+                        window.location.href = '{:U("User/user")}';
+                    }, 500);
+
+                    // window.open('{:U("User/user")}');
+                    return;
+                }
 
                 if (res.res == 0) {
 

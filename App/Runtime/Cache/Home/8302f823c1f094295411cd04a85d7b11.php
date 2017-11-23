@@ -75,7 +75,44 @@
 <body>
     <div class="order">
         <!-- 表头的导航栏 表头样式统一在allcss里边 -->
-        <!-- 页眉-图片部分 -->
+        <style>
+	.col-xs-6 {
+		/* background-color: #ff0000; */
+		/* outline: 1px #00f solid; */
+	}
+
+	#topTool {
+		position: absolute;
+		right: 180px;
+		bottom: 0;
+		line-height: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#topTool a {
+		display: inline-block;
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+	}
+
+	#topTool .fk {
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+		height: auto;
+		line-height: 1;
+		padding: 5px 10px;
+
+	}
+
+	.fk:hover {
+		text-decoration: none;
+	}
+</style>
+
+<!-- 页眉-图片部分 -->
 <div class="index-package1">
 	<div class="container">
 		<div class="row">
@@ -85,7 +122,27 @@
 			</div>
 			<div class="col-xs-6 index-right text-right">
 				<img src="/finance/Public/img/top-right.png" />
+				<div id="topTool">
+					<a href="<?php echo U('Index/index');?>">
+						<div class="fk fudong0">
+							首页
+						</div>
+					</a>
+					<a href="<?php echo U('User/User');?>">
+
+						<div class="fk fudong1">
+							个人中心
+						</div>
+					</a>
+					<a href="<?php echo U('ShopBag/ShopBag');?>">
+						<div class="fk fudong2">
+							购物车
+						</div>
+					</a>
+				</div>
+
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -118,10 +175,10 @@
 
                             <?php if(is_array($user_exam_info)): $i = 0; $__LIST__ = $user_exam_info;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
                                     <td><?php echo ($vol["exam_name"]); ?></td>
-                                    <td><?php echo ($vol["exam_date"]); ?></td>
-                                    <td><?php echo ($vol["exam_time"]); ?></td>
-                                    <td><?php echo ($vol["exam_subject"]); ?></td>
-                                    <td><?php echo ($vol["exam_money"]); ?></td>
+                                    <td><?php echo ($vol["date"]); ?></td>
+                                    <td><?php echo ($vol["time"]); ?></td>
+                                    <td><?php echo ($vol["title"]); ?></td>
+                                    <td><?php echo ($vol["money"]); ?></td>
                                     <td class="cur-pointer">删除</td>
                                 </tr><?php endforeach; endif; else: echo "没有信息" ;endif; ?>
 
@@ -271,7 +328,6 @@
 		</div>
 	</a>
 </div>
-
     </div>
     <div id="test">
 
@@ -299,6 +355,10 @@
 
                     sub_money -= res.msg;
                     sub_money = sub_money.toFixed(2);
+
+                    sub_money = sub_money <= 0 ? 0 : sub_money;
+
+
                     $('#sub_money').text(sub_money);
 
                 } else {
@@ -330,6 +390,18 @@
 
                 // $('#test').html(res);
                 res = JSON.parse(res);
+
+                if (res.res == 1) {
+                    //订单金额<=0，直接支付完成
+
+                    layer.msg('支付完成~正在为您跳转');
+                    setTimeout(function () {
+                        window.location.href = '<?php echo U("User/user");?>';
+                    }, 500);
+
+                    // window.open('<?php echo U("User/user");?>');
+                    return;
+                }
 
                 if (res.res == 0) {
 

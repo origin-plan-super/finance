@@ -43,7 +43,7 @@
                         </tr>
                         <tr>
                             <th style='width:150px'>用户：</th>
-                            <td><?php echo ($order["user_pid"]); ?></td>
+                            <td><?php echo ($order["user_id"]); ?></td>
                         </tr>
                         <tr>
                             <th style='width:150px'>交易金额：</th>
@@ -91,10 +91,10 @@
                     <tbody>
                         <?php if(is_array($order_info)): $i = 0; $__LIST__ = $order_info;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
                                 <td><?php echo ($vol["exam_name"]); ?></td>
-                                <td><?php echo ($vol["exam_date"]); ?></td>
-                                <td><?php echo ($vol["exam_time"]); ?></td>
-                                <td><?php echo ($vol["exam_subject"]); ?></td>
-                                <td><?php echo ($vol["exam_money"]); ?></td>
+                                <td><?php echo ($vol["date"]); ?></td>
+                                <td><?php echo ($vol["time"]); ?></td>
+                                <td><?php echo ($vol["title"]); ?></td>
+                                <td><?php echo ($vol["money"]); ?></td>
                                 <!-- 用户信息 -->
                                 <td><?php echo ($vol["user_name"]); ?></td>
                                 <td><?php echo ($vol["user_phone"]); ?></td>

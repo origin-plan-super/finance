@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
                             <?php if(is_array($table)): $i = 0; $__LIST__ = $table;if( count($__LIST__)==0 ) : echo "没有信息" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
-                                    <td><?php echo ($vol["order_id"]); ?></td>
+                                    <td><?php echo ($vol["order_id"]); ?>&nbsp</td>
                                     <td><?php echo ($vol["user_pid"]); ?></td>
                                     <td><?php echo ($vol["money"]); ?></td>
                                     <td>
@@ -68,7 +68,7 @@
                                     <td><?php echo ($vol["z_payment_buyer_email"]); ?></td>
                                     <!-- 课程信息 -->
                                     <td><?php echo ($vol["exam_id"]); ?></td>
-                                    <td><?php echo ($vol["exam_subject"]); ?></td>
+                                    <td><?php echo ($vol["title"]); ?></td>
                                     <!-- 用户信息 -->
                                     <td><?php echo ($vol["user_name"]); ?></td>
                                     <td><?php echo ($vol["user_phone"]); ?></td>

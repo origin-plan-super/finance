@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>报名页面</title>
 	<link rel="stylesheet" type="text/css" href="__DIST__/all/all.css" />
@@ -112,35 +111,46 @@
 
 								<tr>
 									<td>{$vol.exam_name}</td>
-									<td>{$vol.exam_date}</td>
-									<td>{$vol.exam_time}</td>
-									<td>
-										<if condition="$vol.surplus gt 0">
-											{$vol.surplus}
+									<td class="date">
+										{$vol['subject_info'][0].date}
+									</td>
+									<td class="time">
+										{$vol['subject_info'][0].time}
+									</td>
+									<td class="surplus">
+
+										<if condition="$vol['subject_info'][0]['surplus'] gt 0 ">
+											{$vol['subject_info'][0].surplus}
 											<else/>
 											<span class="text-danger">已报满</span>
 										</if>
+
 									</td>
 
 									<td class="text-center">
 
-										<select class="form-control text-center input-sm" id="select{$vol.exam_id}">
-											<volist name="vol.exam_subject" id="vol2" empty="暂时没有数据">
-												<option class="text-center">{$vol2}</option>
+										<select class="form-control text-center input-sm subject_select" id="select{$vol.subject_id}">
+											<volist name="vol.subject_info" id="vol2" empty="暂时没有数据">
+												<option class="text-center" value="{$vol2.subject_id}">{$vol2.title}</option>
 											</volist>
 										</select>
 
 									</td>
-									<td>{$vol.exam_money}元</td>
-									<if condition="$vol.surplus gt 0">
-										<td class="index-red-color toSignUp cur-pointer" data-id="#select{$vol.exam_id}" data-exam-id='{$vol.exam_id}'>
+									<td class="money">{$vol['subject_info'][0].money}元</td>
+
+									<if condition="$vol['subject_info'][0]['surplus'] gt 0 ">
+
+										<td class="index-red-color toSignUp cur-pointer" data-subject-title="{$vol['subject_info'][0]['title']}" data-subject-id="{$vol['subject_info'][0]['subject_id']}"
+										 data-exam-id='{$vol.exam_id}'>
 											<span class="text-danger">我要报名</span>
 										</td>
 										<else/>
 										<td class="index-red-color">
 											<span class="" style="color:#777">我要报名</span>
 										</td>
+
 									</if>
+
 								</tr>
 
 							</volist>
@@ -181,8 +191,8 @@
 								<label for="">考试科目</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<span id="exam_subject_info">F1</span>
-								<input type="hidden" id="exam_subject" name="exam_subject">
+								<span id="subject_title">F1</span>
+								<input type="hidden" id="subject_id" name="subject_id">
 								<input type="hidden" id="exam_id" name="exam_id">
 							</div>
 							<br>
@@ -220,6 +230,15 @@
 							</div>
 							<div class="col-xs-8 text-left">
 								<input lay-verify='required|identity' name="user_uid" type="text" class="form-control" style="width:70%;">
+							</div>
+							<br>
+						</div>
+						<div class="index-frame-margin">
+							<div class="col-xs-4 text-right">
+								<label for="">注册ID</label>
+							</div>
+							<div class="col-xs-8 text-left">
+								<input lay-verify='required' name="user_pid" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -270,8 +289,7 @@
 
 	<script>
 
-
-
+		var exam_info_json = JSON.parse('{$exam_info_json}');
 
 
 		layui.use(['table', 'form'], function () {
@@ -283,12 +301,10 @@
 				console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
 				console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
 
-
-
 				$.post('', data.field, function (res) {
 
 
-					// $('#info').html(res);
+					$('#info').html(res);
 					res = JSON.parse(res);
 					w(res);
 
@@ -315,44 +331,102 @@
 
 		});
 
+		function showClick(e) {
+
+			var $this = $(this);
+
+
+			/**
+			先判断登录没
+			*/
+			$.get('{:U("Login/isLogin")}', function (res) {
+
+
+				res = JSON.parse(res);
+				if (res.res == -999) {
+					//未登录
+					window.location.href = '{:U("Login/login")}';
+
+				} else {
+					//登录了
+
+					// <span id="subject_title">F1</span>
+					// <input type="hidden" id="subject_id" name="subject_id">
+					// <input type="hidden" id="exam_id" name="exam_id">
+
+
+					var subject_id = $this.attr('data-subject-id');
+					var exam_id = $this.attr('data-exam-id');
+					var subject_title = $this.attr('data-subject-title');
+					// ==
+					$('#subject_title').text(subject_title);//科目title
+					$('#subject_id').val(subject_id);//科目id
+					$('#exam_id').val(exam_id);//课程id
+
+					$(".con").removeClass("hidden");
+				}
+
+			});
+
+
+		}
+
+
+
+
 
 		// 报名信息页面的显示与隐藏
 		$(document).ready(function () {
-			$(".toSignUp").click(function (e) {
-				var $this = $(this);
 
+			$(".toSignUp").click(showClick);
 
-
-				/**
-				先判断登录没
-				*/
-				$.get('{:U("Login/isLogin")}', function (res) {
-
-					res = JSON.parse(res);
-					if (res.res == -999) {
-						//未登录
-						window.location.href = '{:U("Login/login")}';
-
-					} else {
-						//登录了
-						var id = $this.attr('data-id');
-						var exam_id = $this.attr('data-exam-id');
-						var val = $(id).val();
-						$('#exam_subject_info').text(val);
-						$('#exam_subject').val(val);
-						$('#exam_id').val(exam_id);
-
-						$(".con").removeClass("hidden");
-					}
-
-
-
-				});
-
-			});
 			$("#closeForm").click(function (e) {
 				$(".con").addClass("hidden");
 			});
+
+			//下拉列表选择
+			$(document).on('change', '.subject_select', function (e) {
+				var tr = $(this).parents('tr');
+				var id = $(this).val();
+
+				$.get('__MODULE__/ExamSubject/get', {
+					id: id
+				}, function (res) {
+
+					res = JSON.parse(res);
+					tr.find('.money').text(res.msg.money + '元');
+					//人数处理
+					// toSignUp
+					if (res.msg.surplus > 0) {
+						tr.find('.surplus').text(res.msg.surplus);
+
+						tr.find('.index-red-color span').addClass('text-danger');
+						tr.find('.index-red-color span').css('color', '#a94442');
+						tr.find('.index-red-color').addClass('toSignUp cur-pointer');
+						tr.find('.index-red-color').click(showClick);
+
+
+
+
+					} else {
+
+						tr.find('.surplus').html('<span class="text-danger">已报满</span');
+						tr.find('.index-red-color span').removeClass('text-danger');
+						tr.find('.index-red-color span').css('color', '#777');
+						tr.find('.index-red-color').removeClass('toSignUp cur-pointer');
+						tr.find('.index-red-color').unbind();
+
+					}
+
+
+					tr.find('.time').text(res.msg.time);
+					tr.find('.date').text(res.msg.date);
+
+				});
+				// w($(this).val());
+
+			});
+
 		});
 
 

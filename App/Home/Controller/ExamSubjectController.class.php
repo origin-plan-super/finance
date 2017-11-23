@@ -1,7 +1,7 @@
 <?php
 /**
 * +----------------------------------------------------------------------
-* 创建日期：2017年11月17日
+* 创建日期：2017年11月23日
 * +----------------------------------------------------------------------
 * https：//github.com/ALNY-AC
 * +----------------------------------------------------------------------
@@ -9,27 +9,47 @@
 * +----------------------------------------------------------------------
 * QQ:1173197065
 * +----------------------------------------------------------------------
-* #####考试、课程控制器#####
+* #####科目控制器#####
 * @author 代码狮
 *
 */
 
-namespace Admin\Controller;
+namespace Home\Controller;
 use Think\Controller;
-class ExamController extends CommonController {
-    public function index(){
-        $this->display();
-    }
+class ExamSubjectController extends Controller {
     
     /**
     * 显示列表
     */
     public function showList(){
+        
+        $model=M('exam');
+        $w['exam_id']=I('get.exam_id');
+        $r= $model->where($w)->find();
+        
+        $this->assign('exam_info',$r);
         $this->display();
     }
     
     public function getList(){
         
+        
+        $model=M('ExamSubject');
+        $w['exam_id']=I('get.exam_id');
+        
+        $result= $model->where($w)->select();
+        
+        if($result){
+            $res['code']=0;
+            $res['msg']='更新了'.$res['count'].'条数据';
+            $res['data']= $result;
+        }else{
+            $res['code']=-1;
+            $res['msg']='没有数据！';
+        }
+        echo json_encode($res);
+        
+        return;
         $model=M('Exam');
         $page=I('get.page');
         $limit=I('get.limit');
@@ -82,9 +102,40 @@ class ExamController extends CommonController {
         echo json_encode($res);
         
     }
+    /**
+    * 获得一个
+    */
+    public function get(){
+        $model=M('ExamSubject');
+        
+        $w['subject_id']=I('get.id');
+        $result= $model->where($w)->find();
+        
+        
+        //计算剩余考位
+        
+        $sign  =   M('sign');
+        
+        $sing_w['subject_id']=$result['subject_id'];//课程的id
+        $count= $sign->where($sing_w)->count();//计数
+        $max_num=$result['max_num'];//得到最大人数
+        $result['surplus']= $max_num-$count;//运算
+        
+        //end
+        
+        if($result){
+            $res['res']= 1;
+            $res['msg']= $result;
+        }else{
+            $res['res']=-1;
+            $res['msg']='没有数据！';
+        }
+        echo json_encode($res);
+    }
+    
     
     /**
-    * 添加课程
+    * 添加科目
     */
     public function add(){
         
@@ -93,10 +144,9 @@ class ExamController extends CommonController {
             $add=I('post.');
             $add['add_time']=time();
             $add['edit_time']= $add['add_time'];
-            $add['exam_id']= md5($add['add_time'].rand().__KEY__);
-            $add['exam_subject']= json_encode($add['exam_subject']);
+            $add['subject_id']= md5($add['add_time'].rand().__KEY__);
             
-            $model=M('Exam');
+            $model=M('examSubject');
             
             $result= $model->add($add);
             if($result!==false){
@@ -108,6 +158,11 @@ class ExamController extends CommonController {
             }
             echo json_encode($res);
         }else{
+            
+            $model=M('exam');
+            $w['exam_id']=I('get.exam_id');
+            $r= $model->where($w)->find();
+            $this->assign('exam_info',$r);
             $this->display();
         }
     }
@@ -122,12 +177,11 @@ class ExamController extends CommonController {
             
             $save=I('post.');
             $save['edit_time'] = time();
-            $save['exam_subject'] = json_encode($save['exam_subject']);
             
-            $where['exam_id'] = $save['exam_id'];
-            unset($save['exam_id']);
+            $where['subject_id'] = $save['subject_id'];
+            unset($save['subject_id']);
             
-            $model=M('Exam');
+            $model=M('examSubject');
             $result = $model->where($where)->save($save);
             
             if($result!==false){
@@ -147,27 +201,10 @@ class ExamController extends CommonController {
         }else{
             //显示
             
-            $model=M('Exam');
-            $where['exam_id'] = I('get.exam_id');
+            $model=M('examSubject');
+            $where['subject_id'] = I('get.subject_id');
             $result = $model->where($where)->find();
-            
-            $textarea = "";
-            
-            $exam_subject = json_decode($result['exam_subject'],true);
-            
-            
-            foreach($exam_subject as $value){
-                
-                $title=$value['title'];
-                $money= empty($value['money']) ?'':$value['money'];
-                
-                $textarea .= $title.','.$money."\n";
-            }
-            
-            
-            $result['exam_subject'] =  chop($textarea);
-            
-            $this->assign('exam_info',$result);
+            $this->assign('subject_info',$result);
             $this->display();
             
         }
@@ -180,8 +217,8 @@ class ExamController extends CommonController {
         
         if(IS_POST){
             
-            $model=M('Exam');
-            $where['exam_id']=I('post.exam_id');
+            $model=M('examSubject');
+            $where['subject_id']=I('post.subject_id');
             $result=$model->where($where)->delete();
             if($result !==false){
                 //删除成功
@@ -211,8 +248,8 @@ class ExamController extends CommonController {
         if(IS_POST){
             
             $save=I('post.save');
-            $model=M('exam');
-            $where['exam_id']=I('post.exam_id');
+            $model=M('examSubject');
+            $where['subject_id']=I('post.subject_id');
             $result=$model->where($where)->save($save);
             if($result !==false){
                 //修改成功

@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>报名页面</title>
 	<link rel="stylesheet" type="text/css" href="/finance/Public/dist/all/all.css" />
@@ -79,7 +78,44 @@
 	<div class="index">
 		<!-- 页眉-图片部分 -->
 
-		<!-- 页眉-图片部分 -->
+		<style>
+	.col-xs-6 {
+		/* background-color: #ff0000; */
+		/* outline: 1px #00f solid; */
+	}
+
+	#topTool {
+		position: absolute;
+		right: 180px;
+		bottom: 0;
+		line-height: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#topTool a {
+		display: inline-block;
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+	}
+
+	#topTool .fk {
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+		height: auto;
+		line-height: 1;
+		padding: 5px 10px;
+
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+</style>
+
+<!-- 页眉-图片部分 -->
 <div class="index-package1">
 	<div class="container">
 		<div class="row">
@@ -89,7 +125,27 @@
 			</div>
 			<div class="col-xs-6 index-right text-right">
 				<img src="/finance/Public/img/top-right.png" />
+				<div id="topTool">
+					<a href="<?php echo U('Index/index');?>">
+						<div class="fk fudong0">
+							首页
+						</div>
+					</a>
+					<a href="<?php echo U('User/User');?>">
+
+						<div class="fk fudong1">
+							个人中心
+						</div>
+					</a>
+					<a href="<?php echo U('ShopBag/ShopBag');?>">
+						<div class="fk fudong2">
+							购物车
+						</div>
+					</a>
+				</div>
+
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -123,29 +179,38 @@
 
 							<?php if(is_array($exam_info)): $i = 0; $__LIST__ = $exam_info;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><tr>
 									<td><?php echo ($vol["exam_name"]); ?></td>
-									<td><?php echo ($vol["exam_date"]); ?></td>
-									<td><?php echo ($vol["exam_time"]); ?></td>
-									<td>
-										<?php if($vol["surplus"] > 0): echo ($vol["surplus"]); ?>
+									<td class="date">
+										<?php echo ($vol['subject_info'][0]["date"]); ?>
+									</td>
+									<td class="time">
+										<?php echo ($vol['subject_info'][0]["time"]); ?>
+									</td>
+									<td class="surplus">
+
+										<?php if($vol['subject_info'][0]['surplus'] > 0 ): echo ($vol['subject_info'][0]["surplus"]); ?>
 											<?php else: ?>
 											<span class="text-danger">已报满</span><?php endif; ?>
+
 									</td>
 
 									<td class="text-center">
 
-										<select class="form-control text-center input-sm" id="select<?php echo ($vol["exam_id"]); ?>">
-											<?php if(is_array($vol["exam_subject"])): $i = 0; $__LIST__ = $vol["exam_subject"];if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol2): $mod = ($i % 2 );++$i;?><option class="text-center"><?php echo ($vol2); ?></option><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+										<select class="form-control text-center input-sm subject_select" id="select<?php echo ($vol["subject_id"]); ?>">
+											<?php if(is_array($vol["subject_info"])): $i = 0; $__LIST__ = $vol["subject_info"];if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vol2): $mod = ($i % 2 );++$i;?><option class="text-center" value="<?php echo ($vol2["subject_id"]); ?>"><?php echo ($vol2["title"]); ?></option><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
 										</select>
 
 									</td>
-									<td><?php echo ($vol["exam_money"]); ?>元</td>
-									<?php if($vol["surplus"] > 0): ?><td class="index-red-color toSignUp cur-pointer" data-id="#select<?php echo ($vol["exam_id"]); ?>" data-exam-id='<?php echo ($vol["exam_id"]); ?>'>
+									<td class="money"><?php echo ($vol['subject_info'][0]["money"]); ?>元</td>
+
+									<?php if($vol['subject_info'][0]['surplus'] > 0 ): ?><td class="index-red-color toSignUp cur-pointer" data-subject-title="<?php echo ($vol['subject_info'][0]['title']); ?>" data-subject-id="<?php echo ($vol['subject_info'][0]['subject_id']); ?>"
+										 data-exam-id='<?php echo ($vol["exam_id"]); ?>'>
 											<span class="text-danger">我要报名</span>
 										</td>
 										<?php else: ?>
 										<td class="index-red-color">
 											<span class="" style="color:#777">我要报名</span>
 										</td><?php endif; ?>
+
 								</tr><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
 
 
@@ -184,8 +249,8 @@
 								<label for="">考试科目</label>
 							</div>
 							<div class="col-xs-8 text-left">
-								<span id="exam_subject_info">F1</span>
-								<input type="hidden" id="exam_subject" name="exam_subject">
+								<span id="subject_title">F1</span>
+								<input type="hidden" id="subject_id" name="subject_id">
 								<input type="hidden" id="exam_id" name="exam_id">
 							</div>
 							<br>
@@ -223,6 +288,15 @@
 							</div>
 							<div class="col-xs-8 text-left">
 								<input lay-verify='required|identity' name="user_uid" type="text" class="form-control" style="width:70%;">
+							</div>
+							<br>
+						</div>
+						<div class="index-frame-margin">
+							<div class="col-xs-4 text-right">
+								<label for="">注册ID</label>
+							</div>
+							<div class="col-xs-8 text-left">
+								<input lay-verify='required' name="user_pid" type="text" class="form-control" style="width:70%;">
 							</div>
 							<br>
 						</div>
@@ -295,7 +369,6 @@
 	</a>
 </div>
 
-
 	</div>
 
 	<script src="/finance/Public/vendor/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -307,8 +380,7 @@
 
 	<script>
 
-
-
+		var exam_info_json = JSON.parse('<?php echo ($exam_info_json); ?>');
 
 
 		layui.use(['table', 'form'], function () {
@@ -320,12 +392,10 @@
 				console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
 				console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
 
-
-
 				$.post('', data.field, function (res) {
 
 
-					// $('#info').html(res);
+					$('#info').html(res);
 					res = JSON.parse(res);
 					w(res);
 
@@ -352,44 +422,102 @@
 
 		});
 
+		function showClick(e) {
+
+			var $this = $(this);
+
+
+			/**
+			先判断登录没
+			*/
+			$.get('<?php echo U("Login/isLogin");?>', function (res) {
+
+
+				res = JSON.parse(res);
+				if (res.res == -999) {
+					//未登录
+					window.location.href = '<?php echo U("Login/login");?>';
+
+				} else {
+					//登录了
+
+					// <span id="subject_title">F1</span>
+					// <input type="hidden" id="subject_id" name="subject_id">
+					// <input type="hidden" id="exam_id" name="exam_id">
+
+
+					var subject_id = $this.attr('data-subject-id');
+					var exam_id = $this.attr('data-exam-id');
+					var subject_title = $this.attr('data-subject-title');
+					// ==
+					$('#subject_title').text(subject_title);//科目title
+					$('#subject_id').val(subject_id);//科目id
+					$('#exam_id').val(exam_id);//课程id
+
+					$(".con").removeClass("hidden");
+				}
+
+			});
+
+
+		}
+
+
+
+
 
 		// 报名信息页面的显示与隐藏
 		$(document).ready(function () {
-			$(".toSignUp").click(function (e) {
-				var $this = $(this);
 
+			$(".toSignUp").click(showClick);
 
-
-				/**
-				先判断登录没
-				*/
-				$.get('<?php echo U("Login/isLogin");?>', function (res) {
-
-					res = JSON.parse(res);
-					if (res.res == -999) {
-						//未登录
-						window.location.href = '<?php echo U("Login/login");?>';
-
-					} else {
-						//登录了
-						var id = $this.attr('data-id');
-						var exam_id = $this.attr('data-exam-id');
-						var val = $(id).val();
-						$('#exam_subject_info').text(val);
-						$('#exam_subject').val(val);
-						$('#exam_id').val(exam_id);
-
-						$(".con").removeClass("hidden");
-					}
-
-
-
-				});
-
-			});
 			$("#closeForm").click(function (e) {
 				$(".con").addClass("hidden");
 			});
+
+			//下拉列表选择
+			$(document).on('change', '.subject_select', function (e) {
+				var tr = $(this).parents('tr');
+				var id = $(this).val();
+
+				$.get('/finance/index.php/Home/ExamSubject/get', {
+					id: id
+				}, function (res) {
+
+					res = JSON.parse(res);
+					tr.find('.money').text(res.msg.money + '元');
+					//人数处理
+					// toSignUp
+					if (res.msg.surplus > 0) {
+						tr.find('.surplus').text(res.msg.surplus);
+
+						tr.find('.index-red-color span').addClass('text-danger');
+						tr.find('.index-red-color span').css('color', '#a94442');
+						tr.find('.index-red-color').addClass('toSignUp cur-pointer');
+						tr.find('.index-red-color').click(showClick);
+
+
+
+
+					} else {
+
+						tr.find('.surplus').html('<span class="text-danger">已报满</span');
+						tr.find('.index-red-color span').removeClass('text-danger');
+						tr.find('.index-red-color span').css('color', '#777');
+						tr.find('.index-red-color').removeClass('toSignUp cur-pointer');
+						tr.find('.index-red-color').unbind();
+
+					}
+
+
+					tr.find('.time').text(res.msg.time);
+					tr.find('.date').text(res.msg.date);
+
+				});
+				// w($(this).val());
+
+			});
+
 		});
 
 

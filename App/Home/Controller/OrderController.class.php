@@ -23,32 +23,39 @@ class OrderController extends CommonController {
         
         if(IS_POST){
             
-            
             $sign_id=I('post.sign_id');
-            
             //把sign_id存起来，等支付订单的时候要用
             session('sign_id',json_encode($sign_id));
             
+            
             $where['sign_id']=array('in',$sign_id);
             
-            $model              =   M('Sign');
-            $result             =   $model
-            ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
-            ->table('fi_sign as t1,fi_exam as t2')
-            ->where('t1.exam_id = t2.exam_id AND t1.user_pid = '.session('user_pid'))
+            
+            $sign_m              =   M('Sign');//购物车的模型
+            
+            //联表查询，需要查找到科目的信息
+            $signDate=  $sign_m->where($where)
+            ->field('t1.*,t2.*,t3.*')
+            ->table('fi_sign as t1,fi_exam_subject as t2,fi_exam as t3')
+            ->where('t1.subject_id = t2.subject_id AND t1.user_id = '.session('user_id').' AND t2.exam_id = t3.exam_id ')
             ->where($where)
             ->order('t1.add_time desc')
-            ->select();
+            ->select();//找多个
+            
+            $this->assign('user_exam_info',$signDate);
             
             
+            // dump($signDate);
+            // die;
+            // ==== 查找end ====
             
-            // ========================
+            
             // ==== 获得优惠 ====
-            // ========================
             
             $model              =   M('discount');
             $discount           =   $model->order('full desc')->select();
             $this->assign('discount',$discount);
+            
             
             // ========================
             // ====  开始计算价格 ====
@@ -56,12 +63,13 @@ class OrderController extends CommonController {
             
             $sub_money=0;
             
-            foreach ($result as $key => $value) {
-                $sub_money += $value['exam_money'];
+            foreach ($signDate as $key => $value) {
+                //计算总价
+                $sub_money += $value['money'];
             }
             
             $discount = $model->order('full desc')->select();
-            $red;
+            $red=0;//这个是要用总价减去的数
             //优惠减免
             foreach ($discount as $key => $value) {
                 
@@ -70,8 +78,8 @@ class OrderController extends CommonController {
                     break
                     ;
                 }
-                
             }
+            //优惠减免没问题
             
             // ========================
             // ==== 满科减 ====
@@ -79,24 +87,30 @@ class OrderController extends CommonController {
             //先获得
             $model              =   M('DiscountSubject');
             $DiscountSubject           =   $model->order('full desc')->select();
+            
             $this->assign('DiscountSubject',$DiscountSubject);
             //再计算
             foreach ($DiscountSubject as $key => $value) {
                 //这里计算数量
-                
-                if(count($result) >= $value['full']){
+                if(count($signDate) >= $value['full']){
                     $red+=$value['red'];
                     break
                     ;
                 }
             }
             
-            $sub_money-=$red;
+            $sub_money-=$red;//减去优惠的钱
+            $sub_money = $sub_money<=0 ?0 :$sub_money;//如果负数就等于0
+            
+            
+            $this->assign('red',$red);//减去的钱
+            $this->assign('sub_money',$sub_money);//优惠过后的总价
+            
+            //计算到此结束
             
             $this->assign('red',$red);
             $this->assign('sub_money',$sub_money);
             
-            $this->assign('user_exam_info',$result);
             $this->display();
             
             
@@ -144,7 +158,7 @@ class OrderController extends CommonController {
         * 先创建订单
         *
         * order_id：订单号
-        * user_pid：用户id
+        * user_id：用户id
         * money：订单金额
         * method：支付方式
         * state：状态
@@ -164,14 +178,17 @@ class OrderController extends CommonController {
             $where['sign_id']   =   array('in',$sign_id);
             
             
+            //联表查询，需要查找到科目的信息
             $model              =   M('Sign');
             $sign_info=    $result             =   $model
-            ->field('t2.exam_id,t2.exam_date,t2.exam_time,t2.exam_money,t2.exam_name,t1.*')
-            ->table('fi_sign as t1,fi_exam as t2')
-            ->where('t1.exam_id = t2.exam_id AND t1.user_pid = '.session('user_pid'))
+            ->where($where)
+            ->field('t1.*,t2.*,t3.*')
+            ->table('fi_sign as t1,fi_exam_subject as t2,fi_exam as t3')
+            ->where('t1.subject_id = t2.subject_id AND t1.user_id = '.session('user_id').' AND t2.exam_id = t3.exam_id ')
             ->where($where)
             ->order('t1.add_time desc')
-            ->select();
+            ->select();//找多个
+            
             $exam_id            =   [];//课程的id数组
             
             
@@ -183,7 +200,7 @@ class OrderController extends CommonController {
             //先算总价
             $sub_money=0;
             foreach ($result as $key => $value) {
-                $sub_money += $value['exam_money'];
+                $sub_money += $value['money'];
             }
             
             
@@ -228,31 +245,47 @@ class OrderController extends CommonController {
             foreach ($DiscountSubject as $key => $value) {
                 //这里计算数量
                 
-                if(count($result) >= $value['full']){
+                if(count($sign_info) >= $value['full']){
                     $red+=$value['red'];
                     break
                     ;
                 }
             }
             
+            $sub_money =$sub_money-$red;
+            
+            $sub_money = $sub_money<=0 ?0 :$sub_money;
             
             //得到价格
-            $order_add['money']       =   $sub_money-$red;
+            $order_add['money']       =   $sub_money;
             // ========================
             // ==== 计算价格结束 ====
             // ========================
             
             
             $order_add['method']      =   $post['method'];//支付方式，微信或支付宝或银联
-            $order_add['user_pid']    =   session('user_pid');//用户id
+            $order_add['user_id']    =   session('user_id');//用户id
             $order_add['add_time']    =   time();//添加时间
             $order_add['edit_time']   =   $order_add['add_time'] ;//最后一次修改时间
-            $order_add['state']       =   0 ;//状态：未支付
+            
+            
+            //如果金额是0，就不执行了，直接完成订单
+            
+            
+            if($order_add['money']<=0){
+                $order_add['state']       =   1 ;//完成
+            }else{
+                $order_add['state']       =   0 ;//状态：未支付
+            }
+            
+            
+            
+            
             
             $model=M('Order');
             $result             =   $model->add($order_add);
             if($result!==false){
-                
+                //订单创建成功，现在记录订单信息表
                 // ========================
                 // ==== 记录订单的课程信息 ====
                 // ========================
@@ -264,7 +297,6 @@ class OrderController extends CommonController {
                 //组装数据
                 
                 //遍历sign，找到exam_id，组装数据
-                
                 $sign_id            =   json_decode(session('sign_id'));//从session中取出sign_id
                 $where['sign_id']   =   array('in',$sign_id);
                 
@@ -278,7 +310,16 @@ class OrderController extends CommonController {
                 }
                 $OrderInfo->addAll($Signarr);
                 
-                $res['res']     =   0;
+                
+                if($order_add['money']<=0){
+                    $res['res']     =   1;
+                }else{
+                    $res['res']     =   0;
+                }
+                
+                
+                
+                
                 $res['msg']     =   $order_add['order_id'];
             }else{
                 $rse['res']     =   -1;
