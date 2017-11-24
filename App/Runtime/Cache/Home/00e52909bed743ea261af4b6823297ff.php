@@ -369,11 +369,13 @@
 		</div>
 	</a>
 
-	<a href="<?php echo U('Login/sinOut');?>">
-		<div class="fk fudong">
-			<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
-		</div>
-	</a>
+	<?php if(!empty($_SESSION['user_id'])): ?><a href="<?php echo U('Login/sinOut');?>">
+			<div class="fk fudong">
+				<span class="glyphicon glyphicon-log-out shopBag cur-icon"></span>
+			</div>
+		</a><?php endif; ?>
+
+
 </div>
 
 	</div>
