@@ -9,19 +9,52 @@
     <link rel="stylesheet" type="text/css" href="__VENDOR__/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="__DIST__/order/order.css" />
     <include file="App/Admin/View/component/importComponent.html" />
+
+    <style>
+        .weixin-logo {
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        .weixin-code {
+            display: inline-block;
+            width: 260px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- 表头的导航栏 表头样式统一在allcss里边 -->
     <include file="App/Home/View/component/topNavComponent.html" />
-    <p>{$order.order_id}</p>
-    <p>{$order.money}</p>
-    <p>{$order.user_pid}</p>
-    <p>{$order.method}</p>
-    <p>{$order.exam_id}</p>
 
-    <img src='{$url}' alt="">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="weixin-logo" src="__PUBLIC__/img/WePayLogo.png" alt="">
+                <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+
+                <p>订单号：{$order.order_id}</p>
+                <p>应付金额：{$order.money}</p>
+                <p>用户账户：{$order.user_id}</p>
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="{$url}" alt="二维码生成失败，请刷新重试" class="img-thumbnail weixin-code">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="weixin-logo" src="__PUBLIC__/img/weixin_info.png" alt="">
+            </div>
+        </div>
+    </div>
+
 
     <script>
 

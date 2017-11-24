@@ -221,9 +221,7 @@
                 $.post('__CONTROLLER__/getAllMoney', {
                     sign_id: postArr
                 }, function (res) {
-                    w(res);
                     res = JSON.parse(res);
-                    w(res);
                     if (res.res > 0) {
                         //最终的钱
                         var sub_money = res.msg.sub_money;
@@ -235,9 +233,6 @@
                         //放到页面上。
 
                     }
-
-
-
                 });
 
             });

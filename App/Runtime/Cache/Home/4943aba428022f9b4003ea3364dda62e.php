@@ -24,11 +24,22 @@
         return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
     }
 </script>
+
+    <style>
+        .weixin-logo {
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        .weixin-code {
+            display: inline-block;
+            width: 260px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- 表头的导航栏 表头样式统一在allcss里边 -->
     <style>
 	.col-xs-6 {
 		/* background-color: #ff0000; */
@@ -100,13 +111,35 @@
 		</div>
 	</div>
 </div>
-    <p><?php echo ($order["order_id"]); ?></p>
-    <p><?php echo ($order["money"]); ?></p>
-    <p><?php echo ($order["user_pid"]); ?></p>
-    <p><?php echo ($order["method"]); ?></p>
-    <p><?php echo ($order["exam_id"]); ?></p>
 
-    <img src='<?php echo ($url); ?>' alt="">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="weixin-logo" src="/finance/Public/img/WePayLogo.png" alt="">
+                <!-- 表头的导航栏 表头样式统一在allcss里边 -->
+
+                <p>订单号：<?php echo ($order["order_id"]); ?></p>
+                <p>应付金额：<?php echo ($order["money"]); ?></p>
+                <p>用户账户：<?php echo ($order["user_id"]); ?></p>
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="<?php echo ($url); ?>" alt="二维码生成失败，请刷新重试" class="img-thumbnail weixin-code">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="weixin-logo" src="/finance/Public/img/weixin_info.png" alt="">
+            </div>
+        </div>
+    </div>
+
 
     <script>
 
