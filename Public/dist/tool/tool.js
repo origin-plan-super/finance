@@ -7,7 +7,6 @@ var tool = function () {
             window.w = console.warn;
             window.e = console.error;
             window.i = console.info;
-
         }
 
     }

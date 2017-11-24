@@ -129,7 +129,7 @@
                 $(this).attr('id', 'item' + index);
             })
 
-            w(localStorage.item_id);
+            // w(localStorage.item_id);
             $(localStorage.item_id).addClass('layui-this');
 
 

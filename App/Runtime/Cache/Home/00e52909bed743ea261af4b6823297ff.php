@@ -107,6 +107,7 @@
 		height: auto;
 		line-height: 1;
 		padding: 5px 10px;
+		font-size: 16px;
 
 	}
 
@@ -397,7 +398,7 @@
 
 					// $('#info').html(res);
 					res = JSON.parse(res);
-					w(res);
+					// w(res);
 
 					if (res.res == 0) {
 						layer.msg('添加成功~', {
@@ -496,7 +497,7 @@
 						tr.find('.index-red-color').addClass('toSignUp cur-pointer');
 						tr.find('.index-red-color').click(showClick);
 
-						w(res.msg);
+						// w(res.msg);
 						//设置我要报名的属性
 						tr.find('.index-red-color').attr('data-subject-id', res.msg.subject_id);
 						tr.find('.index-red-color').attr('data-exam-id', res.msg.exam_id);

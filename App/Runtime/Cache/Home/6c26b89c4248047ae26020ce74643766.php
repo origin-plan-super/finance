@@ -89,7 +89,7 @@
 		height: auto;
 		line-height: 1;
 		padding: 5px 10px;
-		font-size:16px;
+		font-size: 16px;
 
 	}
 
@@ -352,7 +352,7 @@
                     _this.parents('tr').remove();
 
                 } else {
-                    w(res);
+                    // w(res);
                     layer.msg('删除失败~' + res.msg, {
                         offset: '80%'
                     });

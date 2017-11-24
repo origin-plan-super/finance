@@ -130,7 +130,7 @@
             }, function (res) {
 
                 res = JSON.parse(res);
-                w(res);
+                // w(res);
 
                 if (res.res == 0) {
 

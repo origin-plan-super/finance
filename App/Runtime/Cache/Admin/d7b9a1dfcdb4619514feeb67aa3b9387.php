@@ -279,7 +279,7 @@
                 * 批量打印
                 */
         $(document).on('click', '#printAll', function () {
-            w('开始批量打印');
+            // w('开始批量打印');
             var o = table.checkStatus('table');
             if (o.data.length <= 0) {
                 return;

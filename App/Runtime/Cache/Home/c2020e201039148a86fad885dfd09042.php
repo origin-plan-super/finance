@@ -60,6 +60,7 @@
 		height: auto;
 		line-height: 1;
 		padding: 5px 10px;
+		font-size: 16px;
 
 	}
 

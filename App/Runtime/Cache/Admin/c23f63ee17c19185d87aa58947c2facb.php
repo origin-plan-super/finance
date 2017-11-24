@@ -93,7 +93,7 @@
                 $.post('', data.field, function (res) {
                     res = JSON.parse(res);
 
-                    w(res);
+                    // w(res);
                     layer.close(index);
 
                     if (res.res > 0) {

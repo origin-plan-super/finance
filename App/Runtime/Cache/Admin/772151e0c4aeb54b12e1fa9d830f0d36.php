@@ -56,7 +56,7 @@
     </script>
     <script type="text/html" id="bar2">
                 
-        {{#  w(d.subject_info) }}
+    
         {{#  layui.each(d.subject_info, function(index, item){ }}
             {{ '【'+item.title+'】:'+item.money }}￥ | 
         {{#  }); }}
@@ -151,7 +151,7 @@
                 if (obj.event === 'exam_subject') {
 
 
-                    w(obj.tr);
+                    // w(obj.tr);
 
                     var a = JSON.parse(data.exam_subject);
 

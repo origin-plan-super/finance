@@ -59,7 +59,7 @@
     <script type="text/html" id="bar2">
                 
         {{#  var a=JSON.parse(d.exam_subject) }}
-        {{#  w(a) }}
+ 
         {{#  layui.each(a, function(index, item){ }}
             {{ '【'+item.title+'】:'+item.money }}￥,
         {{#  }); }}
@@ -177,7 +177,7 @@
                     "subject_id": obj.data.subject_id,
                     "save": save
                 }, function (res) {
-                    w(res);
+                    // w(res);
                     if (res.res == 0) {
                         layer.msg('修改成功~', {
                             offset: '80%'

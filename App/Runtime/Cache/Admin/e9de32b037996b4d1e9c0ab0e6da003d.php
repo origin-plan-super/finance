@@ -244,7 +244,7 @@
          * 批量删除
          */
         $(document).on('click', '#removeAll', function () {
-            w('开始批量删除');
+            // w('开始批量删除');
             var o = table.checkStatus('table');
             if (o.data.length <= 0) {
                 return;
@@ -266,7 +266,7 @@
                     if (res.res > 0) {
 
                         layer.msg('成功删除' + res.res + '数据~');
-                        w(res.msg);
+                        // w(res.msg);
 
                         tableIns.reload();
                     } else {
