@@ -89,6 +89,7 @@
 		height: auto;
 		line-height: 1;
 		padding: 5px 10px;
+		font-size:16px;
 
 	}
 
@@ -316,9 +317,7 @@
                 $.post('/finance/index.php/Home/ShopBag/getAllMoney', {
                     sign_id: postArr
                 }, function (res) {
-                    w(res);
                     res = JSON.parse(res);
-                    w(res);
                     if (res.res > 0) {
                         //最终的钱
                         var sub_money = res.msg.sub_money;
@@ -330,9 +329,6 @@
                         //放到页面上。
 
                     }
-
-
-
                 });
 
             });
