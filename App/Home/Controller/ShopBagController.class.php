@@ -23,7 +23,6 @@ class ShopBagController extends CommonController {
     public function ShopBag(){
         
         
-        
         $sign_m              =   M('Sign');//购物车的模型
         
         //联表查询，需要查找到科目的信息
@@ -36,69 +35,15 @@ class ShopBagController extends CommonController {
         $this->assign('user_exam_info',$signDate);
         
         
-        // ==== 查找end ====
-        
-        
-        // ==== 获得优惠 ====
-        
+        //满减信息
         $model              =   M('discount');
         $discount           =   $model->order('full desc')->select();
         $this->assign('discount',$discount);
         
-        
-        // ========================
-        // ====  开始计算价格 ====
-        // ========================
-        
-        $sub_money=0;
-        
-        foreach ($signDate as $key => $value) {
-            //计算总价
-            $sub_money += $value['money'];
-        }
-        
-        $discount = $model->order('full desc')->select();
-        $red=0;//这个是要用总价减去的数
-        //优惠减免
-        foreach ($discount as $key => $value) {
-            
-            if($sub_money >= $value['full']){
-                $red+=$value['red'];
-                break
-                ;
-            }
-        }
-        //优惠减免没问题
-        
-        // ========================
-        // ==== 满科减 ====
-        // ========================
-        //先获得
+        //满科减信息
         $model              =   M('DiscountSubject');
-        $DiscountSubject           =   $model->order('full desc')->select();
-        
+        $DiscountSubject    =   $model->order('full desc')->select();
         $this->assign('DiscountSubject',$DiscountSubject);
-        //再计算
-        foreach ($DiscountSubject as $key => $value) {
-            //这里计算数量
-            if(count($signDate) >= $value['full']){
-                $red+=$value['red'];
-                break
-                ;
-            }
-        }
-        
-        $sub_money-=$red;//减去优惠的钱
-        $sub_money = $sub_money<=0 ?0 :$sub_money;//如果负数就等于0
-        
-        
-        $this->assign('red',$red);//减去的钱
-        $this->assign('sub_money',$sub_money);//优惠过后的总价
-        
-        //计算到此结束
-        
-        
-        //模板的展示
         
         $this->display();
         
@@ -151,22 +96,9 @@ class ShopBagController extends CommonController {
         ->select();//找多个
         
         
-        
-        // dump($signDate);
-        // die;
-        // ==== 查找end ====
-        
-        
-        // ==== 获得优惠 ====
-        
-        $model              =   M('discount');
-        $discount           =   $model->order('full desc')->select();
-        
-        
         // ========================
         // ====  开始计算价格 ====
         // ========================
-        
         $sub_money=0;
         
         foreach ($signDate as $key => $value) {
@@ -174,45 +106,14 @@ class ShopBagController extends CommonController {
             $sub_money += $value['money'];
         }
         
-        $discount = $model->order('full desc')->select();
-        $red=0;//这个是要用总价减去的数
-        //优惠减免
-        foreach ($discount as $key => $value) {
-            
-            if($sub_money >= $value['full']){
-                $red+=$value['red'];
-                break
-                ;
-            }
-        }
-        //优惠减免没问题
-        
-        // ========================
-        // ==== 满科减 ====
-        // ========================
-        //先获得
-        $model              =   M('DiscountSubject');
-        $DiscountSubject           =   $model->order('full desc')->select();
-        
-        //再计算
-        foreach ($DiscountSubject as $key => $value) {
-            //这里计算数量
-            if(count($signDate) >= $value['full']){
-                $red+=$value['red'];
-                break
-                ;
-            }
-        }
-        
-        $sub_money-=$red;//减去优惠的钱
-        $sub_money = $sub_money<=0 ?0 :$sub_money;//如果负数就等于0
+        $sub_money=   discount($sub_money,count($signDate));
         
         // $red;//减去的钱
         // $sub_money;//优惠过后的总价
         
         $res['res']=1;
-        $res['msg']['red']=$red;
-        $res['msg']['sub_money']=$sub_money;
+        $res['msg']['red']=$sub_money['red'];
+        $res['msg']['sub_money']=$sub_money['sub_money'];
         
         echo json_encode($res);
         

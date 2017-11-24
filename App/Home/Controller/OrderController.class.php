@@ -26,11 +26,7 @@ class OrderController extends CommonController {
             $sign_id=I('post.sign_id');
             //把sign_id存起来，等支付订单的时候要用
             session('sign_id',json_encode($sign_id));
-            
-            
             $where['sign_id']=array('in',$sign_id);
-            
-            
             $sign_m              =   M('Sign');//购物车的模型
             
             //联表查询，需要查找到科目的信息
@@ -41,75 +37,33 @@ class OrderController extends CommonController {
             ->where($where)
             ->order('t1.add_time desc')
             ->select();//找多个
-            
             $this->assign('user_exam_info',$signDate);
             
-            
-            // dump($signDate);
-            // die;
-            // ==== 查找end ====
-            
-            
-            // ==== 获得优惠 ====
-            
+            //=================================================
+            //优惠减信息
             $model              =   M('discount');
             $discount           =   $model->order('full desc')->select();
             $this->assign('discount',$discount);
             
             
-            // ========================
-            // ====  开始计算价格 ====
-            // ========================
-            
-            $sub_money=0;
-            
-            foreach ($signDate as $key => $value) {
-                //计算总价
-                $sub_money += $value['money'];
-            }
-            
-            $discount = $model->order('full desc')->select();
-            $red=0;//这个是要用总价减去的数
-            //优惠减免
-            foreach ($discount as $key => $value) {
-                
-                if($sub_money >= $value['full']){
-                    $red+=$value['red'];
-                    break
-                    ;
-                }
-            }
-            //优惠减免没问题
-            
-            // ========================
-            // ==== 满科减 ====
-            // ========================
-            //先获得
+            //=================================================
+            //满科减信息
             $model              =   M('DiscountSubject');
             $DiscountSubject           =   $model->order('full desc')->select();
-            
             $this->assign('DiscountSubject',$DiscountSubject);
-            //再计算
-            foreach ($DiscountSubject as $key => $value) {
-                //这里计算数量
-                if(count($signDate) >= $value['full']){
-                    $red+=$value['red'];
-                    break
-                    ;
-                }
+            
+            //=================================================
+            //计算总价
+            $sub_money=0;
+            foreach ($signDate as $key => $value) {
+                $sub_money += $value['money'];
             }
-            
-            $sub_money-=$red;//减去优惠的钱
-            $sub_money = $sub_money<=0 ?0 :$sub_money;//如果负数就等于0
+            $sub_money  =   discount($sub_money,count($signDate));//调用优惠函数
             
             
-            $this->assign('red',$red);//减去的钱
-            $this->assign('sub_money',$sub_money);//优惠过后的总价
-            
-            //计算到此结束
-            
-            $this->assign('red',$red);
-            $this->assign('sub_money',$sub_money);
+            //=================================================
+            $this->assign('red',$sub_money['red']);//减去的钱
+            $this->assign('sub_money',$sub_money['sub_money']);//优惠过后的总价
             
             $this->display();
             
@@ -124,38 +78,31 @@ class OrderController extends CommonController {
     
     public function code(){
         
+        //调用验证优惠码的函数
         $code=I('post.discountCode');
+        $result= isCode($code);
         
-        $model=M('DiscountCode');
-        $where['discount_code_id']=$code;
-        $where['is_use']=0;
-        $result=$model->where($where)->find();
         
-        if($result){
-            //有优惠码
-            //过期不能用
-            $time=time();
-            
-            if($time>$result['end_time']){
-                //过期了
-                $res['res']=-2;
-                $res['msg']='验证码已过期';
-            }else{
-                
-                $res['res']=0;
-                $res['msg']=$result['money'];
-                
-            }
-            
-            
-            
-        }else{
-            $res['res']=-1;
-            $res['msg']='没有找到优惠码或已被使用';
+        if($result==-1){
+            //已经被使用
+            $res['msg']='优惠码已经被使用';
+        }
+        if($result==-2){
+            //过期了
+            $res['msg']='优惠码已过期';
+        }
+        if($result==-3){
+            //找不到
+            $res['msg']='优惠码找不到';
         }
         
-        echo json_encode($res);
+        if($result>0){
+            //能用
+            $res['msg']='优惠码正确';
+        }
         
+        $res['res']= $result;
+        echo json_encode($res);
         
     }
     /**
@@ -216,65 +163,24 @@ class OrderController extends CommonController {
                 $sub_money += $value['money'];
             }
             
-            
-            $model              =   M('discount');
-            //再算优惠减免
-            $discount = $model->order('full desc')->select();
-            $red;
-            //优惠减免
-            foreach ($discount as $key => $value) {
-                if($sub_money >= $value['full']){
-                    $red+=$value['red'];
-                    break
-                    ;
-                }
-            }
-            
-            //再算优惠码 a75970e82b9722853e8fc36c39461f09
+            //再算优惠码
             $code=I('post.code');
-            
-            $model=M('DiscountCode');
-            $where['discount_code_id']=$code;
-            $where['is_use']=0;
-            $result=$model->where($where)->find();
-            
-            if($result){
-                $red+=$result['money'];
+            //这个方法一调用，优惠码就不能用了，因为验证后，把优惠码就弃用了
+            $code=   useCode($code);
+            //只有>=0才是能用的
+            if($code>=0){
+                $red+=$code;
             }
             
-            //把优惠码弃用
-            $save['is_use']=1;
-            $model->where($where)->save($save);
-            
-            
-            // ========================
-            // ==== 满科减 ====
-            // ========================
-            //先获得
-            $model              =   M('DiscountSubject');
-            $DiscountSubject           =   $model->order('full desc')->select();
-            $this->assign('DiscountSubject',$DiscountSubject);
-            //再计算
-            foreach ($DiscountSubject as $key => $value) {
-                //这里计算数量
-                
-                if(count($sign_info) >= $value['full']){
-                    $red+=$value['red'];
-                    break
-                    ;
-                }
-            }
-            
-            $sub_money =$sub_money-$red;
-            
-            $sub_money = $sub_money<=0 ?0 :$sub_money;
+            //优惠减
+            $discount    =   discount($sub_money,count($sign_info));
+            $sub_money   =   $discount['sub_money'];
             
             //得到价格
             $order_add['money']       =   $sub_money;
             // ========================
             // ==== 计算价格结束 ====
             // ========================
-            
             
             $order_add['method']      =   $post['method'];//支付方式，微信或支付宝或银联
             $order_add['user_id']    =   session('user_id');//用户id
@@ -283,8 +189,6 @@ class OrderController extends CommonController {
             
             
             //如果金额是0，就不执行了，直接完成订单
-            
-            
             if($order_add['money']<=0){
                 $order_add['state']       =   1 ;//完成
             }else{
