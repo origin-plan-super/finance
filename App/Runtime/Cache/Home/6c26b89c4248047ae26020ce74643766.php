@@ -265,18 +265,24 @@
 <!-- 右侧悬浮的图标   -->
 <div id="fudong">
 	<a href="<?php echo U('Index/index');?>">
-		<div class="fk fudong0">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon glyphicon-home userCenter cur-icon"></span>
 		</div>
 	</a>
 	<a href="<?php echo U('User/User');?>">
 
-		<div class="fk fudong1">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon-user userCenter cur-icon"></span>
 		</div>
 	</a>
 	<a href="<?php echo U('ShopBag/ShopBag');?>">
-		<div class="fk fudong2">
+		<div class="fk fudong">
+			<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
+		</div>
+	</a>
+
+	<a href="<?php echo U('Login/sinOut');?>">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
 		</div>
 	</a>
@@ -305,7 +311,6 @@
                 // console.log(data.othis); //得到美化后的DOM对象
 
                 //获得所有选中的
-
 
                 var postArr = [];
 

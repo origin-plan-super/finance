@@ -51,6 +51,7 @@ class LoginController extends Controller {
     * 判断是否登录
     */
     public function isLogin(){
+        
         if (empty(session('user_id'))) {
             $res['res']=-999;
         }else{
@@ -58,6 +59,12 @@ class LoginController extends Controller {
         }
         echo json_encode($res);
         
+    }
+    
+    public function sinOut(){
+        session(null);
+        $url=U('Login/login');
+        echo "<script>top.location.href='$url'</script>";
     }
     
 }

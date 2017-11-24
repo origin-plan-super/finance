@@ -123,6 +123,7 @@
 		height: auto;
 		line-height: 1;
 		padding: 5px 10px;
+		font-size: 16px;
 
 	}
 
@@ -218,19 +219,25 @@
 <!-- 右侧悬浮的图标   -->
 <div id="fudong">
 	<a href="<?php echo U('Index/index');?>">
-		<div class="fk fudong0">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon glyphicon-home userCenter cur-icon"></span>
 		</div>
 	</a>
 	<a href="<?php echo U('User/User');?>">
 
-		<div class="fk fudong1">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon-user userCenter cur-icon"></span>
 		</div>
 	</a>
 	<a href="<?php echo U('ShopBag/ShopBag');?>">
-		<div class="fk fudong2">
+		<div class="fk fudong">
 			<span class="glyphicon glyphicon-shopping-cart shopBag cur-icon"></span>
+		</div>
+	</a>
+
+	<a href="<?php echo U('Login/sinOut');?>">
+		<div class="fk fudong">
+			<span class="glyphicon glyphicon-log-out shopBag cur-icon"></span>
 		</div>
 	</a>
 </div>
@@ -249,9 +256,29 @@
 
         var num = 60;
         var count = num;
-        $('#getCode').on('click', function () {
-            $this = $(this).attr('disabled', 'disabled');
 
+        $('#getCode').on('click', function () {
+
+
+
+            if ($('#user_id').val() == null || $('#user_id').val() == undefined || $('#user_id').val() == '') {
+                layer.msg('请输入手机号~');
+                return;
+            }
+
+            $this = $(this).attr('disabled', 'disabled');
+            $this.text(count + 's');
+            var Interval = setInterval(function () {
+                count--;
+                $this.text(count + 's')
+                if (count <= 0) {
+                    //计时器完
+                    $this.removeAttr('disabled');
+                    $this.text('获取验证码');
+                    count = num;
+                    clearInterval(Interval);
+                }
+            }, 1000);
 
             var url = '/finance/Public/SUBMAIL_PHP_SDK/demo/message_xsend_demo.php?user_id=' + $('#user_id').val();
             $.get(url, function (res) {
@@ -260,26 +287,14 @@
 
                 if (res.status == 'success') {
                     //发送成功
-
-                    $this.text(count)
-                    var Interval = setInterval(function () {
-                        count--;
-                        $this.text(count)
-                        if (count <= 0) {
-                            //计时器完
-                            $this.removeAttr('disabled');
-                            $this.text('发送验证码');
-                            count = num;
-                            clearInterval(Interval);
-                        }
-                    }, 1000);
+                    layer.msg('发送成功，请注意查收~');
 
 
                 } else {
                     //发送失败
                     layer.msg('发送失败，请重试');
                     $this.removeAttr('disabled');
-                    $this.text('发送验证码');
+                    $this.text('获取验证码');
                     count = num;
                 }
 
