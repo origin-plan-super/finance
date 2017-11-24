@@ -35,15 +35,35 @@ class DiscountCodeController extends CommonController {
         
         $page=($page-1)* $limit;
         
+        
         if(!empty(I('get.key'))){
             
             $key=I('get.key');
             
-            $where['discount_code_id|is_use'] = array(
-            'like',
-            "%".$key."%",
-            'OR'
-            );
+            //如果数据是已使用或者未使用，直接查询不用模糊查询
+            
+            switch ($key) {
+                case '已使用':
+                    $where['is_use'] = 1;
+                    break;
+                case '未使用':
+                    $where['is_use'] = 0;
+                    break;
+                case '已过期':
+                    $where = 'end_time < '.time();
+                    break;
+                case '未过期':
+                    $where = 'end_time > '.time();
+                    break;
+                default:
+                    $where['discount_code_id'] = array(
+                    'like',
+                    "%".$key."%",
+                    'OR'
+                    );
+                    break ;
+                    
+            }
             
             $result= $model->limit("$page,$limit")->order('add_time desc')->where($where)->select();
             $res['count']=$model->where($where)->count();
@@ -179,5 +199,37 @@ class DiscountCodeController extends CommonController {
         echo json_encode($res);
     }
     
-    // 优惠减免 满1000元减100元，满10科减100元。
+    /*
+    * 保存字段操作
+    * 可上传任意字段保存，慎用，以后加字段验证
+    */
+    public function saveInfo(){
+        if(IS_POST){
+            
+            $save=I('post.save');
+            $save['edit_time']=time();
+            $model=M('DiscountCode');
+            $where['discount_code_id']=I('post.id');
+            $result=$model->where($where)->save($save);
+            if($result !==false){
+                //修改成功
+                $res['res']=0;
+                $res['msg']=$result;
+                
+            }else{
+                //修改失败
+                $res['res']=-1;
+                $res['msg']=$result;
+            }
+            $res['sql']=$model->_sql();
+            
+        }else{
+            $res['res']=-1;
+            $res['msg']='no';
+        }
+        
+        echo json_encode($res);
+        
+    }
+    
 }

@@ -64,11 +64,11 @@
 
         {{#  if(d.is_use > 0){ }}
 
-        <span class="layui-badge layui-bg-gray">已使用</span>
+        <span class="layui-badge">已使用</span>
         
         {{#  } else { }}
 
-        <span class="layui-badge layui-bg-orange">未使用</span>
+        <span class="layui-badge layui-bg-gray">未使用</span>
 
         {{#  } }}
             
@@ -125,7 +125,7 @@
                     { type: 'checkbox', width: 50, fixed: 'lfet' }
                     , { type: 'numbers', width: 50 }
                     , { field: 'discount_code_id', title: '优惠码', width: 150 }
-                    , { field: 'money', title: '优惠', width: 150 }
+                    , { field: 'money', title: '优惠', edit: 'text', width: 150 }
                     , { field: 'is_use', title: '是否使用', width: 100, toolbar: '#bar1', align: 'center' }
                     , { title: '是否过期', width: 100, toolbar: '#isEnd', align: 'center' }
                     , { field: 'end_time', title: '过期时间', width: 200, toolbar: '#barEndTim' }
@@ -170,7 +170,36 @@
 
             });
 
+            /**
+                      监听单元格编辑
+                      */
+            table.on('edit(table_filter)', function (obj) { //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+                console.log(obj.value); //得到修改后的值
+                console.log(obj.field); //当前编辑的字段名
+                console.log(obj.data); //所在行的所有相关数据  
 
+                var save = {};
+                save[obj.field] = obj.value;
+
+                saveInfo({
+                    "id": obj.data.discount_code_id,
+                    "save": save
+                }, function (res) {
+                    w(res);
+                    if (res.res == 0) {
+                        layer.msg('修改成功~', {
+                            offset: '80%'
+                        });
+                    } else {
+                        layer.msg(res.msg, {
+                            offset: '80%'
+                        });
+                    }
+                });
+
+
+
+            });
         });
 
         /**
@@ -211,7 +240,7 @@
 
         });
         function saveInfo(post, f) {
-            $.post('<?php echo U("Exam/saveInfo");?>', post, function (res) {
+            $.post('/finance/index.php/Admin/DiscountCode/saveInfo', post, function (res) {
                 console.log(res);
                 res = JSON.parse(res);
                 if (f != null) {
