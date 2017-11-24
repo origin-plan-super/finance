@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>支付</title>
     <link rel="stylesheet" type="text/css" href="/finance/Public/dist/all/all.css" />
@@ -30,7 +29,44 @@
 <body>
 
     <!-- 表头的导航栏 表头样式统一在allcss里边 -->
-    <!-- 页眉-图片部分 -->
+    <style>
+	.col-xs-6 {
+		/* background-color: #ff0000; */
+		/* outline: 1px #00f solid; */
+	}
+
+	#topTool {
+		position: absolute;
+		right: 180px;
+		bottom: 0;
+		line-height: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#topTool a {
+		display: inline-block;
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+	}
+
+	#topTool .fk {
+		background-color: #ca231c;
+		border: none;
+		width: auto;
+		height: auto;
+		line-height: 1;
+		padding: 5px 10px;
+
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+</style>
+
+<!-- 页眉-图片部分 -->
 <div class="index-package1">
 	<div class="container">
 		<div class="row">
@@ -40,7 +76,27 @@
 			</div>
 			<div class="col-xs-6 index-right text-right">
 				<img src="/finance/Public/img/top-right.png" />
+				<div id="topTool">
+					<a href="<?php echo U('Index/index');?>">
+						<div class="fk fudong0">
+							首页
+						</div>
+					</a>
+					<a href="<?php echo U('User/User');?>">
+
+						<div class="fk fudong1">
+							个人中心
+						</div>
+					</a>
+					<a href="<?php echo U('ShopBag/ShopBag');?>">
+						<div class="fk fudong2">
+							购物车
+						</div>
+					</a>
+				</div>
+
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -54,6 +110,29 @@
 
     <script>
 
+
+        //验证是否支付
+        setInterval(function () {
+
+            $.get('/finance/index.php/Home/Weixin/getNotify', function (res) {
+                if (res == 'SUCCESS') {
+
+                    layer.msg('支付成功！正在为您跳转');
+
+                    setTimeout(function () {
+                        window.location.href = '/finance/index.php/Home/User/user';
+
+                    }, 500);
+
+                }
+
+            });
+
+
+        }, 1000)
+
+
+// getNotify
 
 
 

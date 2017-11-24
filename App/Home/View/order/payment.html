@@ -26,6 +26,29 @@
     <script>
 
 
+        //验证是否支付
+        setInterval(function () {
+
+            $.get('__MODULE__/Weixin/getNotify', function (res) {
+                if (res == 'SUCCESS') {
+
+                    layer.msg('支付成功！正在为您跳转');
+
+                    setTimeout(function () {
+                        window.location.href = '__MODULE__/User/user';
+
+                    }, 500);
+
+                }
+
+            });
+
+
+        }, 1000)
+
+
+// getNotify
+
 
 
 

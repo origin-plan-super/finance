@@ -42,10 +42,10 @@ class WeixinController extends Controller {
         * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
         */
         // $price = $_POST ['price'];
-        $prodect_id = $_GET ['order_id'];
+        $order_id = $_GET ['order_id'];
         
         $model=M('order');
-        $where['order_id']=$prodect_id ;
+        $where['order_id']=$order_id ;
         $order_info=$model -> where($where)->find();
         
         
@@ -54,9 +54,8 @@ class WeixinController extends Controller {
         //钱
         $price = $order_info['money'];
         //商品id
-        // $prodect_id = rand ( 2, 8 );
         //把id放在商品名上
-        $premission_name = $prodect_id;
+        $premission_name = $order_id;
         //开始处理
         $input = new \WxPayUnifiedOrder ();
         //商品的名称，商品描述
@@ -64,8 +63,9 @@ class WeixinController extends Controller {
         
         $input->SetAttach ( "财金通-Attach" );
         
-        $out_trade_no=\WxPayConfig::MCHID . date ( "YmdHis" );
-        session('out_trade_no',$out_trade_no);
+        // $out_trade_no=\WxPayConfig::MCHID . date ( "YmdHis" );
+        $out_trade_no=$order_id;
+        // session('out_trade_no',$out_trade_no);
         $input->SetOut_trade_no ( $out_trade_no );
         $input->SetTotal_fee ( $price * 100 );
         $input->SetTime_start ( date ( "YmdHis" ) );
@@ -91,7 +91,6 @@ class WeixinController extends Controller {
     * @时间 2016-9-22下午3:41:59
     */
     public function notify() {
-        echo 1;
         // 获取微信回调的数据
         $notifiedData = $GLOBALS ['HTTP_RAW_POST_DATA'];
         // 加载相关的类
@@ -100,10 +99,28 @@ class WeixinController extends Controller {
         import ( "@.Controller.WxPay.WxPayNotify" );
         import ( "@.Controller.WxPay.PayNotifyCallBack" );
         
+        $wx_notified_data=\WxPayDataBase::FromXml_4_babbage ( $notifiedData ) ;
+        
         // 转成数组 并写入缓存
-        F ( "wx_notified_data", \WxPayDataBase::FromXml_4_babbage ( $notifiedData ) );
+        F ( "wx_notified_data", $wx_notified_data);
         // 吧xml原型也写入xml
         F ( "wx_notified_data_xml", $notifiedData );
+        /**
+        * 这里要对订单数据库进行操作
+        */
+        
+        if($wx_notified_data['result_code']==='SUCCESS'){
+            //支付成功
+            $where['order_id']=$wx_notified_data['out_trade_no'];
+            $model=M('Order');
+            $save['w_openid']=$wx_notified_data['w_openid'];
+            $save['state']=1;
+            $order->where($where)->save($save);
+            F(session('user_id').'wx_info','SUCCESS');
+        }else{
+            F(session('user_id').'wx_info','ERROR');
+        }
+        
         
         // 给微信返回支付状态值
         $notify = new \PayNotifyCallBack ();
@@ -111,28 +128,55 @@ class WeixinController extends Controller {
         $notify->Handle ( false );
     }
     public function getNotify() {
-        dump(F("wx_notified_data"));
-        dump(F("wx_notified_data_xml"));
-        dump(F("wxpay_HTTP_RAW_POST_DATA"));
+        
+        
+        
+        echo F(session('user_id').'wx_info');
+        F(session('user_id').'wx_info',null);
+        // echo 'SUCCESS';
+        
+        // dump(F("wx_notified_data"));
+        
+        // dump(F("wx_notified_data_xml"));
+        // dump(F("wxpay_HTTP_RAW_POST_DATA"));
+        
+        
+        // C:\App\finance\ThinkPHP\Common\functions.php:842:
+        // array (size=17)
+        //   'appid' => string 'wx27f56521bd47f6fd' (length=18)
+        //   'attach' => string '财金通-Attach' (length=16)
+        //   'bank_type' => string 'CFT' (length=3)
+        //   'cash_fee' => string '1' (length=1)
+        //   'fee_type' => string 'CNY' (length=3)
+        //   'is_subscribe' => string 'N' (length=1)
+        //   'mch_id' => string '1346662401' (length=10)
+        //   'nonce_str' => string 'oumgtlf88drpnvzsshp7wym7jpu6tdod' (length=32)
+        //   'openid' => string 'oAq7fvhPtNSCCsIUwV4xI81mANRI' (length=28)
+        //   'out_trade_no' => string '134666240120171124085249' (length=24)//订单号
+        //   'result_code' => string 'SUCCESS' (length=7)//交易标识
+        //   'return_code' => string 'SUCCESS' (length=7)
+        //   'sign' => string '6B98DCDB9B1802AFD581869042BACA39' (length=32)
+        //   'time_end' => string '20171124085309' (length=14)
+        //   'total_fee' => string '1' (length=1)
+        //   'trade_type' => string 'NATIVE' (length=6)
+        //   'transaction_id' => string '4200000025201711246659351181' (length=28)
+        
+        
+        
+        // C:\App\finance\ThinkPHP\Common\functions.php:842:string '<xml><appid><![CDATA[wx27f56521bd47f6fd]]></appid>
+        // <attach><![CDATA[财金通-Attach]]></attach>
+        // <bank_type><![CDATA[CFT]]></bank_type>
+        // <cash_fee><![CDATA[1]]></cash_fee>
+        // <fee_type><![CDATA[CNY]]></fee_type>
+        // <is_subscribe><![CDATA[N]]></is_subscribe>
+        // <mch_id><![CDATA[1346662401]]></mch_id>
+        // <nonce_str><![CDATA[oumgtlf88drpnvzsshp7wym7jpu6tdod]]></nonce_str>
+        // <openid><![CDATA[oAq7fvhPtNSCCsIUwV4xI81mANRI]]></openid>
+        // <out_trade_no><![CDATA[134666240120171124085249]]></out_trade_no>
+        // <result_code><![CDATA[SUCCESS'... (length=832)
+        
+        // C:\App\finance\ThinkPHP\Common\functions.php:842:boolean false
+        
     }
     
-    public function getInfo(){
-        
-        $out_trade_no=    session('out_trade_no');
-        
-        import('Common.Libs.Weixin.JSAPI');
-        $input = new \WxPayOrderQuery();
-        $input->SetOut_trade_no($out_trade_no);
-        $data = \WxPayApi::orderQuery($input);
-        if($data['trade_state'] == 'SUCCESS' ){
-            $paydata = S('paydata');
-            $data = $paydata[$out_trade_no];
-            $data['status'] = 1;
-            $paydata[$out_trade_no] = $data;
-            S('paydata',$paydata);
-            return $data;
-        }else{
-            return false;
-        }
-    }
 }
